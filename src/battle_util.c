@@ -589,11 +589,7 @@ void HandleAction_ThrowPokeblock(void)
     if (gBattleStruct->safariEscapeFactor > 1)
     {
         // BUG: safariEscapeFactor can become 0 below. This causes the pokeblock throw glitch.
-        #ifdef BUGFIX
         if (gBattleStruct->safariEscapeFactor <= sPkblToEscapeFactor[gBattleStruct->safariPkblThrowCounter][gBattleCommunication[MULTISTRING_CHOOSER]])
-        #else
-        if (gBattleStruct->safariEscapeFactor < sPkblToEscapeFactor[gBattleStruct->safariPkblThrowCounter][gBattleCommunication[MULTISTRING_CHOOSER]])
-        #endif
             gBattleStruct->safariEscapeFactor = 1;
         else
             gBattleStruct->safariEscapeFactor -= sPkblToEscapeFactor[gBattleStruct->safariPkblThrowCounter][gBattleCommunication[MULTISTRING_CHOOSER]];
@@ -8486,22 +8482,22 @@ u8 GetAttackerObedienceForAction()
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return OBEYS;
 
-    obedienceLevel = 10;
+    obedienceLevel = 20;
 
     if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
         obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
         obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
         obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
         obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
         obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
         obedienceLevel = 80;
+    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+        obedienceLevel = 90;
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
@@ -9051,6 +9047,18 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
         else
             basePower = 120;
         break;
+    case EFFECT_SPLASH:
+        weight = GetBattlerWeight(battlerDef);
+        for (i = 0; sWeightToDamageTable[i] != 0xFFFF; i += 2)
+        {
+            if (sWeightToDamageTable[i] > weight)
+                break;
+        }
+        if (sWeightToDamageTable[i] != 0xFFFF)
+            basePower = sWeightToDamageTable[i + 1];
+        else
+            basePower = 120;
+        break;
     case EFFECT_HEAT_CRASH:
         weight = GetBattlerWeight(battlerAtk) / GetBattlerWeight(battlerDef);
         if (weight >= ARRAY_COUNT(sHeatCrashPowerTable))
@@ -9527,6 +9535,50 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
 }
 
+static const u16 sLowHPAbilities[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NORMAL] = ABILITY_STANDARD,
+    [TYPE_FIGHTING] = ABILITY_WRESTLE,
+    [TYPE_FLYING] = ABILITY_AIRBORNE,
+    [TYPE_POISON] = ABILITY_VENOMOUS,
+    [TYPE_GROUND] = ABILITY_FOUNDATION,
+    [TYPE_ROCK] = ABILITY_RUBBLE,
+    [TYPE_BUG] = ABILITY_SWARM,
+    [TYPE_GHOST] = ABILITY_PHANTASM,
+    [TYPE_STEEL] = ABILITY_FORTIFY,
+    [TYPE_FIRE] = ABILITY_BLAZE,
+    [TYPE_WATER] = ABILITY_TORRENT,
+    [TYPE_GRASS] = ABILITY_OVERGROW,
+    [TYPE_ELECTRIC] = ABILITY_OVERCHARGE,
+    [TYPE_PSYCHIC] = ABILITY_MYSTIC,
+    [TYPE_ICE] = ABILITY_CHILL,
+    [TYPE_DRAGON] = ABILITY_HYDRA,
+    [TYPE_DARK] = ABILITY_DREAD,
+    [TYPE_FAIRY] = ABILITY_PIXIE,
+};
+
+static const u16 sTypeToTrainer[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NORMAL] = FLAG_NORMAL_TRAINER_DEFEATED,
+    [TYPE_FIGHTING] = FLAG_FIGHTING_TRAINER_DEFEATED,
+    [TYPE_FLYING] = FLAG_FLYING_TRAINER_DEFEATED,
+    [TYPE_POISON] = FLAG_POISON_TRAINER_DEFEATED,
+    [TYPE_GROUND] = FLAG_GROUND_TRAINER_DEFEATED,
+    [TYPE_ROCK] = FLAG_ROCK_TRAINER_DEFEATED,
+    [TYPE_BUG] = FLAG_BUG_TRAINER_DEFEATED,
+    [TYPE_GHOST] = FLAG_GHOST_TRAINER_DEFEATED,
+    [TYPE_STEEL] = FLAG_STEEL_TRAINER_DEFEATED,
+    [TYPE_FIRE] = FLAG_FIRE_TRAINER_DEFEATED,
+    [TYPE_WATER] = FLAG_WATER_TRAINER_DEFEATED,
+    [TYPE_GRASS] = FLAG_GRASS_TRAINER_DEFEATED,
+    [TYPE_ELECTRIC] = FLAG_ELECTRIC_TRAINER_DEFEATED,
+    [TYPE_PSYCHIC] = FLAG_PSYCHIC_TRAINER_DEFEATED,
+    [TYPE_ICE] = FLAG_ICE_TRAINER_DEFEATED,
+    [TYPE_DRAGON] = FLAG_DRAGON_TRAINER_DEFEATED,
+    [TYPE_DARK] = FLAG_DARK_TRAINER_DEFEATED,
+    [TYPE_FAIRY] = FLAG_FAIRY_TRAINER_DEFEATED,
+};
+
 static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u32 atkAbility, u32 defAbility, u32 holdEffectAtk, u32 weather)
 {
     u8 atkStage;
@@ -9601,8 +9653,11 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     switch (atkAbility)
     {
     case ABILITY_HUGE_POWER:
-    case ABILITY_PURE_POWER:
         if (IS_MOVE_PHYSICAL(move))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+    case ABILITY_PURE_POWER:
+        if (IS_MOVE_SPECIAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_SLOW_START:
@@ -9621,7 +9676,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (moveType == TYPE_FIRE && gBattleResources->flags->flags[battlerAtk] & RESOURCE_FLAG_FLASH_FIRE)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_SWARM:
+/*    case ABILITY_SWARM:
         if (moveType == TYPE_BUG && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
@@ -9636,6 +9691,30 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_OVERGROW:
         if (moveType == TYPE_GRASS && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;*/
+    case ABILITY_SWARM:
+    case ABILITY_TORRENT:
+    case ABILITY_BLAZE:
+    case ABILITY_OVERGROW:
+    case ABILITY_STANDARD:
+    case ABILITY_WRESTLE:
+    case ABILITY_AIRBORNE:
+    case ABILITY_VENOMOUS:
+    case ABILITY_FOUNDATION:
+    case ABILITY_RUBBLE:
+    case ABILITY_PHANTASM:
+    case ABILITY_FORTIFY:
+    case ABILITY_OVERCHARGE:
+    case ABILITY_MYSTIC:
+    case ABILITY_CHILL:
+    case ABILITY_HYDRA:
+    case ABILITY_DREAD:
+    case ABILITY_PIXIE:
+        if ((gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))
+            && (GetBattlerAbility(battlerAtk) == sLowHPAbilities[moveType]))
+            {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            }
         break;
     case ABILITY_PLUS:
         if (IS_MOVE_SPECIAL(move) && IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
@@ -9647,7 +9726,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         }
         break;
     case ABILITY_MINUS:
-        if (IS_MOVE_SPECIAL(move) && IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
+        if (IS_MOVE_PHYSICAL(move) && IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
         {
             u32 partnerAbility = GetBattlerAbility(BATTLE_PARTNER(battlerAtk));
             if (partnerAbility == ABILITY_PLUS
@@ -9722,6 +9801,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN && IS_MOVE_SPECIAL(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.33));
         break;
+    case ABILITY_CACOPHONY:
+        if (gMovesInfo[move].soundMove)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     }
 
     // target's abilities
@@ -9788,6 +9871,11 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     if (ShouldGetStatBadgeBoost(FLAG_BADGE07_GET, battlerAtk) && IS_MOVE_SPECIAL(move))
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
 
+    // A boost to moves of each type can be obtained by defeating a trainer of the designated type.
+    // They are littered throughout the Hoenn region and can only be battled after the HoF.
+    if (FlagGet(sTypeToTrainer[moveType]))
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.1));
+    
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);
 }
 

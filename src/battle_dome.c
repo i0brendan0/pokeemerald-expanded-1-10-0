@@ -2193,11 +2193,7 @@ static void InitDomeOpponentParty(void)
 
 static void CreateDomeOpponentMon(u8 monPartyId, u16 tournamentTrainerId, u8 tournamentMonId, u32 otId)
 {
-    #ifdef BUGFIX
     u8 fixedIv = GetDomeTrainerMonIvs(DOME_TRAINERS[tournamentTrainerId].trainerId);
-    #else
-    u8 fixedIv = GetDomeTrainerMonIvs(tournamentTrainerId); // BUG: Using the wrong ID. As a result, all Pokémon have ivs of 3.
-    #endif
     u8 level = SetFacilityPtrsGetLevel();
 
     CreateFacilityMon(&gFacilityTrainerMons[DOME_MONS[tournamentTrainerId][tournamentMonId]],
@@ -2410,9 +2406,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
         if (mode == EFFECTIVENESS_MODE_BAD)
         {
             typePower = 8;
-        #ifdef BUGFIX
             return typePower;
-        #endif
         }
     }
     else
@@ -5913,10 +5907,8 @@ static void DecideRoundWinners(u8 roundId)
         else if (tournamentId2 != 0xFF)
         {
             // BUG: points1 and points2 are not cleared at the beginning of the loop resulting in not fair results.
-            #ifdef BUGFIX
             points1 = 0;
             points2 = 0;
-            #endif
 
             // Calculate points for both trainers.
             for (monId1 = 0; monId1 < FRONTIER_PARTY_SIZE; monId1++)

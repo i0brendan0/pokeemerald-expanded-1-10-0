@@ -503,7 +503,7 @@
 #define ITEM_ODD_INCENSE 406
 #define ITEM_ROCK_INCENSE 407
 #define ITEM_FULL_INCENSE 408
-#define ITEM_WAVE_INCENSE 409
+#define ITEM_RICH_INCENSE 409
 #define ITEM_ROSE_INCENSE 410
 #define ITEM_LUCK_INCENSE 411
 #define ITEM_PURE_INCENSE 412
@@ -994,10 +994,16 @@
 
 #define ITEM_STRANGE_BALL 828
 
+// Custom
+
+#define ITEM_LINK_CABLE 829
+#define ITEM_FLAME_INCENSE 830
+#define ITEM_GRIME_INCENSE 831
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 832
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

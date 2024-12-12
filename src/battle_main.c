@@ -4854,7 +4854,7 @@ s8 GetMovePriority(u32 battler, u16 move)
     {
         priority++;
     }
-    else if (ability == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
+    else if ((ability == ABILITY_PRANKSTER && IS_MOVE_STATUS(move)) && !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_DARK))
     {
         gProtectStructs[battler].pranksterElevated = 1;
         priority++;
@@ -5735,11 +5735,7 @@ static void ReturnFromBattleToOverworld(void)
     {
         UpdateRoamerHPStatus(&gEnemyParty[0]);
 
-#ifndef BUGFIX
-        if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
-#else
         if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).
-#endif                                                                               // & with B_OUTCOME_WON (1) will return TRUE and deactivates the roamer.
             SetRoamerInactive(gEncounteredRoamerIndex);
     }
 

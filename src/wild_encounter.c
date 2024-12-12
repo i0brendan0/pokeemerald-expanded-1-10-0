@@ -28,7 +28,7 @@ extern const u8 EventScript_SprayWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
 
-#define NUM_FEEBAS_SPOTS 6
+#define NUM_FEEBAS_SPOTS 12
 
 // Number of accessible fishing spots in each section of Route 119
 // Each section is an area of the route between the y coordinates in sRoute119WaterTileData
@@ -56,11 +56,7 @@ static bool8 IsWildLevelAllowedByRepel(u8 level);
 static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
 static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16 species, u8 area);
-#ifdef BUGFIX
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size);
-#else
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex);
-#endif
 static bool8 IsAbilityAllowingEncounter(u8 level);
 
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
@@ -311,6 +307,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
     u8 max;
     u8 range;
     u8 rand;
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    u32 metatileBehavior = MapGridGetMetatileBehaviorAt(playerObjEvent->currentCoords.x, playerObjEvent->currentCoords.y);
 
     if (LURE_STEP_COUNT == 0)
     {
@@ -324,6 +322,16 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
         {
             min = wildPokemon[wildMonIndex].maxLevel;
             max = wildPokemon[wildMonIndex].minLevel;
+        }
+        if (MetatileBehavior_IsDarkGrass(metatileBehavior) 
+         || MetatileBehavior_IsDarkWater(metatileBehavior))
+        {
+            min += min * 10 / 100;
+            max += max * 10 / 100;
+            if (min > MAX_LEVEL)
+                min = MAX_LEVEL;
+            if (max > MAX_LEVEL)
+                max = MAX_LEVEL;
         }
         range = max - min + 1;
         rand = Random() % range;
@@ -453,11 +461,7 @@ static void CreateWildMon(u16 species, u8 level)
 
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
 }
-#ifdef BUGFIX
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)
-#else
-#define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr)
-#endif
 
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 flags)
 {
@@ -534,6 +538,9 @@ static bool8 SetUpMassOutbreakEncounter(u8 flags)
     CreateWildMon(gSaveBlock1Ptr->outbreakPokemonSpecies, gSaveBlock1Ptr->outbreakPokemonLevel);
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(&gEnemyParty[0], gSaveBlock1Ptr->outbreakPokemonMoves[i], i);
+
+    if (gSaveBlock1Ptr->outbreakPokemonItem != ITEM_NONE)
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gSaveBlock1Ptr->outbreakPokemonItem);
 
     return TRUE;
 }
@@ -691,7 +698,7 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
                 // try a regular wild land encounter
                 if (TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
-                    if (TryDoDoubleWildBattle())
+                    if (TryDoDoubleWildBattle(curMetatileBehavior))
                     {
                         struct Pokemon mon1 = gEnemyParty[0];
                         TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
@@ -734,7 +741,7 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
                 if (TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
                     gIsSurfingEncounter = TRUE;
-                    if (TryDoDoubleWildBattle())
+                    if (TryDoDoubleWildBattle(curMetatileBehavior))
                     {
                         struct Pokemon mon1 = gEnemyParty[0];
                         TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_KEEN_EYE);
@@ -1079,11 +1086,7 @@ static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16
     return maxLevel;
 }
 
-#ifdef BUGFIX
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex, u32 size)
-#else
-static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u16 ability, u8 *monIndex)
-#endif
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return FALSE;
@@ -1092,11 +1095,7 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
     else if (Random() % 2 != 0)
         return FALSE;
 
-#ifdef BUGFIX
     return TryGetRandomWildMonIndexByType(wildMon, type, size, monIndex);
-#else
-    return TryGetRandomWildMonIndexByType(wildMon, type, LAND_WILD_COUNT, monIndex);
-#endif
 }
 
 static void ApplyFluteEncounterRateMod(u32 *encRate)
@@ -1113,14 +1112,14 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
         *encRate = *encRate * 2 / 3;
 }
 
-bool8 TryDoDoubleWildBattle(void)
+bool8 TryDoDoubleWildBattle(u16 curMetatileBehavior)
 {
     if (GetSafariZoneFlag()
       || (B_DOUBLE_WILD_REQUIRE_2_MONS == TRUE && GetMonsStateToDoubles() != PLAYER_HAS_TWO_USABLE_MONS))
         return FALSE;
     else if (B_FLAG_FORCE_DOUBLE_WILD != 0 && FlagGet(B_FLAG_FORCE_DOUBLE_WILD))
         return TRUE;
-    else if (B_DOUBLE_WILD_CHANCE != 0 && ((Random() % 100) + 1 <= B_DOUBLE_WILD_CHANCE))
+    else if ((B_DOUBLE_WILD_CHANCE != 0) && ((Random() % 100) + 1 <= B_DOUBLE_WILD_CHANCE) && (MetatileBehavior_IsDarkGrass(curMetatileBehavior) || MetatileBehavior_IsDarkWater(curMetatileBehavior)))
         return TRUE;
     return FALSE;
 }

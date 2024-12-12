@@ -5,6 +5,7 @@
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
+#include "daycare.h"
 #include "decoration.h"
 #include "diploma.h"
 #include "event_data.h"
@@ -57,6 +58,7 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/field_specials.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
 #include "constants/map_types.h"
@@ -70,6 +72,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "wild_encounter.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -147,6 +150,8 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
 static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
 #endif //FREE_LINK_BATTLE_RECORDS
+
+//static void TryGiveRandomBabyEgg(void);
 
 void Special_ShowDiploma(void)
 {
@@ -3561,9 +3566,9 @@ bool32 IsTrainerRegistered(void)
 bool32 ShouldDistributeEonTicket(void)
 {
     if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
-        return FALSE;
+        return TRUE;
 
-    return TRUE;
+    return FALSE;
 }
 
 #define tState data[0]
@@ -4332,4 +4337,81 @@ void UseBlankMessageToCancelPokemonPic(void)
     u8 t = EOS;
     AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
     ScriptMenu_HidePokemonPic();
+}
+
+static const u16 sBabySpecies[] =
+{
+    SPECIES_PICHU,
+    SPECIES_CLEFFA,
+    SPECIES_IGGLYBUFF,
+    SPECIES_TOGEPI,
+    SPECIES_TYROGUE,
+    SPECIES_SMOOCHUM,
+    SPECIES_ELEKID,
+    SPECIES_MAGBY,
+    SPECIES_AZURILL,
+    SPECIES_WYNAUT,
+    SPECIES_BUDEW,
+    SPECIES_CHINGLING,
+    SPECIES_BONSLY,
+    SPECIES_MIME_JR,
+    SPECIES_HAPPINY,
+    SPECIES_MUNCHLAX,
+    SPECIES_RIOLU,
+    SPECIES_MANTYKE,
+/*    SPECIES_CHIKS,
+    SPECIES_GOLPY,
+    SPECIES_GRIMEY,
+    SPECIES_MEOWSY,
+    SPECIES_MINICORN,
+    SPECIES_PARA,
+    SPECIES_PUDDI,
+    SPECIES_TANGEL,
+    SPECIES_TRIFOX,
+    SPECIES_x_DUNSPARCE_x, */
+    SPECIES_PHIONE,
+};
+
+void TryGiveRandomBabyEgg(void)
+{
+    u16 species = sBabySpecies[Random() % ARRAY_COUNT(sBabySpecies)];
+    struct Pokemon mon;
+    u8 i;
+    u16 move = MOVE_DIZZY_PUNCH;
+    bool8 isShinyFlag = FlagGet(FLAG_FORCE_SHINY);
+    bool8 isNotShinyFlag = FlagGet(FLAG_FORCE_NOT_SHINY);
+    
+    if ((species == SPECIES_PHIONE) && (Random() & 1))
+        species = sBabySpecies[Random() % ARRAY_COUNT(sBabySpecies)];
+    
+    if ((Random() % 100) < SHINY_ODDS)
+    {
+        FlagSet(FLAG_FORCE_SHINY);
+        FlagClear(FLAG_FORCE_NOT_SHINY);
+    }
+    else
+    {
+        FlagClear(FLAG_FORCE_SHINY);
+        FlagSet(FLAG_FORCE_NOT_SHINY);
+    }
+    
+    CreateEgg(&mon, species, FALSE);
+    
+    if (isShinyFlag)
+        FlagSet(FLAG_FORCE_SHINY);
+    else
+        FlagClear(FLAG_FORCE_SHINY);
+    if (isNotShinyFlag)
+        FlagSet(FLAG_FORCE_NOT_SHINY);
+    else
+        FlagClear(FLAG_FORCE_NOT_SHINY);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if ((GetMonData(&mon, MON_DATA_MOVE1 + i, NULL)) == MOVE_NONE)
+            break;
+    }
+    SetMonData(&mon, MON_DATA_MOVE1 + i, &move);
+    
+    GiveMonToPlayer(&mon);
 }

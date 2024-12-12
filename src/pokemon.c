@@ -1272,6 +1272,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     if (gSpeciesInfo[species].abilities[1])
     {
         value = personality & 1;
+        if (FlagGet(FLAG_FORCE_HIDDEN_ABILITY))
+            value = 2;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
 
@@ -4722,6 +4724,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                 if (mon == GetFirstLiveMon() && gFollowerSteps >= evolutions[i].param)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
+            case EVO_SPECIFIC_LEVEL:
+                if ((level % 10) == 0)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+                break;
             }
         }
         break;
@@ -4799,6 +4806,15 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             case EVO_ITEM_DAY:
                 if (GetTimeOfDay() != TIME_NIGHT && evolutions[i].param == evolutionItem)
                     targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_TRADE:
+                if (evolutionItem == ITEM_LINK_CABLE)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_TRADE_ITEM:
+                if (evolutionItem == ITEM_LINK_CABLE && evolutions[i].param == heldItem)
+                    targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
                 break;
             }
         }

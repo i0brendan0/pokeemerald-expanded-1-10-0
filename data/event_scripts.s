@@ -1096,6 +1096,10 @@ EventScript_VsSeekerChargingDone::
 	special VsSeekerResetObjectMovementAfterChargeComplete
 	releaseall
 	end
+    
+Common_EventScript_OddEgg::
+    special TryGiveRandomBabyEgg
+    return
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"

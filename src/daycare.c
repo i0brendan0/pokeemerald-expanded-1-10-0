@@ -100,7 +100,7 @@ static const struct {
     { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE, SPECIES_CHINGLING },
     { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE, SPECIES_BONSLY },
     { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE, SPECIES_BUDEW },
-    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE, SPECIES_MANTYKE },
+    { SPECIES_MANTINE,      ITEM_SEA_INCENSE,  SPECIES_MANTYKE },
 };
 
 static const u8 *const sCompatibilityMessages[] =
@@ -665,14 +665,9 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
         // have a lower chance to be inherited in Emerald and why the IV picked for inheritance can
         // be repeated. Amusingly, FRLG and RS also got this wrong. They remove selectedIvs[i], which
         // is not an index! This means that it can sometimes remove the wrong stat.
-        #ifndef BUGFIX
-        selectedIvs[i] = availableIVs[Random() % (NUM_STATS - i)];
-        RemoveIVIndexFromList(availableIVs, i);
-        #else
         u8 index = Random() % (NUM_STATS - i);
         selectedIvs[i] = availableIVs[index];
         RemoveIVIndexFromList(availableIVs, index);
-        #endif
     }
 
     // Determine which parent each of the selected IVs should inherit from.
@@ -974,8 +969,14 @@ static const struct {
   u16 move;
 } sBreedingSpecialMoveItemTable[] =
 {
-    // Offspring,    Item,            Move
-    { SPECIES_PICHU, ITEM_LIGHT_BALL, MOVE_VOLT_TACKLE },
+    // Offspring,        Item,             Move
+    { SPECIES_PICHU,     ITEM_LIGHT_BALL,  MOVE_VOLT_TACKLE },
+    { SPECIES_FARFETCHD, ITEM_LEEK,        MOVE_TAILWIND    },
+    { SPECIES_CHANSEY,   ITEM_LUCKY_PUNCH, MOVE_MACH_PUNCH  },
+    { SPECIES_HAPPINY,   ITEM_LUCKY_PUNCH, MOVE_MACH_PUNCH  },
+    { SPECIES_CUBONE,    ITEM_THICK_CLUB,  MOVE_BONE_RUSH   },
+    { SPECIES_SNEASEL,   ITEM_RAZOR_CLAW,  MOVE_NIGHT_SLASH },
+    { SPECIES_GLIGAR,    ITEM_RAZOR_FANG,  MOVE_LEECH_LIFE  },
 };
 
 static void GiveMoveIfItem(struct Pokemon *mon, struct DayCare *daycare)
@@ -1028,8 +1029,8 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_NIDORAN_F;
     else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_VOLBEAT && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_ILLUMISE;
-    else if (eggSpecies == SPECIES_MANAPHY)
-        eggSpecies = SPECIES_PHIONE;
+//    else if (eggSpecies == SPECIES_MANAPHY)
+//        eggSpecies = SPECIES_PHIONE;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG)

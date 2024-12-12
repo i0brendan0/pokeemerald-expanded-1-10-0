@@ -92,6 +92,10 @@ static const u8 sSeaIncenseDesc[]     = _("A hold item that\n"
                                           "slightly boosts\n"
                                           "Water-type moves.");
 
+static const u8 sRichIncenseDesc[]     = _("An incense that\n"
+                                           "makes the holder\n"
+                                           "move first often.");
+
 static const u8 sOddIncenseDesc[]     = _("A hold item that\n"
                                           "boosts Psychic-\n"
                                           "type moves.");
@@ -7198,7 +7202,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SEA_INCENSE] =
     {
-        .name = _("Sea Incense"),
+        .name = _("Water Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
         .holdEffect = HOLD_EFFECT_WATER_POWER,
         .holdEffectParam = 20,
@@ -7274,13 +7278,13 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FullIncense,
     },
 
-    [ITEM_WAVE_INCENSE] =
+    [ITEM_RICH_INCENSE] =
     {
-        .name = _("Wave Incense"),
+        .name = _("Rich Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_WATER_POWER,
+        .holdEffect = HOLD_EFFECT_QUICK_CLAW,
         .holdEffectParam = 20,
-        .description = sSeaIncenseDesc,
+        .description = sRichIncenseDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -7291,7 +7295,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ROSE_INCENSE] =
     {
-        .name = _("Rose Incense"),
+        .name = _("Grass Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
         .holdEffect = HOLD_EFFECT_GRASS_POWER,
         .holdEffectParam = 20,
@@ -14092,5 +14096,19 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+    
+    [ITEM_LINK_CABLE] = //  x_MODIFY_x
+    {
+        .name = _("Link Cable"),
+        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
+        .description = sEvolutionStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
     },
 };
