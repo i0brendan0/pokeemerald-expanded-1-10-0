@@ -862,6 +862,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sHoothootTeachableLearnset,
         .eggMoveLearnset = sHoothootEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_NOCTOWL}),
+                                //{EVO_LEVEL_SILCOON, 20, SPECIES_NOCTOWL},
+                                //{EVO_LEVEL_CASCOON, 20, SPECIES_OWLDURN}),
     },
 
     [SPECIES_NOCTOWL] =
@@ -1960,7 +1962,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .catchRate = 150,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 38 : 33,
         .evYield_HP = 1,
-        .genderRatio = PERCENT_FEMALE(75),
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 10,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
@@ -2077,6 +2079,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sMarillTeachableLearnset,
         .eggMoveLearnset = sMarillEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_AZUMARILL}),
+                                //{EVO_LEVEL, 18, SPECIES_x_AZUMARILL_x}), // x_MODIFY_x
     },
 
     [SPECIES_AZUMARILL] =
@@ -4002,7 +4005,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     #else
         .expYield = 75,
     #endif
-        .evYield_HP = 1,
+        .evYield_HP = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -4259,6 +4262,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .eggMoveLearnset = sGligarEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR},
                                 {EVO_ITEM_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR}),
+                                //{EVO_ITEM_HOLD_NIGHT, ITEM_RAZOR_CLAW, SPECIES_GLISCOR},
+                                //{EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_GLISCOR}),
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -4537,6 +4542,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sQwilfishTeachableLearnset,
         .eggMoveLearnset = sQwilfishEggMoveLearnset,
         .formSpeciesIdTable = sQwilfishFormSpeciesIdTable,
+        //.evolutions = EVOLUTION({EVO_ITEM, WATER_STONE, SPECIES_NUMPUFF}),
     },
 
 #if P_HISUIAN_FORMS

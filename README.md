@@ -44,10 +44,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (PENDING)
 
-UPDATE TOOLS
-NEW POKEMON DATA DUMP - GITHUB
 NEW MAP STARTS - GITHUB
-ADD TMS 51 THROUGH 100 - GITHUB
+ADD TMS 51 THROUGH 100 - GITHUB (make 120 instead. 128 with HMs)
 SRC/ITEM_MENU.C - SMALL FIXES 75de8d555 - GITHUB
 SRC/DATA/POKEMON/SPECIES_INFO.H - TYPE POWER BOOST 841c276d6 - GITHUB
 data\maps\BattleFrontier_Lounge7\scripts.inc - MISC EDITS 1 ee78f0008 - GITHUB
@@ -143,122 +141,146 @@ HIDDEN TREES - GITHUB
 
     - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
         - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
-            - Beta Bayleef
-                - Blossomole
-                    - Grass/Fairy(?)
-            - -Beta Fire type starter line - New Fire starter
-                - Flambear, Volbear, Dynabear
-                    - Fire, Fire/???, Fire/???
-            - -Beta Water type starter line - New Water starter
-                - Cruz, Aquis, Aquaria
-                    - Water, Water/???, Water/???
-            - Beta Noctowl - Hoothoot split evolution - Use Wurmple's evolution
-                - Owldurn
-                    - Normal/Flying
-            - -Beta Vulpix baby
-                - Trifox
-                    - Fire
-            - Beta Tangela baby
-                - Tangel
-                    - Grass
-            - Beta Tangrowth - Tangela split evolution
-                - Tangrath
-                    - Grass/Fighting(?)
-            - -Beta Mantine
-                - Rayleep
-                    - Water/Fairy(?)
-            - Beta Qwilfish evolution
-                - Numpuff
-                    - Water/Poison
-            - -Beta Goldeen baby
-                - Golpy
-                    - Water
-            - Beta sunfish line 
-                - Sunmola, Anchorage, Grotess
-                    - Water, Water/Steel, Water/???
-            - Beta Paras baby
-                - Para
-                    - Bug/Grass
-            - Beta Ditto evolution - Metal Coat + Trade
-                - Animon
-                    - Normal/Steel
-            - -Beta Doduo baby
-                - Chiks
-                    - Normal/Flying
-            - -Beta Meowth baby
-                - Meowsy
-                    - Normal
-            - -Beta dark cat line
-                - Rinring, Belloyant
-                    - Dark/Fairy(?), Dark/Fairy(?)
-            - Beta Ponyta baby
-                - Minicorn
-                    - Fire
-            - Beta Slowbro shell pokemon
-                - Turbann
-                    - Rock(?)
-            - -Beta Grimer baby
-                - Grimey
-                    - Poison
-            - Beta Tyrogue
-                - Gohng
-                    - Fighting/Fairy(?)
-            - -Beta Growlithe baby
-                - Puddi
-                    - Fire
-            - -Beta Hoppip line
-                - Lefneko, Dandeneko, Cottoneko - New Grass starter
-                    - Grass/Fairy, Grass/Fairy, Grass/Fairy
-            - Beta Weepinbell branching evolution - Moon Stone
-                - Belmitt
-                    - Grass/Dark(?)
-            - -Beta seal Pokemon
-                - Bomsoaker
-                    - Fire/Water
-            - -Beta electric tiger line
-                - Kotora, Raitora
-                    - Electric, Electric
-            - Beta Farfetch'd evolution
-                - Madame - female only
-                    - Normal(?)/Flying
-            - -Beta Ghost line - They will evolve into each other every 10 levels
-                - Kurstraw, Pangshi
-                    - Ghost/???, Ghost/???
-            - -Beta Pinsir Evolution
-                - Plux
-                    - Bug/Dark
-            - -Beta Ice wolf line - Ice Stone
-                - Wolfman, Warwolf
-                    - Ice, Ice/Dark
-            - Beta Porygon2 - Branching evolution for Porygon - Dubious Disc at Porygon
-                - Porygon-C
-                    - Normal
+            - Lefneko - Beta Hoppip line
+                - Grass
+                    - Give one like elemental monkeys
+            - Dandeneko
+                - Grass/Fairy
+                    - Evolve Lefneko - Level up
+            - Cottoneko
+                - Grass/Fairy
+                    - Evolve Dandeneko - Level up
+            - Flambear - Beta Fire type starter line
+                - Fire
+                    - Give one like elemental monkeys
+            - Volbear
+                - Fire/???
+                    - Evolve Flambear - Level up
+            - Dynabear
+                - Fire/???
+                    - Evolve Volbear - Level up
+            - Cruz - Beta Water type starter line
+                - Water
+                    - Give one like elemental monkeys
+            - Aquis
+                - Water/???
+                    - Evolve Cruz - Level up
+            - Aquaria
+                - Water/???
+                    - Evolve Aquis - Level up
+            - Blossomole - Beta Bayleef
+                - Grass/Fairy
+            - Owldurn - Beta Noctowl
+                - Normal/Flying
+                    - Evolve Hoothoot - Wurmple evolution
+            - Trifox - Beta Vulpix baby
+                - Fire
+                    - Baby Vulpix
+            - Tangel - Beta Tangela baby
+                - Grass
+                    - Tangela Baby
+            - Tangrath - Beta Tangrowth
+                - Grass/Dark
+                    - Evolve Tangela - ??? (can't be level up)
+            - Rayleep - Beta Mantine
+                - Water/Fairy
+            - Numpuff - Beta Qwilfish evolution
+                - Water/Poison
+                    - Evolve Qwilfish - Water Stone
+            - Golpy - Beta Goldeen baby
+                - Water
+                    - Baby Goldeen
+            - Sunmola
+                - Water
+            - Anchorage
+                - Water/Steel
+                    - Evolve Sunmola - ???
+            - Grotess - Beta sunfish line 
+                - Water/Dark
+                    - Evolve Sunmola - ???
+            - Para - Beta Paras baby
+                - Bug
+                    - Baby Paras
+            - Animon - Beta Ditto evolution
+                - Normal/Steel
+                    - Evolve Ditto - Metal Coat + Trade
+            - Chiks - Beta Doduo baby
+                - Normal
+                    - Baby Doduo
+            - Meowsy - Beta Meowth baby
+                - Normal
+                    - Baby Meowth
+            - Rinring - Beta dark cat line
+                - Dark/Fairy
+            - Belloyant
+                - Dark/Fairy
+                    - Evolve Rinring - ???
+            - Minicorn - Beta Ponyta baby
+                - Fire
+                    - Baby Ponyta
+            - Tubann - Beta Slowbro shell pokemon
+                - Rock
+            - Grimey - Beta Grimer baby
+                - Poison
+                    - Baby Grimer
+            - Gohng - Beta Tyrogue
+                - Fighting/Fairy
+                    - Legendary Pokemon
+            - Puddi - Beta Growlithe baby
+                - Fire
+                    - Baby Growlithe
+            - Belmitt - Beta Weepinbell branching evolution
+                - Grass/Fighting
+                    - Evolve Weepinbell - Moon Stone
+            - Bomsoaker - Beta seal Pokemon
+                - Fire/Water
+            - Kotora - Beta electric tiger line
+                - Electric
+            - Raitora
+                - Electric
+                    - Evolve Kotora - ???
+            - Madame - Beta Farfetch'd evolution
+                - Normal/Flying
+                    - Evolve Farfetch'd - ??? (Female Only)
+            - Kurstraw - Beta Ghost line
+                - Ghost
+                    - Evolve Pangshi - Evolves every 10 levels
+            - Pangshi
+                - Ghost
+                    - Evolve Kurstraw - Evolves every 10 levels
+            - Plux - Beta Pinsir Evolution
+                - Bug/Dark
+            - Wolfman - Beta Ice wolf line
+                - Ice
+            - Warwolf
+                - Ice/???
+                    - Evolve Wolfman - Ice Stone
+            - Porygon-C - Beta Porygon-2
+                - Normal/Stee;
+                    - Evolve Porygon-2 - Metal Coat + Trade
         - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Pok%C3%A9mon
-            - Beta Dunsparce - Baby Dunsparce?
-                - Duneslet
-                    - Normal
-            - -Beta Sneasel
-                - Swievel
-                    - Ice/Normal
-            - -Beta Celebi
-                - ???
-                    - Steel/???
-            - Beta Wooper - 
-                - Woober
-                    - Water/???
+            - Dunslet - Beta Dunsparce
+                - Normal
+                    - Baby Dunsparce
+            - Swievel - Beta Sneasel
+                - Ice/Normal
+            - (UNNAMED) - Beta Celebi
+                - Steel/Fairy
+                    - Mythical Pokemon
+            - Woober - Beta Wooper
+                - Water/(???)
         - https://tcrf.net/Prerelease:Pok%C3%A9mon_Gold_and_Silver/Sprites/990613
-            - -Beta Azumarill - Branching evolution for Marill
-                - Kirorill
-                    - Water/Fighting
-            - Beta Gligar - Branching evolution for Gligar
-                - Stingbat
-                    - Flying/???
-            - Beta Blissey - Branching evolution for Chansey
-                - Whimsey
-                    - ???
-            - -Beta Girafarig pre-evolution
-                - Twinz
-                    - Ghost/Fairy
+            - Kiromarill - Beta Azumarill
+                - Water/Fighting
+                    - Evolve Marill - ??? (Can't be friendship)
+            - Stingbat - Beta Gligar
+                - Dark/Flying
+                    - Evolve Gligar - Razor Claw + Trade
+            - Whimsey - Beta Blissey
+                - Normal/Fairy
+                    - Evolve Chansey - ???
+            - Twinz - Beta Girafarig pre-evolution
+                - Ghost/Normal
     - New incense items for use with beta baby mon.
         - Rich Incense - Meowsy
             - An exotic-smelling incense that makes the holder move first occasionally. (Quick Claw)
@@ -376,7 +398,7 @@ HIDDEN TREES - GITHUB
         - Wormadam (All forms)
         - Zapdos
     
-Use XMODIFYX to find changes for future.
+Use x_MODIFY_x to find changes for future.
     
 ### [Documentation on features can be found here for the pokeemerald Expansion](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
