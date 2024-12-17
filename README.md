@@ -20,6 +20,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Hidden Abilities.
     - Items from newer generations.
     - TMs are reusable.
+    - A new key item called Meteorite can be used to change Deoxys' forme.
     
 ### New Features (COMPLETED)
 
@@ -37,37 +38,120 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
             - Water
             - Does damage during rain based on the user's weight.
     - Swarming Pokemon may now hold special items.
-    - The Rival's gender can now be chosen. (Can't be renamed.)
-    - Castform gets a Sandy Form. (No sprite/design yet)
-    - Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
+    - (Not Updated) The Rival's gender can now be chosen. (Can't be renamed.)
+    - (Not Updated) Castform gets a Sandy Form. (No sprite/design yet)
+    - (Not Updated) Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
         - All Hidden Tree Pokemon will have their hidden ability. 
-
-### New Features (PENDING)
-
-NEW MAP STARTS - GITHUB
-ADD TMS 51 THROUGH 100 - GITHUB (make 120 instead. 128 with HMs)
-SRC/ITEM_MENU.C - SMALL FIXES 75de8d555 - GITHUB
-SRC/DATA/POKEMON/SPECIES_INFO.H - TYPE POWER BOOST 841c276d6 - GITHUB
-data\maps\BattleFrontier_Lounge7\scripts.inc - MISC EDITS 1 ee78f0008 - GITHUB
-SRC/DATA/TEXT/SPECIES_NAMES.H - MISC EDITS 1 ee78f0008 - GITHUB
-SANDY FORM CASTFORM BASE - GITHUB
-ADD RIVAL CHOICE - GITHUB
-RIVAL FIX - GITHUB
-SRC/STRINGS.C - MISC EDITS 3 5c20c7815 - GITHUB
-SRC/DAYCARE.C - ODD EGG 24161bb08 - GITHUB
-HIDDEN TREES - GITHUB
-
-    - Certain Pokeballs in the world will give a higher amount of that item.
-    - More TMs.
-    - A new key item called Meteorite can be used to change Deoxys' forme.
     - Certain Pokemon will know moves as a baby just like Pichu and Volt Tackle. 
-        - Farfetch'd - Leek - Tailwind
+        - Farfetch'd - Leek - Sky Attack
         - Chansey/Happiny - Lucky Punch - Mach Punch
         - Cubone - Thick Club - Bone Rush
         - Sneasel - Razor Claw - Night Slash
         - Gligar - Razor Fang - Leech Life
+        - Clamperl - Deep Sea Scale - Psychic
+        - Clamperl - Deep Sea Tooth - Crunch
+        - Horsea - Dragon Scale - Dragon Breath
+        - Elekid - Electirizer - Discharge
+        - Magby - Magmarizer - Lava Plume
+        - Rhydon - Protector - Head Smash
+        - Duskull - Reaper Cloth - Ominous Wind
+        - Feebas - Prism Scale - Aqua Jet
+    - New low-hp type abilities. Some may not be used.
     - A baby egg lotto will be available. Basically an updated Odd Egg.
-    - New low-hp type abilities.
+        - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
+        - Pokemon hatched from the egg have a 16% chance of being shiny.
+
+### New TMs - (51 through 120)
+
+    Moves without an icon are the same TM in Generation 4.
+    Moves with a 📗 are Generation 1 or 2 TMs.
+    Moves with a 📕 are TMs Generation 5 or later.
+    Moves with a 📘 have never been TMs.
+    - TM  51 - Roost
+    - TM  52 - Focus Blast
+    - TM  53 - Energy Ball
+    - TM  54 - False Swipe
+    - TM  55 - Brine
+    - TM  56 - Fling
+    - TM  57 - Charge Beam
+    - TM  58 - Endure
+    - TM  59 - Dragon Pulse
+    - TM  60 - Drain Punch
+    - TM  61 - Will-O-Wisp
+    - TM  62 - Silver Wind
+    - TM  63 - Embargo
+    - TM  64 - Explosion
+    - TM  65 - Shadow Claw
+    - TM  66 - Payback
+    - TM  67 - Recycle
+    - TM  68 - Giga Impact
+    - TM  69 - Rock Polish
+    - TM  70 - Dazzling Gleam 📕 (Flash is an HM)
+    - TM  71 - Stone Edge
+    - TM  72 - Avalanche
+    - TM  73 - Thunder Wave
+    - TM  74 - Gyro Ball
+    - TM  75 - Swords Dance
+    - TM  76 - Stealth Rock
+    - TM  77 - Psych Up
+    - TM  78 - Captivate
+    - TM  79 - Dark Pulse
+    - TM  80 - Rock Slide
+    - TM  81 - X-Scissor
+    - TM  82 - Sleep Talk
+    - TM  83 - Natural Gift
+    - TM  84 - Poison Jab
+    - TM  85 - Dream Eater
+    - TM  86 - Grass Knot
+    - TM  87 - Swagger
+    - TM  88 - Pluck
+    - TM  89 - U-Turn
+    - TM  90 - Substitute
+    - TM  91 - Flash Cannon
+    - TM  92 - Trick Room
+    - TM  93 - Scald 📕
+    - TM  94 - Play Rough 📕
+    - TM  95 - Bug Buzz 📕
+    - TM  96 - Volt Switch 📕
+    - TM  97 - Baby Doll Eyes 📘
+    - TM  98 - Tri Attack 📗
+    - TM  99 - Fairy Wind 📘
+    - TM 100 - Sheer Cold 📘
+    - TM 101 - Teleport 📗
+    - TM 102 - Dynamic Punch 📗
+    - TM 103 - Zap Cannon 📗
+    - TM 104 - Curse 📗
+    - TM 105 - Pay Day 📗
+    - TM 106 - Headbutt 📗
+    - TM 107 - Thunder Fang 📕
+    - TM 108 - Ice Fang 📕
+    - TM 109 - Fire Fang 📕
+    - TM 110 - Double-Edge 📗
+    - TM 111 - Fury Cutter 📗
+    - TM 112 - Metronome 📗
+    - TM 113 - Mimic 📗
+    - TM 114 - Rollout 📗
+    - TM 115 - Weather Ball 📕
+    - TM 116 - Power-Up Punch 📕
+    - TM 117 - Wild Charge 📕
+    - TM 118 - Helping Hand 📕
+    - TM 119 - Soft-Boiled 📗
+    - TM 120 - Dragon Rage 📗
+
+### New Features (PENDING)
+
+TMs 51-120 need descriptions
+add new incense graphics
+
+NEW MAP STARTS - GITHUB
+SANDY FORM CASTFORM BASE - GITHUB
+ADD RIVAL CHOICE - GITHUB
+RIVAL FIX - GITHUB
+SRC/STRINGS.C - MISC EDITS 3 5c20c7815 - GITHUB
+HIDDEN TREES - GITHUB
+
+    - Certain Pokeballs in the world will give a higher amount of that item.
+    - More TMs.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
     - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
         - Gen 1
@@ -132,6 +216,8 @@ HIDDEN TREES - GITHUB
                 - Electric/Dark
             - Rampardos
                 - Rock/Dark
+            - Bonsly
+                - Rock/Normal
             - Pachirisu
                 - Electric/Fairy
             - Lopunny
@@ -282,18 +368,20 @@ HIDDEN TREES - GITHUB
             - Twinz - Beta Girafarig pre-evolution
                 - Ghost/Normal
     - New incense items for use with beta baby mon.
-        - Rich Incense - Meowsy
-            - An exotic-smelling incense that makes the holder move first occasionally. (Quick Claw)
+        - Luck Incense - Meowsy
         - Flame Incense - Trifox/Minicorn/Puddi
             - . (Charcoal)
         - Grime Incense - Grimey
-            - . (Poison Barb?)
+            - . (Poison Barb)
         - Grass Incense - Tangel/Para
         - Water Incense - Golpy
-    - Ice - Resist Dragon and Ground
-    - Electric - Super effective to Steel
-    - Bug - Remove Fairy Resistance - Resist Psychic
-    - Poison - Super effective to Bug
+        - Full Incense - Dunslet
+        - Lax Incense - Chiks
+    - Type Effectiveness Changes
+        - Ice - Resist Dragon and Ground
+        - Electric - Super effective to Steel
+        - Bug - Remove Fairy Resistance - Resist Psychic
+        - Poison - Super effective to Bug
     
 ## Changes
 
