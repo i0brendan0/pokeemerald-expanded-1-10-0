@@ -208,6 +208,73 @@ const struct SpeciesInfo gSpeciesInfo[] =
     /* You may add any custom species below this point based on the following structure: */
 
     
+    [SPECIES_CASTFORM_SANDY] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 70,
+        .baseDefense   = 70,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_ROCK),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 147 : 145,
+        .evYield_HP = 1,
+        .itemCommon = ITEM_MYSTIC_WATER,
+        .itemRare = ITEM_MYSTIC_WATER,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_FORECAST, ABILITY_FORECAST, ABILITY_FORECAST },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Castform"),
+        .cryId = CRY_CASTFORM,
+        .natDexNum = NATIONAL_DEX_CASTFORM,
+        .categoryName = _("Weather"),
+        .height = 3,
+        .weight = 8,
+        .description = COMPOUND_STRING(
+            "Castform takes this form during a sandstorm.\n"
+            "In an experiment where it was placed in\n"
+            "a sandbox, it didn't change to this\n"
+            "form. Its body is hard and jagged."),
+        .pokemonScale = 435,
+        .pokemonOffset = -5,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CastformSandy,
+        .frontPicSize = MON_COORDS_SIZE(24, 32), //
+        .frontPicYOffset = 17, //
+        .frontAnimFrames = sAnims_CastformSandy,
+        .frontAnimId = ANIM_GROW_VIBRATE, //
+        .enemyMonElevation = 16, //
+        .backPic = gMonBackPic_CastformSandy,
+        .backPicSize = MON_COORDS_SIZE(32, 64),
+        .backPicYOffset = 0, //
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED, //
+        .palette = gMonPalette_CastformSandy,
+        .shinyPalette = gMonShinyPalette_CastformSandy,
+        .iconSprite = gMonIcon_CastformSandy,
+        .iconPalIndex = 0,
+        SHADOW(1, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Castform)
+        OVERWORLD(
+            sPicTable_CastformNormal, //
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            gOverworldPalette_CastformNormal, //
+            gShinyOverworldPalette_CastformNormal //
+        )
+        .levelUpLearnset = sCastformLevelUpLearnset,
+        .teachableLearnset = sCastformTeachableLearnset,
+        .eggMoveLearnset = sCastformEggMoveLearnset,
+        .formSpeciesIdTable = sCastformFormSpeciesIdTable,
+        .formChangeTable = sCastformFormChangeTable,
+    },
+
     [SPECIES_ANCHORAGE] =
     {
         .baseHP        = 1, //

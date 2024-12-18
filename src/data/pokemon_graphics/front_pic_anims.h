@@ -4726,6 +4726,16 @@ static const union AnimCmd sAnim_CastformSnowy_1[] =
     ANIMCMD_FRAME(0, 12),
     ANIMCMD_END,
 };
+
+static const union AnimCmd sAnim_CastformSandy_1[] =
+{
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 29),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_END,
+};
 #endif //P_FAMILY_CASTFORM
 
 #if P_FAMILY_KECLEON
@@ -11265,6 +11275,7 @@ SINGLE_ANIMATION(CastformNormal);
 SINGLE_ANIMATION(CastformSunny);
 SINGLE_ANIMATION(CastformRainy);
 SINGLE_ANIMATION(CastformSnowy);
+SINGLE_ANIMATION(CastformSandy);
 #endif //P_FAMILY_CASTFORM
 #if P_FAMILY_KECLEON
 SINGLE_ANIMATION(Kecleon);

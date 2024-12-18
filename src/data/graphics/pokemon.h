@@ -12772,6 +12772,12 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u32 gMonShinyPalette_CastformSnowy[] = INCBIN_U32("graphics/pokemon/castform/snowy/shiny.gbapal.lz");
     const u8 gMonIcon_CastformSnowy[] = INCBIN_U8("graphics/pokemon/castform/snowy/icon.4bpp");
 
+    const u32 gMonFrontPic_CastformSandy[] = INCBIN_U32("graphics/pokemon/castform/sandy/anim_front.4bpp.lz");
+    const u32 gMonPalette_CastformSandy[] = INCBIN_U32("graphics/pokemon/castform/sandy/normal.gbapal.lz");
+    const u32 gMonBackPic_CastformSandy[] = INCBIN_U32("graphics/pokemon/castform/sandy/back.4bpp.lz");
+    const u32 gMonShinyPalette_CastformSandy[] = INCBIN_U32("graphics/pokemon/castform/sandy/shiny.gbapal.lz");
+    const u8 gMonIcon_CastformSandy[] = INCBIN_U8("graphics/pokemon/castform/sandy/icon.4bpp");
+
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_CastformNormal[] = INCBIN_COMP("graphics/pokemon/castform/overworld.4bpp");
     const u32 gObjectEventPic_CastformSunny[] = INCBIN_COMP("graphics/pokemon/castform/sunny/overworld.4bpp");

@@ -8133,7 +8133,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .weight = 8,
         .description = COMPOUND_STRING(
             "Castform takes this form on bright days.\n"
-            "In an experiment where is was placed in\n"
+            "In an experiment where it was placed in\n"
             "front of a heater, it didn't change to this\n"
             "form. Its body is warm and toasty."),
         .pokemonScale = 435,

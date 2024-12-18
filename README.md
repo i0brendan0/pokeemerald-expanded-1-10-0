@@ -63,10 +63,10 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New TMs - (51 through 120)
 
-    Moves without an icon are the same TM in Generation 4.
-    Moves with a 📗 are Generation 1 or 2 TMs.
-    Moves with a 📕 are TMs Generation 5 or later.
-    Moves with a 📘 have never been TMs.
+        Moves without an icon are the same TM in Generation 4.
+        Moves with a 📗 are Generation 1 or 2 TMs.
+        Moves with a 📕 are TMs Generation 5 or later.
+        Moves with a 📘 have never been TMs.
     - TM  51 - Roost
     - TM  52 - Focus Blast
     - TM  53 - Energy Ball
@@ -143,7 +143,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 TMs 51-120 need descriptions
 add new incense graphics
 
-NEW MAP STARTS - GITHUB
 SANDY FORM CASTFORM BASE - GITHUB
 ADD RIVAL CHOICE - GITHUB
 RIVAL FIX - GITHUB

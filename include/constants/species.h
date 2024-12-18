@@ -1689,7 +1689,9 @@
 #define SPECIES_x_GLIGAR_x    1572
 #define SPECIES_x_WOOPER_x    1573
 
-#define SPECIES_EGG                                     (SPECIES_x_WOOPER_x + 1)
+#define SPECIES_CASTFORM_SANDY 1574
+
+#define SPECIES_EGG (SPECIES_CASTFORM_SANDY + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
