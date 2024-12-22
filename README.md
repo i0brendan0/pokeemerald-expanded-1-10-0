@@ -38,8 +38,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
             - Water
             - Does damage during rain based on the user's weight.
     - Swarming Pokemon may now hold special items.
-    - (Not Updated) The Rival's gender can now be chosen. (Can't be renamed.)
-    - (Not Updated) Castform gets a Sandy Form. (No sprite/design yet)
+    - Castform gets a Sandy Form. (No sprite/design yet)
     - (Not Updated) Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
         - All Hidden Tree Pokemon will have their hidden ability. 
     - Certain Pokemon will know moves as a baby just like Pichu and Volt Tackle. 
@@ -57,7 +56,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Duskull - Reaper Cloth - Ominous Wind
         - Feebas - Prism Scale - Aqua Jet
     - New low-hp type abilities. Some may not be used.
-    - A baby egg lotto will be available. Basically an updated Odd Egg.
+    - A baby egg lotto will be available. Basically an updated Odd Egg. (Need to place. Will likely give to the person who gives the Wynaut egg.)
         - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
         - Pokemon hatched from the egg have a 16% chance of being shiny.
 
@@ -143,14 +142,16 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 TMs 51-120 need descriptions
 add new incense graphics
 
-SANDY FORM CASTFORM BASE - GITHUB
-ADD RIVAL CHOICE - GITHUB
-RIVAL FIX - GITHUB
-SRC/STRINGS.C - MISC EDITS 3 5c20c7815 - GITHUB
-HIDDEN TREES - GITHUB
-
+    - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
+        - Will include new Event Items to be used for unobtainable Legendary Pokemon.
+    - Cut trees and Rock Smash rocks that block progress or access to certain areas will no longer reappear when re-entering the map.
+        - Locations with rocks that only block progress will be given more rocks to break.
+    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
+        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
+        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute.
+        - Rayquaza will respawn like this naturally.
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again.
     - Certain Pokeballs in the world will give a higher amount of that item.
-    - More TMs.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
     - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
         - Gen 1
@@ -401,7 +402,7 @@ HIDDEN TREES - GITHUB
             - Manaphy and Phione
     - Mew and Deoxys will behave normally regardless of how they were obtained.
     - The number of spots Feebas can be found has been doubled.
-    - More bag space. 120 spots now.
+    - More bag space. 100 spots now.
     - More PC space. 100 spots now.
     - Wave Incense and Sea Incense have been combined into a singular Incense. It's now called the Water Incense.
     - Rose Incense has been renamed. It's now called the Grass Incense.

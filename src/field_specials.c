@@ -3562,11 +3562,18 @@ bool32 IsTrainerRegistered(void)
     return FALSE;
 }
 
-// Always returns FALSE
+// Modified to distribute every Event Item
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
-        return TRUE;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        if(!FlagGet(FLAG_ENABLE_SHIP_SOUTHERN_ISLAND))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_NAVEL_ROCK))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_BIRTH_ISLAND))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_FARAWAY_ISLAND))
+            return TRUE;
 
     return FALSE;
 }
