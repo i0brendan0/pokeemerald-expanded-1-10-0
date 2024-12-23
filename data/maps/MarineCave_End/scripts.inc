@@ -16,12 +16,18 @@ MarineCave_End_EventScript_TryRemoveKyogre::
 	return
 
 MarineCave_End_OnTransition:
+    goto_if_set FLAG_CAUGHT_KYOGRE, MarineCave_End_EventScript_HideKyogre
 	call_if_unset FLAG_DEFEATED_KYOGRE, MarineCave_End_EventScript_ShowKyogre
 	end
 
 MarineCave_End_EventScript_ShowKyogre::
 	clearflag FLAG_HIDE_MARINE_CAVE_KYOGRE
 	setvar VAR_TEMP_1, 1
+	return
+
+MarineCave_End_EventScript_HideKyogre::
+	setflag FLAG_HIDE_MARINE_CAVE_KYOGRE
+	setvar VAR_TEMP_1, 0
 	return
 
 MarineCave_End_EventScript_Kyogre::
@@ -46,6 +52,7 @@ MarineCave_End_EventScript_Kyogre::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MarineCave_End_EventScript_RanFromKyogre
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MarineCave_End_EventScript_RanFromKyogre
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
+	setflag FLAG_CAUGHT_KYOGRE
 	setflag FLAG_DEFEATED_KYOGRE
 	releaseall
 	end
