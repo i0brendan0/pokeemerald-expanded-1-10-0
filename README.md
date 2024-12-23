@@ -12,10 +12,12 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Generation 4 Pokemon
     - Fairy Type
     - Physical/Special/Status Category Split.
-    - New moves and abilities up to Sword/Shield. (Used depending on the Pokemon available.)
+    - New moves and abilities up to Sword/Shield.
+        - Will include most moves up to ORAS, including certain Gen 7+ moves used in BDSP.
     - Updates Hoenn's Regional Dex to match ORAS' with various changes.
     - Updates National Dex incorporating all the new species.
     - Base stats have been updated.
+        - Rotom's normal form has modified base stats.
     - New evolution methods.
     - Hidden Abilities.
     - Items from newer generations.
@@ -27,10 +29,11 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - The unused ability Cacophony has been re-added as an alternative to Punk Rocker.
         - Pokemon with Cacophony do 1.5x damage with sound-based moves.
         - Pokemon with Cacophony will get a 10% boost to accuracy with sound-based moves.
-        - Currently only the Whismur and Kricketot line has Cacophony as their second ability. 
+        - Currently only the Whismur and Kricketot line have Cacophony as their second ability. 
     - Pokemon that evolve by trade can now evolve through the use of a Link Cable.
     - Pokemon that evolve by trade while holding an item can now evolve through the use of a Link Cable while holding that item.
     - Altering Cave's wild Pokemon changes every day.
+        - Used to be part of an unreleased Mystery Gift.
     - Stats that change from a Pokemon's nature will be shaded.
     - Phione evolves into Manaphy at high friendship.
     - Certain moves have type changes.
@@ -56,7 +59,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Duskull - Reaper Cloth - Ominous Wind
         - Feebas - Prism Scale - Aqua Jet
     - New low-hp type abilities. Some may not be used.
-    - A baby egg lotto will be available. Basically an updated Odd Egg. (Need to place. Will likely give to the person who gives the Wynaut egg.)
+    - A baby egg lotto will be available. Basically an updated Odd Egg.
         - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
         - Pokemon hatched from the egg have a 16% chance of being shiny.
 
@@ -139,18 +142,16 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (PENDING)
 
-TMs 51-120 need descriptions
-add new incense graphics
-
     - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
         - Will include new Event Items to be used for unobtainable Legendary Pokemon.
-    - Cut trees and Rock Smash rocks that block progress or access to certain areas will no longer reappear when re-entering the map.
-        - Locations with rocks that only block progress will be given more rocks to break.
+    - Cut trees will no longer reappear when entering the map.
+    - Rock Smash rocks on Route 111 will no longer reappear when entering the map.
+        - Additional temporary rocks will be added to the route.
     - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
         - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
         - Groudon and Kyogre will respawn after talking to someone at the Weather Institute.
         - Rayquaza will respawn like this naturally.
-        - The Eon Duo chosen as the roamer will respawn after looking at the TV again.
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
     - Certain Pokeballs in the world will give a higher amount of that item.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
     - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
@@ -382,6 +383,26 @@ add new incense graphics
         - Electric - Super effective to Steel
         - Bug - Remove Fairy Resistance - Resist Psychic
         - Poison - Super effective to Bug
+        
+### TODO LIST
+
+    - TMs 51-120 need descriptions.
+        - Use move descriptions as a base.
+    - New incense items need graphics.
+    - Give player other fossils and set up the conversion process.
+    - Unobtainable Legendary Pokemon need locations.
+        - Reminder to make special moon location for Jirachi.
+        - Reminder to make them respawn if not caught.
+    - Give all Johto starters instead of just one.
+        - Make requirement just to see all Hoenn Pokemon.
+    - Give all Kanto Starters.
+    - Give all Sinnoh Starters.
+    - Give new betamon "Starters" as a kind of elemental monkey thing.
+    - Implement new swarms along with held items.
+    - Modify tutor moves to account for new TMs and potentially add more.
+    - Add Odd Egg event into the game.
+        - Let NPC that gives Wynaut Egg also give out this egg.
+    - Move Mr. Mime and Mime Jr. in the alphabetical Pokedex order.
     
 ## Changes
 
@@ -391,7 +412,7 @@ add new incense graphics
     - Pure Power now doubles Special Attack instead of Attack. To differentiate from Huge Power.
     - Minus now raises Attack instead of Special Attack. To differentiate from Plus.
     - Mr. Mime's name is changed to Barrierd.
-    - Mime Jr.'s name is changed to Barrie
+    - Mime Jr.'s name is changed to Barrie.
     - Castform shows its shiny color when transformed.
     - Obedience is increased with each badge.
     - Pickup table has been modified.
@@ -407,46 +428,41 @@ add new incense graphics
     - Wave Incense and Sea Incense have been combined into a singular Incense. It's now called the Water Incense.
     - Rose Incense has been renamed. It's now called the Grass Incense.
     - Starting money has been changed to 5000.
-    - New swarms. (PENDING)
-    - More tutor moves. (PENDING)
 ### Changes from the pokeemerald Expansion
-    - Critical hits do 2x damage. (Gens 1 - 5)
-    - Trainers give boosted EXP. (Gens 1 - 6)
-    - Pokemon receive split EXP instead of full EXP if multiple participated. (Gens 1 - 5)
+    - Critical hits do 2x damage instead of 1.5x.
+    - Trainers give boosted EXP compared to wild Pokemon.
+    - Pokemon receive split EXP instead of full EXP if multiple participated.
     - Pokemon do not get a bonus to EXP when above the level they would evolve at.
-    - Badges boost stats. (Gens 1 - 3)
-    - Binding damage does 1/16th damage each turn. (Gens 1 - 5)
-    - Hidden Power uses IVs to determine power. (Gens 3 - 5)
-    - Rough Skin/Iron Barb damage is 1/16th. (Gen 3)
+    - Obtained badges boost stats.
+    - Binding damage does 1/16th damage each turn instead of 1/8th.
+    - Hidden Power uses IVs to determine power.
+    - Rough Skin/Iron Barb damage is 1/16th instead of 1/8th.
     - Dark Type Pokemon are no longer immune to moves affected by Prankster. Dark types just nullify the priority boost.
     - Roost will make a pure Flying-type Pokemon typless instead of Normal.
-    - Binding moves last for 2-5 turns. (Gens 1 - 4)
-    - Uproar lasts for 2-5 turns. (Gens 3 & 4)
-    - Hi-Jump Kick does recoil damage based on the damage done. (Gens 1 - 4)
-    - Conversion picks a move at random. (Gens 1 - 5)
-    - Spite reduces PP by 2-5. (Gens 1 - 3)
-    - Sheer Cold has normal accuracy if the user is not Ice type. (Gens 1 - 6)
-    - Rapid Spin does not increase speed. (Gens 1 - 7)
-    - Minimize only increases evasion by 1 stage. (Gens 1 - 4)
-    - Hi-Jump Kick will not recoil if the target is immune. (Gen 4)
+    - Binding moves last for 2-5 turns instead of 4-5 turns.
+    - Uproar lasts for 2-5 turns instead of 3 turns.
+    - Hi-Jump Kick does recoil damage based on the damage done, not a flat amount based off the user's HP.
+    - Conversion picks a move at random instead of only the first move.
+    - Spite reduces PP by 2-5 instead of 4.
+    - Sheer Cold has normal accuracy if the user is not Ice type.
+    - Rapid Spin does not increase speed.
+    - Minimize only increases evasion by 1 stage instead of 2.
+    - Hi-Jump Kick will not recoil if the target is immune.
         - My reasoning is they still hit the target but it does no damage.
-    - Damaging healing moves won't heal the user that's under the effect of Heal Block. (Gen 5)
+    - Damaging healing moves won't heal the user that's under the effect of Heal Block.
         - The move will still damage the opponent.
-    - Teleport will not allow the user to switch out. (Gens 1 - 6)
-    - Dark Void will not fail if used by any Pokemon besides Darkrai. (Gens 1 - 6)
-    - Weather abilities will last until the weather is changed. (Gens 1 - 5)
-    - Nest Ball's catch rate is from Gen 5.
-    - Sport Ball has a catch rate of 1.5x.
-    - Serene Grace will not boost the chance of flinching from Razor Fang or King's Rock. (Gens 3 - 4)
+    - Teleport functions normally instead of allowing the user to switch out.
+    - Dark Void will not fail if used by any Pokemon besides Darkrai.
+    - Weather abilities will last until the weather is changed instead of 5 turns.
+    - Nest Ball's catch rate is based off of Gen 5.
+    - Sport Ball has a catch rate of 1.5x instead of 1x.
+    - Serene Grace will not boost the chance of flinching from Razor Fang or King's Rock.
     - Health recovery items heal as they would pre-Gen 7.
-    - Incense items work as they would normally.
+    - Incense items work for breeding as they would normally instead of having no effect.
         - New items will be added for use with Beta Mon.
-    - Rotom's normal form has modified base stats. Closer total to the forms.
-### Bug Fixes
+### Notable Bug Fixes
     - RNG will now be seeded like it should.
-    - Landing on grass will show the grass sprites correctly.
     - Pokedex entries will not show without the Pokedex.
-    - The snow weather has been fixed.
 ### Shiny Color Changes
     - PENDING
         - Abra

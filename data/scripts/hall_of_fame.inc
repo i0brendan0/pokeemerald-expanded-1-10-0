@@ -34,6 +34,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_REGISTEEL
 	clearflag FLAG_DEFEATED_REGICE
 	setflag FLAG_RESET_KYOGRE_AND_GROUDON
+	setflag FLAG_RESET_ROAMER
 	clearflag FLAG_DEFEATED_RAYQUAZA
 	return
 

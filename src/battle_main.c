@@ -5735,7 +5735,10 @@ static void ReturnFromBattleToOverworld(void)
     {
         UpdateRoamerHPStatus(&gEnemyParty[0]);
 
-        if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).
+        if (gBattleOutcome == B_OUTCOME_WON)
+            SetRoamerInactive(gEncounteredRoamerIndex);
+        else if (gBattleOutcome == B_OUTCOME_CAUGHT)
+            FlagSet(FLAG_CAUGHT_ROAMER),
             SetRoamerInactive(gEncounteredRoamerIndex);
     }
 
