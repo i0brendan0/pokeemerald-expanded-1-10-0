@@ -57,18 +57,21 @@
 #define FLAG_FORCE_NOT_SHINY      0x2B
 #define FLAG_FORCE_HIDDEN_ABILITY 0x2C
 
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_HIDDEN_TREE_EXPLANATION 0x2D
+
+// Cut tree and Rock Smash rock flags
+#define FLAG_HIDE_ROUTE_103_TREE_1    0x2E
+#define FLAG_HIDE_ROUTE_103_TREE_2    0x2F
+#define FLAG_HIDE_ROUTE_111_ROCK_1    0x30
+#define FLAG_HIDE_ROUTE_111_ROCK_2    0x31
+#define FLAG_HIDE_ROUTE_115_ROCK_1    0x32
+#define FLAG_HIDE_ROUTE_116_TREE_1    0x33
+#define FLAG_HIDE_ROUTE_116_TREE_2    0x34
+#define FLAG_HIDE_ROUTE_117_TREE_1    0x35
+#define FLAG_HIDE_ROUTE_120_TREE_1    0x36
+#define FLAG_HIDE_PETALBURG_WOODS_TREE_1 0x37
+#define FLAG_HIDE_PETALBURG_WOODS_TREE_2 0x38
+
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
@@ -523,6 +526,10 @@
 #define FLAG_CAUGHT_GROUDON                  0x1E2
 #define FLAG_CAUGHT_RAYQUAZA                 0x1E3
 #define FLAG_RESET_KYOGRE_AND_GROUDON        0x1DA
+#define FLAG_ROAMER_IS_LATIAS                0x4F9
+#define FLAG_ROAMER_IS_LATIOS                0x4FA
+#define FLAG_RESET_ROAMER                    0x2D9
+#define FLAG_CAUGHT_ROAMER                   0x276
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -677,7 +684,6 @@
 #define FLAG_DARK_TRAINER_DEFEATED      0x274
 #define FLAG_FAIRY_TRAINER_DEFEATED     0x275
 
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
@@ -778,8 +784,6 @@
 #define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
-
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
@@ -1328,9 +1332,6 @@
 #define FLAG_DEFEATED_MOSSDEEP_GYM                                  0x4F6
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
-
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC

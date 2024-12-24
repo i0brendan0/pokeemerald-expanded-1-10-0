@@ -62,6 +62,13 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - A baby egg lotto will be available. Basically an updated Odd Egg.
         - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
         - Pokemon hatched from the egg have a 16% chance of being shiny.
+    - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
+        - Will include new Event Items to be used for unobtainable Legendary Pokemon.
+    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
+        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
+        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
+        - Rayquaza will respawn like this naturally.
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
 
 ### New TMs - (51 through 120)
 
@@ -142,16 +149,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (PENDING)
 
-    - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
-        - Will include new Event Items to be used for unobtainable Legendary Pokemon.
     - Cut trees will no longer reappear when entering the map.
     - Rock Smash rocks on Route 111 will no longer reappear when entering the map.
         - Additional temporary rocks will be added to the route.
-    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
-        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
-        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute.
-        - Rayquaza will respawn like this naturally.
-        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
     - Certain Pokeballs in the world will give a higher amount of that item.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
     - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
@@ -386,6 +386,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         
 ### TODO LIST
 
+    - Finish new maps.
+    - Update wild Pokemon to use new regional dex.
     - TMs 51-120 need descriptions.
         - Use move descriptions as a base.
     - New incense items need graphics.
@@ -403,6 +405,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Add Odd Egg event into the game.
         - Let NPC that gives Wynaut Egg also give out this egg.
     - Move Mr. Mime and Mime Jr. in the alphabetical Pokedex order.
+    - Potentially add more post-game maps to vanilla locations.
     
 ## Changes
 
@@ -463,6 +466,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 ### Notable Bug Fixes
     - RNG will now be seeded like it should.
     - Pokedex entries will not show without the Pokedex.
+    - Various map edits that involve incorrectly used tiles.
 ### Shiny Color Changes
     - PENDING
         - Abra

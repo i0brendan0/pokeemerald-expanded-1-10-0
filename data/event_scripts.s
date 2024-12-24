@@ -1155,3 +1155,5 @@ Common_EventScript_OddEgg::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+	.include "data/scripts/hidden_tree.inc"
+
