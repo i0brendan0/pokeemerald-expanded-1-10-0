@@ -1,6 +1,7 @@
 Route113_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route113_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route113_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route113_OnLoad
 	.byte 0
 
 Route113_OnResume:
@@ -11,6 +12,17 @@ Route113_OnTransition:
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	call Route113_EventScript_CheckSetAshWeather
 	end
+
+Route113_OnLoad:
+	call_if_set FLAG_SYS_GAME_CLEAR, Route113_EventScript_OpenRoute138
+	end
+    
+Route113_EventScript_OpenRoute138::
+	setmetatile 10, 14, METATILE_Fallarbor_Fallarbor_Ground, FALSE
+	setmetatile 11, 14, METATILE_Fallarbor_Fallarbor_Ground, FALSE
+	setmetatile 10, 15, METATILE_Fallarbor_Fallarbor_Ground, FALSE
+	setmetatile 11, 15, METATILE_Fallarbor_Fallarbor_Ground, FALSE
+	return
 
 Route113_EventScript_CheckSetAshWeather::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1

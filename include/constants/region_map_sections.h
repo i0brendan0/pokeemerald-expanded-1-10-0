@@ -219,10 +219,12 @@
 #define MAPSEC_ROUTE_135                    0xD5
 #define MAPSEC_ROUTE_136                    0xD6
 #define MAPSEC_ROUTE_137                    0xD7
+#define MAPSEC_ROUTE_136_CAVE               0xEF // placed here for now
 // South of Fallarbor Town
 #define MAPSEC_ROUTE_138                    0xD8
 #define MAPSEC_ROUTE_139                    0xD9
 #define MAPSEC_NEW_TOWN_1                   0xDA
+#define MAPSEC_NEW_TOWN_1_CAVE              0xF1 // placed here for now
 // West of Fortree City
 #define MAPSEC_AREA_1                       0xDB
 // South of Lilycove City
@@ -249,7 +251,9 @@
 #define MAPSEC_ROUTE_153                    0xEC
 #define MAPSEC_ROUTE_154                    0xED
 #define MAPSEC_NEW_FOREST                   0xEE
-#define MAPSEC_NONE                         0xEF
+// Special
+#define MAPSEC_MOON                         0xF0
+#define MAPSEC_NONE                         0xF2
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

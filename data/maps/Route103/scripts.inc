@@ -12,11 +12,23 @@ Route103_OnTransition:
 
 Route103_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
+	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenRoute135
 	end
 
 Route103_EventScript_OpenAlteringCave::
 	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, TRUE
 	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, FALSE
+	return
+
+Route103_EventScript_OpenRoute135::
+	setmetatile 52, 13, METATILE_General_SandPit_LeftEdge, FALSE
+	setmetatile 53, 13, METATILE_General_SandPit_RightEdge, FALSE
+	setmetatile 52, 14, METATILE_General_SandPit_LeftEdge, FALSE
+	setmetatile 53, 14, METATILE_General_SandPit_RightEdge, FALSE
+	setmetatile 52, 15, METATILE_General_SandPit_LeftEdge, FALSE
+	setmetatile 53, 15, METATILE_General_SandPit_RightEdge, FALSE
+	setmetatile 52, 16, METATILE_General_SandPit_LeftEdge, FALSE
+	setmetatile 53, 16, METATILE_General_SandPit_RightEdge, FALSE
 	return
 
 Route103_EventScript_Rival::
