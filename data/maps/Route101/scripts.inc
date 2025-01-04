@@ -8,6 +8,7 @@ Route101_MapScripts::
 
 Route101_OnTransition:
 	call ProfBirch_EventScript_UpdateLocation
+    call_if_set FLAG_SYS_GAME_CLEAR, Common_EventScript_SetAltEncounterFlag
 	end
 
 Route101_OnFrame:

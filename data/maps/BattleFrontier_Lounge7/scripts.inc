@@ -65,7 +65,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
-BattleFrontier_Lounge7_EventScript_Softboiled::
+BattleFrontier_Lounge7_EventScript_Softboiled:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 16
 	setvar VAR_0x8005, MOVE_SOFT_BOILED
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
@@ -77,7 +77,7 @@ BattleFrontier_Lounge7_EventScript_SeismicToss::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_DreamEater::
+BattleFrontier_Lounge7_EventScript_DreamEater:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 24
 	setvar VAR_0x8005, MOVE_DREAM_EATER
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
@@ -101,7 +101,7 @@ BattleFrontier_Lounge7_EventScript_BodySlam::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_RockSlide::
+BattleFrontier_Lounge7_EventScript_RockSlide:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_ROCK_SLIDE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
@@ -113,13 +113,13 @@ BattleFrontier_Lounge7_EventScript_Counter::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_ThunderWave::
+BattleFrontier_Lounge7_EventScript_ThunderWave:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_THUNDER_WAVE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_SwordsDance::
+BattleFrontier_Lounge7_EventScript_SwordsDance:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_SWORDS_DANCE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
@@ -219,13 +219,13 @@ BattleFrontier_Lounge7_EventScript_IcyWind::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_Endure::
+BattleFrontier_Lounge7_EventScript_Endure:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_ENDURE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_PsychUp::
+BattleFrontier_Lounge7_EventScript_PsychUp:: @@ x_MODIFY_x
 	setvar VAR_0x8008, 48
 	setvar VAR_0x8005, MOVE_PSYCH_UP
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
