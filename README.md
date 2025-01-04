@@ -42,8 +42,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
             - Does damage during rain based on the user's weight.
     - Swarming Pokemon may now hold special items.
     - Castform gets a Sandy Form. (No sprite/design yet)
-    - (Not Updated) Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
+    - Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
         - All Hidden Tree Pokemon will have their hidden ability. 
+        - (No Pokemon to obtain yet.)
     - Certain Pokemon will know moves as a baby just like Pichu and Volt Tackle. 
         - Farfetch'd - Leek - Sky Attack
         - Chansey/Happiny - Lucky Punch - Mach Punch
@@ -69,6 +70,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
         - Rayquaza will respawn like this naturally.
         - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
+    - Upon entering the Hall of Fame for the first time, certain locations may have their wild Pokemon change.
+        - Will mostly allow non-native Pokemon to be available without jamming them into post-game locations.
+        - (Only Route 1 as of now.)
 
 ### New TMs - (51 through 120)
 
@@ -305,7 +309,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
             - Minicorn - Beta Ponyta baby
                 - Fire
                     - Baby Ponyta
-            - Tubann - Beta Slowbro shell pokemon
+            - Turbann - Beta Slowbro shell pokemon
                 - Rock
             - Grimey - Beta Grimer baby
                 - Poison
@@ -343,7 +347,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
                 - Ice/???
                     - Evolve Wolfman - Ice Stone
             - Porygon-C - Beta Porygon-2
-                - Normal/Stee;
+                - Normal/Steel
                     - Evolve Porygon-2 - Metal Coat + Trade
         - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Pok%C3%A9mon
             - Dunslet - Beta Dunsparce
@@ -386,19 +390,42 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         
 ### TODO LIST
 
+    - Add explanation for hidden trees and the Pokemon and items to get.
     - Finish new maps.
+    - Expand Scorched Slab.
     - Update wild Pokemon to use new regional dex.
     - TMs 51-120 need descriptions.
         - Use move descriptions as a base.
     - New incense items need graphics.
     - Give player other fossils and set up the conversion process.
     - Unobtainable Legendary Pokemon need locations.
-        - Reminder to make special moon location for Jirachi.
         - Reminder to make them respawn if not caught.
-    - Give all Johto starters instead of just one.
-        - Make requirement just to see all Hoenn Pokemon.
+        - Articuno at Shoal Cave ice room after HoF.
+        - Zapdos at Old Mauville.
+        - Moltres at Jagged Pass.
+        - Mewtwo at ???.
+        - Raikou, Entei, Suicune at ???.
+        - Celebi at forest south of Pacifidlog Town. (Yet to be made.)
+        - Jirachi at special moon area. (Yet to be made.)
+        - Uxie, Mesprit, Azelf at ???.
+        - Dialga, Palkia at ???.
+        - Heatran at Scorched Slab.
+        - Regigigas at ???.
+        - Giratina at ???.
+        - Cresellia at ???.
+        - Manaphy and Phione at ???.
+        - Darkrai at ???.
+        - Shaymin at ???.
+            - Gracidea at Flower Shop.
+        - Arceus at ???.
+            - Plates at ???.
     - Give all Kanto Starters.
+    - Give all Hoenn starters.
+        - Enter Hall of Fame to receive the rest.
+    - Give all Johto starters.
+        - See all Hoenn Pokemon, then obtain all Hoenn Pokemon to receive the rest.
     - Give all Sinnoh Starters.
+        - See all Gen 3 Pokemon, then obtain all Gen 3 Pokemon to receive the rest.
     - Give new betamon "Starters" as a kind of elemental monkey thing.
     - Implement new swarms along with held items.
     - Modify tutor moves to account for new TMs and potentially add more.
@@ -431,6 +458,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Wave Incense and Sea Incense have been combined into a singular Incense. It's now called the Water Incense.
     - Rose Incense has been renamed. It's now called the Grass Incense.
     - Starting money has been changed to 5000.
+    - Hoenn Pokemon missing from Emerald that were in Ruby and Sapphire have been added back to the locations they used to be at.
+        - Encounter rates will differ slightly.
 ### Changes from the pokeemerald Expansion
     - Critical hits do 2x damage instead of 1.5x.
     - Trainers give boosted EXP compared to wild Pokemon.
