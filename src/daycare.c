@@ -100,7 +100,19 @@ static const struct {
     { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE, SPECIES_CHINGLING },
     { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE, SPECIES_BONSLY },
     { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE, SPECIES_BUDEW },
-    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE, SPECIES_MANTYKE },
+    { SPECIES_MANTINE,      ITEM_SEA_INCENSE,  SPECIES_MANTYKE },
+/*
+    { SPECIES_DODUO,     ITEM_LAX_INCENSE,   SPECIES_CHIKS    },
+    { SPECIES_GOLDEEN,   ITEM_SEA_INCENSE,   SPECIES_GOLPY    },
+    { SPECIES_GRIMER,    ITEM_GRIME_INCENSE, SPECIES_GRIMEY   },
+    { SPECIES_MEOWTH,    ITEM_LUCK_INCENSE,  SPECIES_MEOWSY   },
+    { SPECIES_PONYTA,    ITEM_FLAME_INCENSE, SPECIES_MINICORN },
+    { SPECIES_PARAS,     ITEM_ROSE_INCENSE,  SPECIES_PARA     },
+    { SPECIES_GROWLITHE, ITEM_FLAME_INCENSE, SPECIES_PUDDI    },
+    { SPECIES_TANGELA,   ITEM_ROSE_INCENSE,  SPECIES_TANGEL   },
+    { SPECIES_VULPIX,    ITEM_FLAME_INCENSE, SPECIES_TRIFOX   },
+    { SPECIES_DUNSPARCE, ITEM_FULL_INCENSE,  SPECIES_x_DUNSPARCE_x },
+    */
 };
 
 static const u8 *const sCompatibilityMessages[] =
@@ -482,6 +494,14 @@ static u16 GetEggSpecies(u16 species)
 {
     int i, j, k;
     bool8 found;
+    
+    if ((species == SPECIES_KURSTRAW) || (species == SPECIES_PANGSHI))
+    {
+        if (Random() & 1)
+            return SPECIES_KURSTRAW;
+        else
+            return SPECIES_PANGSHI;
+    };
 
     // Working backwards up to 5 times seems arbitrary, since the maximum number
     // of times would only be 3 for 3-stage evolutions.
@@ -644,14 +664,9 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
         // have a lower chance to be inherited in Emerald and why the IV picked for inheritance can
         // be repeated. Amusingly, FRLG and RS also got this wrong. They remove selectedIvs[i], which
         // is not an index! This means that it can sometimes remove the wrong stat.
-        #ifndef BUGFIX
-        selectedIvs[i] = availableIVs[Random() % (NUM_STATS - i)];
-        RemoveIVIndexFromList(availableIVs, i);
-        #else
         u8 index = Random() % (NUM_STATS - i);
         selectedIvs[i] = availableIVs[index];
         RemoveIVIndexFromList(availableIVs, index);
-        #endif
     }
 
     // Determine which parent each of the selected IVs should inherit from.
@@ -881,7 +896,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
             {
                 for (j = 0; j < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; j++)
                 {
-                    u16 moveId = ItemIdToBattleMoveId(ITEM_TM01 + j);
+                    u16 moveId = ItemIdToBattleMoveId(ITEM_TM001 + j);
                     if (sHatchedEggFatherMoves[i] == moveId && CanLearnTeachableMove(GetMonData(egg, MON_DATA_SPECIES_OR_EGG), moveId))
                     {
                         if (GiveMoveToMon(egg, sHatchedEggFatherMoves[i]) == MON_HAS_MAX_MOVES)
@@ -953,8 +968,22 @@ static const struct {
   u16 move;
 } sBreedingSpecialMoveItemTable[] =
 {
-    // Offspring,    Item,            Move
-    { SPECIES_PICHU, ITEM_LIGHT_BALL, MOVE_VOLT_TACKLE },
+    // Offspring,        Item,             Move
+    { SPECIES_PICHU,     ITEM_LIGHT_BALL,  MOVE_VOLT_TACKLE },
+    { SPECIES_FARFETCHD, ITEM_LEEK,        MOVE_SKY_ATTACK  },
+    { SPECIES_CHANSEY,   ITEM_LUCKY_PUNCH, MOVE_MACH_PUNCH  },
+    { SPECIES_HAPPINY,   ITEM_LUCKY_PUNCH, MOVE_MACH_PUNCH  },
+    { SPECIES_CUBONE,    ITEM_THICK_CLUB,  MOVE_BONE_RUSH   },
+    { SPECIES_SNEASEL,   ITEM_RAZOR_CLAW,  MOVE_NIGHT_SLASH },
+    { SPECIES_GLIGAR,    ITEM_RAZOR_FANG,  MOVE_LEECH_LIFE  },
+    { SPECIES_CLAMPERL, ITEM_DEEP_SEA_SCALE, MOVE_PSYCHIC   },
+    { SPECIES_CLAMPERL, ITEM_DEEP_SEA_TOOTH, MOVE_CRUNCH    },
+    { SPECIES_HORSEA, ITEM_DRAGON_SCALE, MOVE_DRAGON_BREATH },
+    { SPECIES_ELEKID,    ITEM_ELECTIRIZER, MOVE_DISCHARGE   },
+    { SPECIES_MAGBY,     ITEM_MAGMARIZER,  MOVE_LAVA_PLUME  },
+    { SPECIES_RHYDON,    ITEM_PROTECTOR,   MOVE_HEAD_SMASH  },
+    { SPECIES_DUSKULL, ITEM_REAPER_CLOTH, MOVE_OMINOUS_WIND },
+    { SPECIES_FEEBAS,    ITEM_PRISM_SCALE, MOVE_AQUA_JET    },
 };
 
 static void GiveMoveIfItem(struct Pokemon *mon, struct DayCare *daycare)
@@ -1007,8 +1036,8 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_NIDORAN_F;
     else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_VOLBEAT && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_ILLUMISE;
-    else if (eggSpecies == SPECIES_MANAPHY)
-        eggSpecies = SPECIES_PHIONE;
+//    else if (eggSpecies == SPECIES_MANAPHY)
+//        eggSpecies = SPECIES_PHIONE;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG)

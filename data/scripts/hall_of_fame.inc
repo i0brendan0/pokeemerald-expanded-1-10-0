@@ -30,6 +30,12 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_DEFEATED_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
+	clearflag FLAG_DEFEATED_REGIROCK
+	clearflag FLAG_DEFEATED_REGISTEEL
+	clearflag FLAG_DEFEATED_REGICE
+	setflag FLAG_RESET_KYOGRE_AND_GROUDON
+	setflag FLAG_RESET_ROAMER
+	clearflag FLAG_DEFEATED_RAYQUAZA
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::

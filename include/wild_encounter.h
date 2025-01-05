@@ -40,8 +40,10 @@ void FishingWildEncounter(u8 rod);
 u16 GetLocalWildMon(bool8 *isWaterMon);
 u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
-bool8 TryDoDoubleWildBattle(void);
+bool8 TryDoDoubleWildBattle(u16 curMetatileBehavior);
 bool8 StandardWildEncounter_Debug(void);
 u32 CalculateChainFishingShinyRolls(void);
+u16 GetCurrentMapWildMonHeaderId(void);
+u8 ChooseWildMonIndex_WaterRock(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

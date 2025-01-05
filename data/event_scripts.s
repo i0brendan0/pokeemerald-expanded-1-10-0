@@ -1096,6 +1096,10 @@ EventScript_VsSeekerChargingDone::
 	special VsSeekerResetObjectMovementAfterChargeComplete
 	releaseall
 	end
+    
+Common_EventScript_OddEgg::
+    special TryGiveRandomBabyEgg
+    return
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
@@ -1151,3 +1155,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+	.include "data/scripts/hidden_tree.inc"
+	.include "data/scripts/alt_encounter_table_flag.inc"
+
+	.include "data/maps/Route135/scripts.inc"
+
+	.include "data/maps/Route136/scripts.inc"
+
+	.include "data/maps/Route137/scripts.inc"
+
+	.include "data/maps/Route138/scripts.inc"
+
+	.include "data/maps/Route139/scripts.inc"
+
+	.include "data/maps/SubearthTown/scripts.inc"

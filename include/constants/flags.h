@@ -23,7 +23,7 @@
 #define FLAG_TEMP_C      (TEMP_FLAGS_START + 0xC)  // Unused Flag
 #define FLAG_TEMP_D      (TEMP_FLAGS_START + 0xD)  // Unused Flag
 #define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  // When set, follower pokemon won't be spawned
-#define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  // Unused Flag
+#define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  // When set, uses an alternate wild pokemon encounter table.
 #define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) // Unused Flag
 #define FLAG_TEMP_11     (TEMP_FLAGS_START + 0x11)
 #define FLAG_TEMP_12     (TEMP_FLAGS_START + 0x12)
@@ -42,32 +42,36 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
+// Modification Flags
+#define FLAG_INVERSE_BATTLE       0x20
+#define FLAG_FORCE_DOUBLE_WILD    0x21
+#define FLAG_SMART_WILD_AI_FLAG   0x22
+#define FLAG_NO_BAG_USE           0x23
+#define FLAG_NO_CATCHING          0x24
+#define FLAG_NO_RUNNING           0x25
+#define FLAG_AI_VS_AI             0x26
+#define FLAG_NO_ENCOUNTER         0x27
+#define FLAG_NO_TRAINER_SEE       0x28
+#define FLAG_NO_COLLISION         0x29
+#define FLAG_FORCE_SHINY          0x2A
+#define FLAG_FORCE_NOT_SHINY      0x2B
+#define FLAG_FORCE_HIDDEN_ABILITY 0x2C
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_HIDDEN_TREE_EXPLANATION 0x2D
+
+// Cut tree and Rock Smash rock flags
+#define FLAG_HIDE_ROUTE_103_TREE_1    0x2E
+#define FLAG_HIDE_ROUTE_103_TREE_2    0x2F
+#define FLAG_HIDE_ROUTE_111_ROCK_1    0x30
+#define FLAG_HIDE_ROUTE_111_ROCK_2    0x31
+#define FLAG_HIDE_ROUTE_115_ROCK_1    0x32
+#define FLAG_HIDE_ROUTE_116_TREE_1    0x33
+#define FLAG_HIDE_ROUTE_116_TREE_2    0x34
+#define FLAG_HIDE_ROUTE_117_TREE_1    0x35
+#define FLAG_HIDE_ROUTE_120_TREE_1    0x36
+#define FLAG_HIDE_PETALBURG_WOODS_TREE_1 0x37
+#define FLAG_HIDE_PETALBURG_WOODS_TREE_2 0x38
+
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
@@ -510,18 +514,22 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
-
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+// New flags to enable respawn if defeated
+#define FLAG_CAUGHT_REGIROCK                 0x1DE
+#define FLAG_CAUGHT_REGICE                   0x1DF
+#define FLAG_CAUGHT_REGISTEEL                0x1E0
+#define FLAG_CAUGHT_KYOGRE                   0x1E1
+#define FLAG_CAUGHT_GROUDON                  0x1E2
+#define FLAG_CAUGHT_RAYQUAZA                 0x1E3
+#define FLAG_RESET_KYOGRE_AND_GROUDON        0x1DA
+#define FLAG_ROAMER_IS_LATIAS                0x4F9
+#define FLAG_ROAMER_IS_LATIOS                0x4FA
+#define FLAG_RESET_ROAMER                    0x2D9
+#define FLAG_CAUGHT_ROAMER                   0x276
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -656,25 +664,26 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
+// Type Trainer defeated flags. When set will boost damage done by that type.
+#define FLAG_NORMAL_TRAINER_DEFEATED    0x264
+#define FLAG_FIGHTING_TRAINER_DEFEATED  0x265
+#define FLAG_FLYING_TRAINER_DEFEATED    0x266
+#define FLAG_POISON_TRAINER_DEFEATED    0x267
+#define FLAG_GROUND_TRAINER_DEFEATED    0x268
+#define FLAG_ROCK_TRAINER_DEFEATED      0x269
+#define FLAG_BUG_TRAINER_DEFEATED       0x26A
+#define FLAG_GHOST_TRAINER_DEFEATED     0x26B
+#define FLAG_STEEL_TRAINER_DEFEATED     0x26C
+#define FLAG_FIRE_TRAINER_DEFEATED      0x26D
+#define FLAG_WATER_TRAINER_DEFEATED     0x26E
+#define FLAG_GRASS_TRAINER_DEFEATED     0x26F
+#define FLAG_ELECTRIC_TRAINER_DEFEATED  0x270
+#define FLAG_PSYCHIC_TRAINER_DEFEATED   0x271
+#define FLAG_ICE_TRAINER_DEFEATED       0x272
+#define FLAG_DRAGON_TRAINER_DEFEATED    0x273
+#define FLAG_DARK_TRAINER_DEFEATED      0x274
+#define FLAG_FAIRY_TRAINER_DEFEATED     0x275
+
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
@@ -775,8 +784,6 @@
 #define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
-
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
@@ -1326,9 +1333,6 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
-
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
 #define FLAG_DEFEATED_ELITE_4_GLACIA                                0x4FD
@@ -1570,7 +1574,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_SET_ALTERING_CAVE                      (DAILY_FLAGS_START + 0x0)  // New Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
@@ -1657,6 +1661,7 @@
 #define FLAG_TEMP_REGICE_PUZZLE_STARTED         FLAG_TEMP_2
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
+#define FLAG_TEMP_USE_ALT_ENCOUNTER_TABLE       FLAG_TEMP_F
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
 
 #endif // GUARD_CONSTANTS_FLAGS_H

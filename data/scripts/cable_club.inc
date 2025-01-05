@@ -19,28 +19,69 @@ CableClub_EventScript_HideMysteryGiftMan::
 	return
 
 CableClub_EventScript_MysteryGiftMan::
+	lock
+	faceplayer
 	specialvar VAR_RESULT, ShouldDistributeEonTicket
 	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_DistributeEonTicket
-	goto CableClub_EventScript_TryWonderCardScript
-	end
-
 CableClub_EventScript_TryWonderCardScript::
 	trywondercardscript
 CableClub_EventScript_MysteryGiftThankYou::
 	msgbox gText_ThankYouForAccessingMysteryGift, MSGBOX_NPC
-	end
+	goto CableClub_EventScript_End
 
 CableClub_EventScript_DistributeEonTicket::
-	checkitem ITEM_EON_TICKET
-	goto_if_eq VAR_RESULT, TRUE, CableClub_EventScript_TryWonderCardScript
-	goto_if_set FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, CableClub_EventScript_TryWonderCardScript
+	goto_if_set FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, CableClub_EventScript_DistributeMysticTicket
 	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
+	checkitemspace ITEM_EON_TICKET
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_NoBagSpace
 	giveitem ITEM_EON_TICKET
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
-	setvar VAR_DISTRIBUTE_EON_TICKET, 0
 	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
+	goto CableClub_EventScript_End
+
+CableClub_EventScript_DistributeMysticTicket::
+	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, CableClub_EventScript_DistributeAuroraTicket
+	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
+	checkitemspace ITEM_MYSTIC_TICKET
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_NoBagSpace
+	giveitem ITEM_MYSTIC_TICKET
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
+	goto CableClub_EventScript_End
+
+CableClub_EventScript_DistributeAuroraTicket::
+	goto_if_set FLAG_ENABLE_SHIP_BIRTH_ISLAND, CableClub_EventScript_DistributeOldSeaMap
+	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
+	checkitemspace ITEM_AURORA_TICKET
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_NoBagSpace
+	giveitem ITEM_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
+	goto CableClub_EventScript_End
+
+CableClub_EventScript_DistributeOldSeaMap::
+	goto_if_set FLAG_ENABLE_SHIP_FARAWAY_ISLAND, CableClub_EventScript_TryWonderCardScript
+	msgbox MysteryGift_Text_TheresATicketForYou, MSGBOX_DEFAULT
+	checkitemspace ITEM_OLD_SEA_MAP
+	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_NoBagSpace
+	giveitem ITEM_OLD_SEA_MAP
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
+	msgbox MysteryGift_Text_TryUsingItAtLilycovePort, MSGBOX_DEFAULT
+	goto CableClub_EventScript_End
+
+CableClub_EventScript_NoBagSpace::
+	message CableClub_EventScript_BagFull
+CableClub_EventScript_End::
+	waitmessage
+	waitbuttonpress
 	release
 	end
+
+CableClub_EventScript_BagFull::
+	.string "Oh, I'm sorry, {PLAYER}.\n"
+	.string "Your BAG's KEY ITEMS POCKET is full.\p"
+	.string "Please store something on your PC,\n"
+	.string "then come back for this.$"
 
 @ Unused?
 CableClub_EventScript_MysteryGiftThankYou2::

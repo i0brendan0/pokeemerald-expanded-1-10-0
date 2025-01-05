@@ -1043,32 +1043,34 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_TINY_MUSHROOM,   {  25,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
     { ITEM_REPEL,           {   8,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
     { ITEM_SUPER_POTION,    {   8,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_POKE_DOLL,       {   8,  10,   9,  30,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_BIG_MUSHROOM,    {   3,  10,   9,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_REPEL,     {   3,  10,   9,   9,  30,   _,   _,   _,   _,   _, } },
-    { ITEM_FULL_HEAL,       {   3,   3,   9,   8,   9,  30,   _,   _,   _,   _, } },
-    { ITEM_REVIVE,          {   3,   3,   3,   8,   8,   9,  30,   _,   _,   _, } },
-    { ITEM_HYPER_POTION,    {   3,   3,   3,   4,   8,   9,   8,  30,   _,   _, } },
+    { ITEM_POKE_DOLL,       {   6,   9,   9,  30,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_BIG_MUSHROOM,    {   3,   9,   9,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_SUPER_REPEL,     {   3,   9,   9,   9,  30,   _,   _,   _,   _,   _, } },
+    { ITEM_FULL_HEAL,       {   3,   4,   7,   7,   9,  30,   _,   _,   _,   _, } },
+    { ITEM_REVIVE,          {   3,   3,   3,   7,   7,   9,  30,   _,   _,   _, } },
+    { ITEM_HYPER_POTION,    {   3,   3,   3,   4,   7,   8,   8,  30,   _,   _, } },
     { ITEM_ETHER,           {   1,   1,   3,   4,   4,   _,   _,   _,   _,   _, } },
-    { ITEM_MAX_REPEL,       {   _,   3,   3,   4,   4,   9,   8,   8,  30,   _, } },
-    { ITEM_MOON_STONE,      {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_SUN_STONE,       {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_RARE_CANDY,      {   _,   1,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_NUGGET,          {   _,   _,   3,   4,   4,   4,   4,   5,   4,   5, } },
-    { ITEM_MAX_POTION,      {   _,   _,   3,   4,   4,   4,   8,   8,   9,  30, } },
+    { ITEM_MAX_REPEL,       {   _,   3,   3,   4,   4,   8,   8,   8,  30,   _, } },
+    { ITEM_FIRE_STONE,      {   _,   3,   3,   4,   4,   4,   4,   7,   8,   9, } },
+    { ITEM_LINK_CABLE,      {   _,   3,   3,   4,   4,   4,   4,   7,   8,   9, } },
+    { ITEM_RARE_CANDY,      {   _,   1,   1,   1,   1,   4,   4,   4,   4,   5, } },
+    { ITEM_NUGGET,          {   _,   _,   3,   4,   4,   4,   4,   4,   4,   5, } },
+    { ITEM_MAX_POTION,      {   _,   _,   3,   4,   4,   4,   5,   8,   9,  30, } },
     { ITEM_MAX_ETHER,       {   _,   _,   1,   1,   4,   4,   4,   _,   _,   _, } },
-    { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
+    { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   4,   4,   5, } },
+    { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   4,   4,   5, } },
     { ITEM_DESTINY_KNOT,    {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_LEFTOVERS,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_MENTAL_HERB,     {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_POWER_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_WHITE_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_BALM_MUSHROOM,   {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
+    { ITEM_BALM_MUSHROOM,   {   _,   _,   1,   4,   4,   4,   4,   4,   4,   5, } },
     { ITEM_MAX_REVIVE,      {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
-    { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
+    { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   4,   4,   5, } },
     { ITEM_MAX_ELIXIR,      {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
-    { ITEM_BOTTLE_CAP,      {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
+    { ITEM_MASTER_BALL,     {   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_LONELY_MINT,     {   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_PP_MAX,          {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
 };
 
 #undef _
@@ -1576,6 +1578,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     case ABILITY_HUSTLE:
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
+        break;
+    case ABILITY_CACOPHONY:
+        if (gMovesInfo[move].soundMove)
+            calc = (calc * 110) / 100; // 1.1 cacophony sound boost
         break;
     }
 
@@ -14856,6 +14862,33 @@ static void Cmd_pickup(void)
     u16 species, heldItem, ability;
     u8 lvlDivBy10;
 
+    static const u16 itemIds[] = {
+        ITEM_FIRE_STONE,
+        ITEM_WATER_STONE,
+        ITEM_THUNDER_STONE,
+        ITEM_LEAF_STONE,
+        ITEM_ICE_STONE,
+        ITEM_SUN_STONE,
+        ITEM_MOON_STONE,
+        ITEM_SHINY_STONE,
+        ITEM_DUSK_STONE,
+        ITEM_DAWN_STONE,
+        ITEM_DRAGON_SCALE,
+        ITEM_UPGRADE,
+        ITEM_PROTECTOR,
+        ITEM_ELECTIRIZER,
+        ITEM_MAGMARIZER,
+        ITEM_DUBIOUS_DISC,
+        ITEM_REAPER_CLOTH,
+        ITEM_PRISM_SCALE,
+        ITEM_OVAL_STONE,
+        ITEM_DEEP_SEA_SCALE,
+        ITEM_DEEP_SEA_TOOTH,
+        ITEM_METAL_COAT,
+        ITEM_KINGS_ROCK,
+        ITEM_RAZOR_CLAW,
+        ITEM_RAZOR_FANG};
+
     if (!InBattlePike()) // No items in Battle Pike.
     {
         bool32 isInPyramid = InBattlePyramid_();
@@ -14884,13 +14917,20 @@ static void Cmd_pickup(void)
                 {
                     u32 rand = Random() % 100;
                     u32 percentTotal = 0;
-
+                    
                     for (j = 0; j < ARRAY_COUNT(sPickupTable); j++)
                     {
                         percentTotal += sPickupTable[j].percentage[lvlDivBy10];
                         if (rand < percentTotal)
                         {
-                            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupTable[j].itemId);
+                            heldItem = sPickupTable[j].itemId;
+                            if (heldItem == ITEM_FIRE_STONE)
+                            {
+                                heldItem = itemIds[Random() % ARRAY_COUNT(itemIds)];
+                            }
+                            else if (heldItem == ITEM_LONELY_MINT)
+                                heldItem += (Random() % (ITEM_SERIOUS_MINT - ITEM_LONELY_MINT));
+                            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
                             break;
                         }
                     }
@@ -15542,6 +15582,11 @@ static void Cmd_trysetcaughtmondexflags(void)
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else if (!FlagGet(FLAG_SYS_POKEDEX_GET))
+    {
+        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);  
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
     else
     {

@@ -1,200 +1,542 @@
-# pokeemerald-expansion
+# Pokemon Emerald Hack
 
-pokeemerald-expansion is ***a romhack base*** based off pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. ***It is NOT a playable romhack,*** but it has multiple features available to romhackers so that they can create their own games, so it's not meant to be played on its own.
+THIS HACK IS CURRENTLY BEING UPDATED
 
-## Should I use this or vanilla pokeemerald for my hack?
-The main advantage of using vanilla pokeemerald as a base is being able to link with other official GBA Pokémon games for battles and trading, pokeemerald-expansion can battle and trade with itself out of the box. If you don't mind losing full vanilla compatiblitity, we recommend using pokeemerald-expansion. Otherwise, use pret's pokeemerald. You'll still receive documentation improvements from pret, as we regurlarly incorporate pret's documentation changes.
+## What is this hack
 
-## Using pokeemerald-expansion
+This hack is a personal upgrade/modification of the original Pokemon Emerald. It uses the pokeemerald Expansion as its base and introduces new Pokemon as well.
 
-If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
-You can phrase it as the following:
-```
-Based off RHH's pokeemerald-expansion 1.10.1 https://github.com/rh-hideout/pokeemerald-expansion/
-```
+## Features
 
-#### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
-
-Please follow the instructions in `INSTALL.md` to get pokeemerald-expansion set up on your machine.
-
-### If I already have a project based on regular pokeemerald, can I use pokeemerald-expansion?
-Yes! Keep in mind that we keep up with pret's documentation of pokeemerald, which means that if your project a bit old, you might get merge conflicts that you need to solve manually.
-- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
-- Once you have your remote set up, run the command `git pull RHH master`.
-
-With this, you'll get the latest version of pokeemerald-expansion, plus a couple of bugfixes that haven't yet been released into the next patch version :)
-
-## Documentation
-[Please click here to visit our documentation page.](https://rh-hideout.github.io/pokeemerald-expansion/)
-
-## **How do I update my version of pokeemerald-expansion?**
-- If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
-- Check your current version.
-    - You can check in the debug menu's `Utilities -> Expansion Version` option.
-    - If the option is not available, you possibly have version 1.6.2 or older. In that case, please check the [changelogs](docs/CHANGELOG.md) to determine your version based on the features available on your repository.
-- ***Important:*** If you are several versions behind, we recommend updating one minor version at a time, skipping directly to the latest patch version (eg, 1.5.3 -> 1.6.2 -> 1.7.4 and so on. Check the [online documentation site](https://rh-hideout.github.io/pokeemerald-expansion/CHANGELOG.html) to see the latest versions of each step.)
-- Once you have your remote set up, run the command `git pull RHH expansion/X.Y.Z`, replacing X, Y and Z with the digits of the respective version you want to update to (eg, to update to 1.9.3, use `git pull RHH expansion/1.9.3`).
-    - ***Important:*** If you are several versions behind, we recommend updating one minor version at a time, skipping directly to the latest patch version (eg, 1.5.3 -> 1.6.2 -> 1.7.4 and so on)
-- Alternatively, you can update to unreleased versions of the expansion.
-    - ***master (stable):*** It contains unreleased **bugfixes** that will come in the next patch version. To merge, use `git pull RHH master`.
-    - ***upcoming (unstable, with potential bugs):*** It contains unreleased **features** that will come in the next minor version. To merge, use `git pull RHH upcoming`.
-
-### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
-
-## Who maintains the project?
-The project was originally started by DizzyEgg alongside other contributors. Now it is maintained by a team in the ROM Hacking Hideout's community called the "Expansion Senate". ROM Hacking Hideout (RHH for short) is a Discord-based ROM hacking community specialized in Pokémon romhacks. A lot of the discussion in regards of the development of the project happens there.
-
-[Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
-
-## There's a bug in the project. How do I let you guys know?
-Please submit any issues with the project [here](https://github.com/rh-hideout/pokeemerald-expansion/issues) and make sure that the issue wasn't reported by someone else by searching using the filters. You may also join the Discord server to try getting more in-depth support from the team and other members of the server.
-
-## Can I contribute even if I'm not a member of ROM Hacking Hideout?
-Yes! Contributions are welcome via Pull Requests and they will be reviewed by maintainers in due time.
-Also, *please follow the Pull Request template and feel free to discuss how the reviews are being handled. **Communication is key!***  Don't feel discouraged if we take a bit to review your PR, we'll get to it.
-
-## What features are included?
-- ***IMPORTANT*❗❗ Read through these to learn what features you can toggle**:
-    - [Battle configurations](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/battle.h)
-    - [Pokémon configurations](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/pokemon.h)
-    - [Item configurations](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/item.h)
-    - [Overworld configurations](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/overworld.h)
-    - [Debug configurations](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/debug.h)
-- ***Upgraded battle engine.***
-    - Gen5+ damage calculation.
-    - 2v2 Wild battles support.
-    - 1v2/2v1 battles support.
-    - Fairy Type (configurable).
-    - Physical/Special/Status Category (configurable).
-    - New moves and abilities up to Scarlet and Violet.
-        - Custom Contest data up to SwSh, newer moves are WIP. ([source](https://pokemonurpg.com/info/contests/rse-move-list/))
-    - Battle gimmick support:
-        - Mega Evolution
-        - Primal Reversion
-        - Ultra Burst
-        - Z-Moves
-            - Gen 8+ damaging moves are given power extrapolated from Gen 7.
-            - Gen 8+ status moves have no additional effects, like Healing Wish.
-        - Dynamax and Gigantamax
-    - Initial battle parameters
-        - Queueing stat boosts (aka, Totem Boosts)
-        - Setting Terrains.
-    - Mid-turn speed recalculation.
-    - Quick Poké Ball selection in Wild Battles
-        - Hold `R` to change selection with the D-Pad.
-        - Press `R` to use last selected Poké Ball.
-    - Run option shortcut
-    - Faster battle intro - Message and animation/cry happens at the same time.
-    - Faster HP drain.
-    - Battle Debug menu.
-        - Accessed by pressing `Select` on the "Fight/Bag/Pokémon/Run" menu.
-    - Option to use AI flags in wild Pokémon battles.
-    - FRLG/Gen4+ whiteout money calculation.
-    - Configurable experience settings
-        - Experience on catch.
-        - Splitting experience.
-        - Trainer experience.
-        - Scaled experience.
-        - Unevolved experience boost.
-    - Frostbite.
-        - Doesn't replace freezing unless a config is enabled, so you can mix and match.
-    - Critical capture.
-    - Removed badge boosts (configurable).
-    - Recalculating stats at the end of every battle.
-    - Level 100 Pokémon can earn EVs.
-    - Inverse battle support.
-    - TONS of other features listed [here](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/battle.h).
-- ***Full Trainer customization***
-    - Nickname, EVs, IVs, moves, ability, ball, friendship, nature, gender, shininess.
-    - Custom tag battle support (teaming up an NPC in a double battle).
-    - Sliding trainer messages.
-    - Upgraded Trainer AI
-        - Considers newer move effects.
-        - New flag options to let you customize the intelligence of your trainers.
-        - Faster calculations.
-    - Specify Poké Balls by Trainer class.
-- ***Pokémon Species from Generations 1-9.***
-    - Simplified process to add new Pokémon.
-    - Option to disable unwanted families.
-    - Updated sprites to DS style.
-    - Updated stats, types, abilities and egg groups (configurable).
-    - Updated Hoenn's Regional Dex to match ORAS' (configurable).
-    - Updated National Dex incorporating the new species.
-    - Sprite and animation visualizer.
-        - Accesible by pressing `Select` on a Pokémon's Summary screen.
-    - Gen4+ evolution methods, with some changes:
-        - Mossy Rock, Icy Rock and Magnetic Field locations match ORAS'.
-            - Leaf, Ice and Thunder Stones may also be used.
-        - Inkay just needs level 30 to evolve.
-            - You can't physically have both the RTC and gyroscope, so we skip this requirement.
-        - Sylveon uses Gen8+'s evolution method (friendship + Fairy Move).
-        - Option to use hold evolution items directly like stones.
+### pokeemerald Expansion features
+    - Generation 4 Pokemon
+    - Fairy Type
+    - Physical/Special/Status Category Split.
+    - New moves and abilities up to Sword/Shield.
+        - Will include most moves up to ORAS, including certain Gen 7+ moves used in BDSP.
+    - Updates Hoenn's Regional Dex to match ORAS' with various changes.
+    - Updates National Dex incorporating all the new species.
+    - Base stats have been updated.
+        - Rotom's normal form has modified base stats.
+    - New evolution methods.
     - Hidden Abilities.
-        - Available via Ability Patch.
-        - Compatible with Ghoul's DexNav branch.
-    - All gender differences.
-        - Custom female icons for female Hippopotas Hippowdon, Pikachu and Wobbufett
-    - 3 Perfect IVs on Legendaries, Mythicals and Ultra Beasts.
-- ***Customizable form change tables. Full list of methods [here](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/constants/form_change_types.h).***
-    - Item holding (eg. Giratina/Arceus)
-    - Item using (eg. Oricorio)
-        - Time of day option for Shaymin
-    - Fainting
-    - Battle begin and end (eg. Xerneas)
-        - Move change option for Zacian/Zamazenta
-    - Battle end in terrains (eg. Burmy)
-    - Switched in battle (eg. Palafin)
-    - HP Threshold (eg. Darmanitan)
-    - Weather (eg. Castform)
-    - End of turn (eg. Morpeko)
-    - Time of day (eg. Shaymin)
-    - Fusions (eg. Kyurem)
-- ***Breeding Improvements***
-    - Incense Baby Pokémon now happen automatically (configurable).
-    - Level 1 eggs (configurable).
-    - Poké Ball inheriting (configurable).
-    - Egg Move Transfer, including Mirror Herb (configurable).
-    - Nature inheriting 100% of the time with Everstone (configurable)
-    - Gen6+ Ability inheriting (configurable).
-- ***Items from newer Generations. Full list [here](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/constants/items.h).***
-    - ***Gen 6+ Exp. Share*** (configurable)
-    - Berserk Gene
-    - Most battle items from Gen 4+
-- ***Feature branches incorporated (with permission):***
-    - [RHH intro credits](https://github.com/Xhyzi/pokeemerald/tree/rhh-intro-credits) by @Xhyzi.
-        - A small signature from all of us to show the collective effort in the project :)
-    - [Overworld debug](https://github.com/TheXaman/pokeemerald/tree/tx_debug_system) by @TheXaman
-        - May be disabled.
-        - Accesible by pressing `R + Start` in the overworld by default.
-        - **Additional features**:
-            - *Clear Boxes*: cleans every Pokémon from the Boxes.
-            - *Hatch an Egg*: lets you choose an Egg in your party and immediately hatch it.
-    - [HGSS Pokédex](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss) by @TheXaman
-        - May be disabled.
-        - **Additional features**:
-            - *Support for new evolution methods*.
-            - *Dark Mode*.
-    - [Nature Colors](https://github.com/DizzyEggg/pokeemerald/tree/nature_color) in summary screen by @DizzyEggg
-    - [Dynamic Multichoice](https://github.com/SBird1337/pokeemerald/tree/feature/dynmulti) by @SBird1337
-    - [Saveblock Cleansing](https://github.com/ghoulslash/pokeemerald/tree/saveblock) by @ghoulslash
-    - [Followers & Expanded IDs](https://github.com/aarant/pokeemerald/tree/followers-expanded-id) by @aarant
-        - May be disabled.
-        - Includes Pokémon followers like in HGSS, including interactions.
-        - ***Expands the amount of possible object event IDs beyond 255.***
-        - ***Includes an implementation of dynamic overworld palettes (DOWP).***
-        - **Additional features**:
-            - *Pokémon overworld sprites up to Generation 8.*
-            - *Integration with our Pokémon Sprite Visualizer, allowing users to browse through the follower sprites alongside battle sprites.*
-- ***Other features***
-    - Pressing B while holding a Pokémon drops them like in modern games (configurable).
-    - Running indoors (configurable).
-    - Configurable overworld poison damage.
-    - Configurable flags for disabling Wild encounters and Trainer battles.
-    - Configurable flags for forcing or disabling Shinies.
-    - Reusable TM (configurable).
-    - B2W2+ Repel system that also supports LGPE's Lures
-    - Gen6+'s EV cap.
-    - All bugfixes from pret included.
-    - Fixed overworld snow effect.
+    - Items from newer generations.
+    - TMs are reusable.
+    - A new key item called Meteorite can be used to change Deoxys' forme.
+    
+### New Features (COMPLETED)
 
-There are some mechanics, moves and abilities that are missing and being developed. Check [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones) and our [issues page](https://github.com/rh-hideout/pokeemerald-expansion/issues) to see which ones.
+    - The unused ability Cacophony has been re-added as an alternative to Punk Rocker.
+        - Pokemon with Cacophony do 1.5x damage with sound-based moves.
+        - Pokemon with Cacophony will get a 10% boost to accuracy with sound-based moves.
+        - Currently only the Whismur and Kricketot line have Cacophony as their second ability. 
+    - Pokemon that evolve by trade can now evolve through the use of a Link Cable.
+    - Pokemon that evolve by trade while holding an item can now evolve through the use of a Link Cable while holding that item.
+    - Altering Cave's wild Pokemon changes every day.
+        - Used to be part of an unreleased Mystery Gift.
+    - Stats that change from a Pokemon's nature will be shaded.
+    - Phione evolves into Manaphy at high friendship.
+    - Certain moves have type changes.
+        - Splash
+            - Water
+            - Does damage during rain based on the user's weight.
+    - Swarming Pokemon may now hold special items.
+    - Castform gets a Sandy Form. (No sprite/design yet)
+    - Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
+        - All Hidden Tree Pokemon will have their hidden ability. 
+        - (No Pokemon to obtain yet.)
+    - Certain Pokemon will know moves as a baby just like Pichu and Volt Tackle. 
+        - Farfetch'd - Leek - Sky Attack
+        - Chansey/Happiny - Lucky Punch - Mach Punch
+        - Cubone - Thick Club - Bone Rush
+        - Sneasel - Razor Claw - Night Slash
+        - Gligar - Razor Fang - Leech Life
+        - Clamperl - Deep Sea Scale - Psychic
+        - Clamperl - Deep Sea Tooth - Crunch
+        - Horsea - Dragon Scale - Dragon Breath
+        - Elekid - Electirizer - Discharge
+        - Magby - Magmarizer - Lava Plume
+        - Rhydon - Protector - Head Smash
+        - Duskull - Reaper Cloth - Ominous Wind
+        - Feebas - Prism Scale - Aqua Jet
+    - New low-hp type abilities. Some may not be used.
+    - A baby egg lotto will be available. Basically an updated Odd Egg.
+        - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
+        - Pokemon hatched from the egg have a 16% chance of being shiny.
+    - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
+        - Will include new Event Items to be used for unobtainable Legendary Pokemon.
+    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
+        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
+        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
+        - Rayquaza will respawn like this naturally.
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
+    - Upon entering the Hall of Fame for the first time, certain locations may have their wild Pokemon change.
+        - Will mostly allow non-native Pokemon to be available without jamming them into post-game locations.
+        - (Only Route 1 as of now.)
+
+### New TMs - (51 through 120)
+
+        Moves without an icon are the same TM in Generation 4.
+        Moves with a 📗 are Generation 1 or 2 TMs.
+        Moves with a 📕 are TMs Generation 5 or later.
+        Moves with a 📘 have never been TMs.
+    - TM  51 - Roost
+    - TM  52 - Focus Blast
+    - TM  53 - Energy Ball
+    - TM  54 - False Swipe
+    - TM  55 - Brine
+    - TM  56 - Fling
+    - TM  57 - Charge Beam
+    - TM  58 - Endure
+    - TM  59 - Dragon Pulse
+    - TM  60 - Drain Punch
+    - TM  61 - Will-O-Wisp
+    - TM  62 - Silver Wind
+    - TM  63 - Embargo
+    - TM  64 - Explosion
+    - TM  65 - Shadow Claw
+    - TM  66 - Payback
+    - TM  67 - Recycle
+    - TM  68 - Giga Impact
+    - TM  69 - Rock Polish
+    - TM  70 - Dazzling Gleam 📕 (Flash is an HM)
+    - TM  71 - Stone Edge
+    - TM  72 - Avalanche
+    - TM  73 - Thunder Wave
+    - TM  74 - Gyro Ball
+    - TM  75 - Swords Dance
+    - TM  76 - Stealth Rock
+    - TM  77 - Psych Up
+    - TM  78 - Captivate
+    - TM  79 - Dark Pulse
+    - TM  80 - Rock Slide
+    - TM  81 - X-Scissor
+    - TM  82 - Sleep Talk
+    - TM  83 - Natural Gift
+    - TM  84 - Poison Jab
+    - TM  85 - Dream Eater
+    - TM  86 - Grass Knot
+    - TM  87 - Swagger
+    - TM  88 - Pluck
+    - TM  89 - U-Turn
+    - TM  90 - Substitute
+    - TM  91 - Flash Cannon
+    - TM  92 - Trick Room
+    - TM  93 - Scald 📕
+    - TM  94 - Play Rough 📕
+    - TM  95 - Bug Buzz 📕
+    - TM  96 - Volt Switch 📕
+    - TM  97 - Baby Doll Eyes 📘
+    - TM  98 - Tri Attack 📗
+    - TM  99 - Fairy Wind 📘
+    - TM 100 - Sheer Cold 📘
+    - TM 101 - Teleport 📗
+    - TM 102 - Dynamic Punch 📗
+    - TM 103 - Zap Cannon 📗
+    - TM 104 - Curse 📗
+    - TM 105 - Pay Day 📗
+    - TM 106 - Headbutt 📗
+    - TM 107 - Thunder Fang 📕
+    - TM 108 - Ice Fang 📕
+    - TM 109 - Fire Fang 📕
+    - TM 110 - Double-Edge 📗
+    - TM 111 - Fury Cutter 📗
+    - TM 112 - Metronome 📗
+    - TM 113 - Mimic 📗
+    - TM 114 - Rollout 📗
+    - TM 115 - Weather Ball 📕
+    - TM 116 - Power-Up Punch 📕
+    - TM 117 - Wild Charge 📕
+    - TM 118 - Helping Hand 📕
+    - TM 119 - Soft-Boiled 📗
+    - TM 120 - Dragon Rage 📗
+
+### New Features (PENDING)
+
+    - Cut trees will no longer reappear when entering the map.
+    - Rock Smash rocks on Route 111 will no longer reappear when entering the map.
+        - Additional temporary rocks will be added to the route.
+    - Certain Pokeballs in the world will give a higher amount of that item.
+    - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
+    - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
+        - Gen 1
+            - Charizard
+                - Fire/Dragon
+            - Arbok
+                - Poison/Dark
+            - Ninetales - Normal Form
+                - Fire/Fairy
+            - Psyduck
+                - Psychic/Water
+            - Golduck
+                - Psychic/Water
+            - Primeape
+                - Fighting/Dark
+            - Hypno
+                - Psychic/Dark
+            - Kangaskhan
+                - Normal/Fighting
+            - Gyarados
+                - Water/Dragon
+        - Gen 2
+            - Bellossom
+                - Grass/Fairy
+            - Sudowoodo
+                - Rock/Fighting
+            - Sunflora
+                - Grass/Fire
+            - Wobbuffet
+                - Psychic/Ghost
+            - Dunsparce
+                - Normal/Steel
+            - Ursaring
+                - Normal/Fighting
+        - Gen 3
+            - Sceptile
+                - Grass/Dragon
+            - Skitty
+                - Fairy
+            - Delcatty
+                - Fairy
+            - Manectric
+                - Electric/Dark
+            - Volbeat
+                - Bug/Fairy
+            - Illumise
+                - Bug/Fairy
+            - Swalot
+                - Poison/Fairy
+            - Torkoal
+                - Fire/Rock
+            - Glalie
+                - Ice/Rock
+            - Huntail
+                - Water/Dark
+            - Gorebyss
+                - Water/Psychic
+            - Luvdisc
+                - Water/Fairy
+        - Gen 4
+            - Luxray
+                - Electric/Dark
+            - Rampardos
+                - Rock/Dark
+            - Bonsly
+                - Rock/Normal
+            - Pachirisu
+                - Electric/Fairy
+            - Lopunny
+                - Normal/Fighting
+            - Carnivine
+                - Grass/Dark
+
+    - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
+        - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
+            - Lefneko - Beta Hoppip line
+                - Grass
+                    - Give one like elemental monkeys
+            - Dandeneko
+                - Grass/Fairy
+                    - Evolve Lefneko - Level up
+            - Cottoneko
+                - Grass/Fairy
+                    - Evolve Dandeneko - Level up
+            - Flambear - Beta Fire type starter line
+                - Fire
+                    - Give one like elemental monkeys
+            - Volbear
+                - Fire/???
+                    - Evolve Flambear - Level up
+            - Dynabear
+                - Fire/???
+                    - Evolve Volbear - Level up
+            - Cruz - Beta Water type starter line
+                - Water
+                    - Give one like elemental monkeys
+            - Aquis
+                - Water/???
+                    - Evolve Cruz - Level up
+            - Aquaria
+                - Water/???
+                    - Evolve Aquis - Level up
+            - Blossomole - Beta Bayleef
+                - Grass/Fairy
+            - Owldurn - Beta Noctowl
+                - Normal/Flying
+                    - Evolve Hoothoot - Wurmple evolution
+            - Trifox - Beta Vulpix baby
+                - Fire
+                    - Baby Vulpix
+            - Tangel - Beta Tangela baby
+                - Grass
+                    - Tangela Baby
+            - Tangrath - Beta Tangrowth
+                - Grass/Dark
+                    - Evolve Tangela - ??? (can't be level up)
+            - Rayleep - Beta Mantine
+                - Water/Fairy
+            - Numpuff - Beta Qwilfish evolution
+                - Water/Poison
+                    - Evolve Qwilfish - Water Stone
+            - Golpy - Beta Goldeen baby
+                - Water
+                    - Baby Goldeen
+            - Sunmola
+                - Water
+            - Anchorage
+                - Water/Steel
+                    - Evolve Sunmola - ???
+            - Grotess - Beta sunfish line 
+                - Water/Dark
+                    - Evolve Sunmola - ???
+            - Para - Beta Paras baby
+                - Bug
+                    - Baby Paras
+            - Animon - Beta Ditto evolution
+                - Normal/Steel
+                    - Evolve Ditto - Metal Coat + Trade
+            - Chiks - Beta Doduo baby
+                - Normal
+                    - Baby Doduo
+            - Meowsy - Beta Meowth baby
+                - Normal
+                    - Baby Meowth
+            - Rinring - Beta dark cat line
+                - Dark/Fairy
+            - Belloyant
+                - Dark/Fairy
+                    - Evolve Rinring - ???
+            - Minicorn - Beta Ponyta baby
+                - Fire
+                    - Baby Ponyta
+            - Turbann - Beta Slowbro shell pokemon
+                - Rock
+            - Grimey - Beta Grimer baby
+                - Poison
+                    - Baby Grimer
+            - Gohng - Beta Tyrogue
+                - Fighting/Fairy
+                    - Legendary Pokemon
+            - Puddi - Beta Growlithe baby
+                - Fire
+                    - Baby Growlithe
+            - Belmitt - Beta Weepinbell branching evolution
+                - Grass/Fighting
+                    - Evolve Weepinbell - Moon Stone
+            - Bomsoaker - Beta seal Pokemon
+                - Fire/Water
+            - Kotora - Beta electric tiger line
+                - Electric
+            - Raitora
+                - Electric
+                    - Evolve Kotora - ???
+            - Madame - Beta Farfetch'd evolution
+                - Normal/Flying
+                    - Evolve Farfetch'd - ??? (Female Only)
+            - Kurstraw - Beta Ghost line
+                - Ghost
+                    - Evolve Pangshi - Evolves every 10 levels
+            - Pangshi
+                - Ghost
+                    - Evolve Kurstraw - Evolves every 10 levels
+            - Plux - Beta Pinsir Evolution
+                - Bug/Dark
+            - Wolfman - Beta Ice wolf line
+                - Ice
+            - Warwolf
+                - Ice/???
+                    - Evolve Wolfman - Ice Stone
+            - Porygon-C - Beta Porygon-2
+                - Normal/Steel
+                    - Evolve Porygon-2 - Metal Coat + Trade
+        - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Pok%C3%A9mon
+            - Dunslet - Beta Dunsparce
+                - Normal
+                    - Baby Dunsparce
+            - Swievel - Beta Sneasel
+                - Ice/Normal
+            - (UNNAMED) - Beta Celebi
+                - Steel/Fairy
+                    - Mythical Pokemon
+            - Woober - Beta Wooper
+                - Water/(???)
+        - https://tcrf.net/Prerelease:Pok%C3%A9mon_Gold_and_Silver/Sprites/990613
+            - Kiromarill - Beta Azumarill
+                - Water/Fighting
+                    - Evolve Marill - ??? (Can't be friendship)
+            - Stingbat - Beta Gligar
+                - Dark/Flying
+                    - Evolve Gligar - Razor Claw + Trade
+            - Whimsey - Beta Blissey
+                - Normal/Fairy
+                    - Evolve Chansey - ???
+            - Twinz - Beta Girafarig pre-evolution
+                - Ghost/Normal
+    - New incense items for use with beta baby mon.
+        - Luck Incense - Meowsy
+        - Flame Incense - Trifox/Minicorn/Puddi
+            - . (Charcoal)
+        - Grime Incense - Grimey
+            - . (Poison Barb)
+        - Grass Incense - Tangel/Para
+        - Water Incense - Golpy
+        - Full Incense - Dunslet
+        - Lax Incense - Chiks
+    - Type Effectiveness Changes
+        - Ice - Resist Dragon and Ground
+        - Electric - Super effective to Steel
+        - Bug - Remove Fairy Resistance - Resist Psychic
+        - Poison - Super effective to Bug
+        
+### TODO LIST
+
+    - Add explanation for hidden trees and the Pokemon and items to get.
+    - Finish new maps.
+    - Expand Scorched Slab.
+    - Update wild Pokemon to use new regional dex.
+    - TMs 51-120 need descriptions.
+        - Use move descriptions as a base.
+    - New incense items need graphics.
+    - Give player other fossils and set up the conversion process.
+    - Unobtainable Legendary Pokemon need locations.
+        - Reminder to make them respawn if not caught.
+        - Articuno at Shoal Cave ice room after HoF.
+        - Zapdos at Old Mauville.
+        - Moltres at Jagged Pass.
+        - Mewtwo at ???.
+        - Raikou, Entei, Suicune at ???.
+        - Celebi at forest south of Pacifidlog Town. (Yet to be made.)
+        - Jirachi at special moon area. (Yet to be made.)
+        - Uxie, Mesprit, Azelf at ???.
+        - Dialga, Palkia at ???.
+        - Heatran at Scorched Slab.
+        - Regigigas at ???.
+        - Giratina at ???.
+        - Cresellia at ???.
+        - Manaphy and Phione at ???.
+        - Darkrai at ???.
+        - Shaymin at ???.
+            - Gracidea at Flower Shop.
+        - Arceus at ???.
+            - Plates at ???.
+    - Give all Kanto Starters.
+    - Give all Hoenn starters.
+        - Enter Hall of Fame to receive the rest.
+    - Give all Johto starters.
+        - See all Hoenn Pokemon, then obtain all Hoenn Pokemon to receive the rest.
+    - Give all Sinnoh Starters.
+        - See all Gen 3 Pokemon, then obtain all Gen 3 Pokemon to receive the rest.
+    - Give new betamon "Starters" as a kind of elemental monkey thing.
+    - Implement new swarms along with held items.
+    - Modify tutor moves to account for new TMs and potentially add more.
+    - Add Odd Egg event into the game.
+        - Let NPC that gives Wynaut Egg also give out this egg.
+    - Move Mr. Mime and Mime Jr. in the alphabetical Pokedex order.
+    - Potentially add more post-game maps to vanilla locations.
+    
+## Changes
+
+### Changes from Emerald
+    - Shiny odds have been increase by 2x.
+    - Pokemon can get 255 EVs in each stat similar to STAT EXP in generation 1 and 2.
+    - Pure Power now doubles Special Attack instead of Attack. To differentiate from Huge Power.
+    - Minus now raises Attack instead of Special Attack. To differentiate from Plus.
+    - Mr. Mime's name is changed to Barrierd.
+    - Mime Jr.'s name is changed to Barrie.
+    - Castform shows its shiny color when transformed.
+    - Obedience is increased with each badge.
+    - Pickup table has been modified.
+        - Due to this change and that plenty of useful items are now possible to get from Pickup, some pokemon get the Pickup ability.
+            - Vulpix line
+            - Plusle and Minun
+            - Starly
+            - Manaphy and Phione
+    - Mew and Deoxys will behave normally regardless of how they were obtained.
+    - The number of spots Feebas can be found has been doubled.
+    - More bag space. 100 spots now.
+    - More PC space. 100 spots now.
+    - Wave Incense and Sea Incense have been combined into a singular Incense. It's now called the Water Incense.
+    - Rose Incense has been renamed. It's now called the Grass Incense.
+    - Starting money has been changed to 5000.
+    - Hoenn Pokemon missing from Emerald that were in Ruby and Sapphire have been added back to the locations they used to be at.
+        - Encounter rates will differ slightly.
+### Changes from the pokeemerald Expansion
+    - Critical hits do 2x damage instead of 1.5x.
+    - Trainers give boosted EXP compared to wild Pokemon.
+    - Pokemon receive split EXP instead of full EXP if multiple participated.
+    - Pokemon do not get a bonus to EXP when above the level they would evolve at.
+    - Obtained badges boost stats.
+    - Binding damage does 1/16th damage each turn instead of 1/8th.
+    - Hidden Power uses IVs to determine power.
+    - Rough Skin/Iron Barb damage is 1/16th instead of 1/8th.
+    - Dark Type Pokemon are no longer immune to moves affected by Prankster. Dark types just nullify the priority boost.
+    - Roost will make a pure Flying-type Pokemon typless instead of Normal.
+    - Binding moves last for 2-5 turns instead of 4-5 turns.
+    - Uproar lasts for 2-5 turns instead of 3 turns.
+    - Hi-Jump Kick does recoil damage based on the damage done, not a flat amount based off the user's HP.
+    - Conversion picks a move at random instead of only the first move.
+    - Spite reduces PP by 2-5 instead of 4.
+    - Sheer Cold has normal accuracy if the user is not Ice type.
+    - Rapid Spin does not increase speed.
+    - Minimize only increases evasion by 1 stage instead of 2.
+    - Hi-Jump Kick will not recoil if the target is immune.
+        - My reasoning is they still hit the target but it does no damage.
+    - Damaging healing moves won't heal the user that's under the effect of Heal Block.
+        - The move will still damage the opponent.
+    - Teleport functions normally instead of allowing the user to switch out.
+    - Dark Void will not fail if used by any Pokemon besides Darkrai.
+    - Weather abilities will last until the weather is changed instead of 5 turns.
+    - Nest Ball's catch rate is based off of Gen 5.
+    - Sport Ball has a catch rate of 1.5x instead of 1x.
+    - Serene Grace will not boost the chance of flinching from Razor Fang or King's Rock.
+    - Health recovery items heal as they would pre-Gen 7.
+    - Incense items work for breeding as they would normally instead of having no effect.
+        - New items will be added for use with Beta Mon.
+### Notable Bug Fixes
+    - RNG will now be seeded like it should.
+    - Pokedex entries will not show without the Pokedex.
+    - Various map edits that involve incorrectly used tiles.
+### Shiny Color Changes
+    - PENDING
+        - Abra
+        - Articuno
+        - Blissey
+        - Burmy (All forms)
+        - Chingling
+        - Combusken
+        - Diglett
+        - Dugtrio
+        - Elekid
+        - Gabite
+        - Gastrodon
+        - Gengar
+        - Igglybuff
+        - Kadabra
+        - Kangaskhan
+        - Leafeon
+        - Mantyke
+        - Meowth
+        - Nidoqueen
+        - Persian
+        - Pichu
+        - Pikachu
+        - Plusle
+        - Poliwag
+        - Poliwhirl
+        - Scyther
+        - Shellos
+        - Skitty
+        - Smoochum
+        - Snorlax
+        - Sunkern
+        - Togepi
+        - Togetic
+        - Venonat
+        - Wormadam (All forms)
+        - Zapdos
+    
+Use x_MODIFY_x to find changes for future.
+    
+### [Documentation on features can be found here for the pokeemerald Expansion](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
+
+### [List of pokeemerald Expansion contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits)

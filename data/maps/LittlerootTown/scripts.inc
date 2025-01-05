@@ -44,6 +44,7 @@ LittlerootTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
 	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
+	call_if_set FLAG_SYS_GAME_CLEAR, LittlerootTown_EventScript_SetTwinPosAfterE4
 	call_if_eq VAR_LITTLEROOT_TOWN_STATE, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
@@ -88,6 +89,10 @@ LittlerootTown_EventScript_SetTwinPos::
 LittlerootTown_EventScript_SetTwinGuardingRoutePos::
 	setobjectxyperm LOCALID_TWIN, 7, 2
 	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_DOWN
+	return
+    
+LittlerootTown_EventScript_SetTwinPosAfterE4::
+	setobjectxyperm LOCALID_TWIN, 8, 5
 	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::

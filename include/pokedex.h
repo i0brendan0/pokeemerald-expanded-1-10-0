@@ -18,5 +18,15 @@ void CB2_OpenPokedex(void);
 void PrintMonMeasurements(u16 species, u32 owned);
 u8* ConvertMonHeightToString(u32 height);
 u8* ConvertMonWeightToString(u32 weight);
+bool16 HasAllKantoMons(void);
+bool16 HasAllJohtoMons(void);
+bool16 HasAllSinnohMons(void);
+bool16 HasAllMonsIncludingMythicals(void);
+bool16 HasSeenAllHoennMons(void);
+bool16 HasSeenAllKantoMons(void);
+bool16 HasSeenAllJohtoMons(void);
+bool16 HasSeenAllSinnohMons(void);
+bool16 HasSeenAllMons(void);
+bool16 HasSeenAllMonsIncludingMythicals(void);
 
 #endif // GUARD_POKEDEX_H

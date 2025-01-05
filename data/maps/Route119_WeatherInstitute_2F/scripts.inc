@@ -139,9 +139,17 @@ Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather::
 
 Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather::
 	setvar VAR_0x8004, 0
-	call_if_set FLAG_DEFEATED_KYOGRE, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
-	call_if_set FLAG_DEFEATED_GROUDON, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
-	goto_if_eq VAR_0x8004, 2, Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather  @ Both defeated
+	call_if_set FLAG_CAUGHT_KYOGRE, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
+	call_if_set FLAG_CAUGHT_GROUDON, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
+	goto_if_eq VAR_0x8004, 2, Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather
+@ if both are caught, don't check anything else
+    call_if_set FLAG_RESET_KYOGRE_AND_GROUDON, Route119_WeatherInstitute_2F_EventScript_ResetLegendary
+@ if player entered hall of fame, reset that both were defeated
+	setvar VAR_0x8004, 0
+    call_if_set FLAG_DEFEATED_KYOGRE, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
+    call_if_set FLAG_DEFEATED_GROUDON, Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated
+	goto_if_eq VAR_0x8004, 2, Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather
+@ if both are defeated, don't check anything else
 	call_if_unset FLAG_TEMP_2, Route119_WeatherInstitute_2F_EventScript_CreateAbnormalWeather
 	specialvar VAR_RESULT, GetAbnormalWeatherMapNameAndType
 	goto_if_eq VAR_RESULT, 1, Route119_WeatherInstitute_2F_EventScript_KyogreWeather
@@ -161,6 +169,12 @@ Route119_WeatherInstitute_2F_EventScript_CreateAbnormalWeather::
 
 Route119_WeatherInstitute_2F_EventScript_LegendaryDefeated::
 	addvar VAR_0x8004, 1
+	return
+
+Route119_WeatherInstitute_2F_EventScript_ResetLegendary::
+	clearflag FLAG_RESET_KYOGRE_AND_GROUDON
+	clearflag FLAG_DEFEATED_KYOGRE
+	clearflag FLAG_DEFEATED_GROUDON
 	return
 
 Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather::

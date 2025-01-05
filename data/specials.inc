@@ -554,3 +554,7 @@ gSpecials::
 	def_special Script_GetChosenMonOffensiveIVs
 	def_special Script_GetChosenMonDefensiveIVs
 	def_special UseBlankMessageToCancelPokemonPic
+	def_special TryGiveRandomBabyEgg
+    def_special FindHiddenTreeResult
+    def_special FindHiddenTreePokemon
+

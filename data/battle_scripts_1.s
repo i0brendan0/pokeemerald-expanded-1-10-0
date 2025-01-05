@@ -2813,6 +2813,7 @@ BattleScript_EffectHit_RetFromCritCalc::
 BattleScript_Hit_RetFromAtkAnimation::
 	attackanimation
 	waitanimation
+BattleScript_SplashHit::
 	effectivenesssound
 	hitanimation BS_TARGET
 	waitstate
@@ -3856,10 +3857,7 @@ BattleScript_EffectDoNothing::
 	attackanimation
 	waitanimation
 	jumpifmove MOVE_CELEBRATE, BattleScript_EffectCelebrate
-	jumpifmove MOVE_HAPPY_HOUR, BattleScript_EffectHappyHour
-	incrementgamestat GAME_STAT_USED_SPLASH
-	printstring STRINGID_BUTNOTHINGHAPPENED
-	waitmessage B_WAIT_TIME_LONG
+	seteffectprimary MOVE_EFFECT_HAPPY_HOUR
 	goto BattleScript_MoveEnd
 BattleScript_EffectHoldHands:
 	jumpifsideaffecting BS_TARGET, SIDE_STATUS_CRAFTY_SHIELD, BattleScript_ButItFailed
@@ -3870,9 +3868,6 @@ BattleScript_EffectHoldHands:
 BattleScript_EffectCelebrate:
 	printstring STRINGID_CELEBRATEMESSAGE
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
-BattleScript_EffectHappyHour:
-	seteffectprimary MOVE_EFFECT_HAPPY_HOUR
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectDisable::
@@ -10074,3 +10069,22 @@ BattleScript_EffectSnow::
 	call BattleScript_CheckPrimalWeather
 	setfieldweather ENUM_WEATHER_SNOW
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_EffectSplash::
+    attackcanceler
+    attackstring
+    ppreduce
+    attackanimation
+    waitanimation
+	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_RAIN, BattleScript_RainingSplash
+BattleScript_SplashMisses:
+	incrementgamestat GAME_STAT_USED_SPLASH
+	printstring STRINGID_BUTNOTHINGHAPPENED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+BattleScript_RainingSplash:
+	accuracycheck BattleScript_SplashMisses, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	goto BattleScript_SplashHit

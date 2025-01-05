@@ -5,6 +5,7 @@
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
+#include "daycare.h"
 #include "decoration.h"
 #include "diploma.h"
 #include "event_data.h"
@@ -57,6 +58,8 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/field_specials.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
 #include "constants/map_types.h"
@@ -70,6 +73,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "wild_encounter.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -147,6 +151,8 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
 static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
 #endif //FREE_LINK_BATTLE_RECORDS
+
+//static void TryGiveRandomBabyEgg(void);
 
 void Special_ShowDiploma(void)
 {
@@ -1661,7 +1667,7 @@ u16 GetMysteryGiftCardStat(void)
 
 bool8 BufferTMHMMoveName(void)
 {
-    if (gSpecialVar_0x8004 >= ITEM_TM01 && gSpecialVar_0x8004 <= ITEM_HM08)
+    if (gSpecialVar_0x8004 >= ITEM_TM001 && gSpecialVar_0x8004 <= ITEM_HM08)
     {
         StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(gSpecialVar_0x8004)));
         return TRUE;
@@ -3559,13 +3565,20 @@ bool32 IsTrainerRegistered(void)
     return FALSE;
 }
 
-// Always returns FALSE
+// Modified to distribute every Event Item
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
-        return FALSE;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        if(!FlagGet(FLAG_ENABLE_SHIP_SOUTHERN_ISLAND))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_NAVEL_ROCK))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_BIRTH_ISLAND))
+            return TRUE;
+        if(!FlagGet(FLAG_ENABLE_SHIP_FARAWAY_ISLAND))
+            return TRUE;
 
-    return TRUE;
+    return FALSE;
 }
 
 #define tState data[0]
@@ -4334,4 +4347,207 @@ void UseBlankMessageToCancelPokemonPic(void)
     u8 t = EOS;
     AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
     ScriptMenu_HidePokemonPic();
+}
+
+static const u16 sBabySpecies[] =
+{
+    SPECIES_PICHU,
+    SPECIES_CLEFFA,
+    SPECIES_IGGLYBUFF,
+    SPECIES_TOGEPI,
+    SPECIES_TYROGUE,
+    SPECIES_SMOOCHUM,
+    SPECIES_ELEKID,
+    SPECIES_MAGBY,
+    SPECIES_AZURILL,
+    SPECIES_WYNAUT,
+    SPECIES_BUDEW,
+    SPECIES_CHINGLING,
+    SPECIES_BONSLY,
+    SPECIES_MIME_JR,
+    SPECIES_HAPPINY,
+    SPECIES_MUNCHLAX,
+    SPECIES_RIOLU,
+    SPECIES_MANTYKE,
+/*    SPECIES_CHIKS,
+    SPECIES_GOLPY,
+    SPECIES_GRIMEY,
+    SPECIES_MEOWSY,
+    SPECIES_MINICORN,
+    SPECIES_PARA,
+    SPECIES_PUDDI,
+    SPECIES_TANGEL,
+    SPECIES_TRIFOX,
+    SPECIES_x_DUNSPARCE_x, */
+    SPECIES_PHIONE,
+};
+
+void TryGiveRandomBabyEgg(void)
+{
+    u16 species = sBabySpecies[Random() % ARRAY_COUNT(sBabySpecies)];
+    struct Pokemon mon;
+    u8 i;
+    u16 move = MOVE_DIZZY_PUNCH;
+    bool8 isShinyFlag = FlagGet(FLAG_FORCE_SHINY);
+    bool8 isNotShinyFlag = FlagGet(FLAG_FORCE_NOT_SHINY);
+    
+    if ((species == SPECIES_PHIONE) && (Random() & 1))
+        species = sBabySpecies[Random() % ARRAY_COUNT(sBabySpecies)];
+    
+    if ((Random() % 100) < SHINY_ODDS)
+    {
+        FlagSet(FLAG_FORCE_SHINY);
+        FlagClear(FLAG_FORCE_NOT_SHINY);
+    }
+    else
+    {
+        FlagClear(FLAG_FORCE_SHINY);
+        FlagSet(FLAG_FORCE_NOT_SHINY);
+    }
+    
+    CreateEgg(&mon, species, FALSE);
+    
+    if (isShinyFlag)
+        FlagSet(FLAG_FORCE_SHINY);
+    else
+        FlagClear(FLAG_FORCE_SHINY);
+    if (isNotShinyFlag)
+        FlagSet(FLAG_FORCE_NOT_SHINY);
+    else
+        FlagClear(FLAG_FORCE_NOT_SHINY);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if ((GetMonData(&mon, MON_DATA_MOVE1 + i, NULL)) == MOVE_NONE)
+            break;
+    }
+    SetMonData(&mon, MON_DATA_MOVE1 + i, &move);
+    
+    GiveMonToPlayer(&mon);
+}
+
+static const u16 sHiddenTreeCommonItemList[] =
+{
+    ITEM_NONE,
+    ITEM_NONE,
+    ITEM_NONE,
+    ITEM_NONE,
+    ITEM_NONE,
+};
+
+static const u16 sHiddenTreeUniqueItemList[][4] =
+{
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 102
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 103
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 104
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 111
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 112
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 115
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 116
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 117
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 118
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 119
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 120
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 121
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 123
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 135
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 137
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 140
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 150
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 151
+    {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE}, // Route 154
+};
+
+static const u16 sGetHiddenTreeVarFromMap[][2] =
+{
+    {MAP_ROUTE102, VAR_HIDDEN_TREE_ROUTE_102},
+    {MAP_ROUTE103, VAR_HIDDEN_TREE_ROUTE_103},
+    {MAP_ROUTE104, VAR_HIDDEN_TREE_ROUTE_104},
+    {MAP_ROUTE110, VAR_HIDDEN_TREE_ROUTE_110},
+    {MAP_ROUTE112, VAR_HIDDEN_TREE_ROUTE_112},
+    {MAP_ROUTE115, VAR_HIDDEN_TREE_ROUTE_115},
+    {MAP_ROUTE116, VAR_HIDDEN_TREE_ROUTE_116},
+    {MAP_ROUTE117, VAR_HIDDEN_TREE_ROUTE_117},
+    {MAP_ROUTE118, VAR_HIDDEN_TREE_ROUTE_118},
+    {MAP_ROUTE119, VAR_HIDDEN_TREE_ROUTE_119},
+    {MAP_ROUTE120, VAR_HIDDEN_TREE_ROUTE_120},
+    {MAP_ROUTE121, VAR_HIDDEN_TREE_ROUTE_121},
+    {MAP_ROUTE123, VAR_HIDDEN_TREE_ROUTE_123},
+//    {MAP_ROUTE135, VAR_HIDDEN_TREE_ROUTE_135},
+//    {MAP_ROUTE137, VAR_HIDDEN_TREE_ROUTE_137},
+//    {MAP_ROUTE140, VAR_HIDDEN_TREE_ROUTE_140},
+//    {MAP_ROUTE150, VAR_HIDDEN_TREE_ROUTE_150},
+//    {MAP_ROUTE151, VAR_HIDDEN_TREE_ROUTE_151},
+//    {MAP_ROUTE154, VAR_HIDDEN_TREE_ROUTE_154},
+};
+
+void SetHiddenTrees(void)
+{
+    u16 i, value;
+    
+    for (i = 0; i < ARRAY_COUNT(sGetHiddenTreeVarFromMap); i++)
+    {
+        if ((Random() & 1) == 0)
+        {
+            if ((Random() % 100) < 20) // 20% chance it grabs a specific item
+            {
+                value = sHiddenTreeUniqueItemList[i][(Random() % 4)];
+            }
+            else // random item from list
+            {
+                value = (Random() % ARRAY_COUNT(sHiddenTreeCommonItemList));
+            }
+            value += (1 << 15);
+        }
+        else
+        {
+            value = ChooseWildMonIndex_WaterRock();
+        }
+        VarSet(sGetHiddenTreeVarFromMap[i][1], value);
+    }
+}
+
+// Checks to see if the tree can give an item or a pokemon
+// VAR_RESULT TRUE if can get item/pokemon
+void FindHiddenTreeResult(void)
+{
+    u16 curMap = gSaveBlock1Ptr->location.mapNum;
+    u16 var;
+    u8 i;
+    
+    for (i = 0; i < ARRAY_COUNT(sGetHiddenTreeVarFromMap); i++)
+    {
+        if (curMap == sGetHiddenTreeVarFromMap[i][0])
+        {
+            var = VarGet(sGetHiddenTreeVarFromMap[i][1]);
+            if (!var)
+            {
+                gSpecialVar_0x8000 = var & 0x7FFF;
+                gSpecialVar_0x8001 = (var >> 15);
+                gSpecialVar_Result = TRUE;
+                VarSet(var, 0);
+                return;
+            }
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}
+
+// VAR_8000 holds species
+// VAR_8001 holds level
+void FindHiddenTreePokemon(void)
+{
+    u16 monNum = gSpecialVar_0x8000;
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+    const struct WildPokemonInfo *hiddenTreeMonsInfo = gWildMonHeaders[headerId].rockSmashMonsInfo;
+    u8 minlvl = hiddenTreeMonsInfo->wildPokemon[monNum].minLevel;
+    u8 maxlvl = hiddenTreeMonsInfo->wildPokemon[monNum].maxLevel;
+
+    if (minlvl > maxlvl)
+        minlvl = maxlvl;
+    if (minlvl != maxlvl)
+        minlvl += (Random() % (maxlvl - minlvl));
+
+    VarSet(gSpecialVar_0x8000, hiddenTreeMonsInfo->wildPokemon[monNum].species);
+    VarSet(gSpecialVar_0x8001, minlvl);
 }

@@ -1,4 +1,4 @@
-SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
+SlateportCity_PokemonFanClub_EventScript_SwaggerTutor:: @@ x_MODIFY_x
 	lock
 	faceplayer
 	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SWAGGER, MoveTutor_EventScript_SwaggerTaught

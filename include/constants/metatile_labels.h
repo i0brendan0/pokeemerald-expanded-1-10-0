@@ -182,6 +182,7 @@
 #define METATILE_Fallarbor_Door_BattleTent           0x36C
 #define METATILE_Fallarbor_Door_DarkRoof             0x2F7
 #define METATILE_Fallarbor_Door_LightRoof            0x2A5
+#define METATILE_Fallarbor_Fallarbor_Ground          0x279
 #define METATILE_Fallarbor_NormalGrass               0x212
 #define METATILE_Fallarbor_RedCaveEntrance_Bottom    0x34F
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
@@ -210,6 +211,9 @@
 #define METATILE_General_CalmWater             0x170
 #define METATILE_General_CaveEntrance_Bottom   0x0A7
 #define METATILE_General_CaveEntrance_Top      0x09F
+#define METATILE_General_DarkGrass             0x05C
+#define METATILE_General_DarkGrass_TreeLeft    0x135
+#define METATILE_General_DarkGrass_TreeRight   0x13F
 #define METATILE_General_Door                  0x021
 #define METATILE_General_Door_Contest          0x1DB
 #define METATILE_General_Door_Gym              0x1CD
@@ -219,6 +223,9 @@
 #define METATILE_General_Grass_TreeLeft        0x1CE
 #define METATILE_General_Grass_TreeRight       0x1CF
 #define METATILE_General_Grass_TreeUp          0x00E
+#define METATILE_General_HiddenTree            0x02A
+#define METATILE_General_HiddenTreeDark        0x1E3
+#define METATILE_General_HiddenTree_Small      0x18B
 #define METATILE_General_LongGrass             0x015
 #define METATILE_General_MuddySlope_Frame0     0x0E8
 #define METATILE_General_MuddySlope_Frame1     0x0E9
@@ -233,6 +240,8 @@
 #define METATILE_General_RoughDeepWater        0x14F
 #define METATILE_General_RoughWater            0x14E
 #define METATILE_General_SandPit_Center        0x121
+#define METATILE_General_SandPit_LeftEdge      0x120
+#define METATILE_General_SandPit_RightEdge     0x122
 #define METATILE_General_SecretBase_TreeLeft   0x026
 #define METATILE_General_SecretBase_TreeRight  0x027
 #define METATILE_General_SecretBase_VineLeft   0x036
@@ -392,6 +401,7 @@
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
+#define METATILE_Petalburg_RegiCheckRock    0x237
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224

@@ -5,6 +5,8 @@ EventScript_TV::
 	specialvar VAR_RESULT, CheckForPlayersHouseNews
 	goto_if_eq VAR_RESULT, PLAYERS_HOUSE_TV_MOVIE, EventScript_PlayersHouseMovie
 	goto_if_eq VAR_RESULT, PLAYERS_HOUSE_TV_LATI, EventScript_PlayersHouseLatiNewsFlash
+    call_if_set FLAG_SYS_GAME_CLEAR, EventScript_CheckResetRoamer
+    goto_if_eq VAR_RESULT, 1, EventScript_ResetRoamer
 	goto_if_unset FLAG_SYS_TV_START, EventScript_MomDadMightLikeThis1
 	goto_if_set FLAG_SYS_TV_WATCH, EventScript_MomDadMightLikeThis1
 	specialvar VAR_RESULT, IsGabbyAndTyShowOnTheAir
@@ -34,6 +36,18 @@ EventScript_PlayersHouseMovie::
 	releaseall
 	end
 
+EventScript_CheckResetRoamer::
+    goto_if_set FLAG_CAUGHT_ROAMER, EventScript_DontResetRoamer
+    goto_if_unset FLAG_RESET_ROAMER, EventScript_DontResetRoamer
+    setvar VAR_RESULT, 1
+EventScript_DontResetRoamer::
+    return
+    
+EventScript_ResetRoamer::
+    clearflag FLAG_RESET_ROAMER
+    setvar VAR_0x8004, 0
+    call_if_set FLAG_ROAMER_IS_LATIOS, EventScript_RoamerIsLatios
+    @ fallthrough
 @ special InitRoamer is a junk call. Its input var (VAR_0x8004) hasn't been set, and
 @ It's called again when Mom actually asks for the color, overwriting
 @ whatever it does here.
@@ -45,6 +59,10 @@ EventScript_PlayersHouseLatiNewsFlash::
 	special TurnOffTVScreen
 	releaseall
 	end
+
+EventScript_RoamerIsLatios::
+    addvar VAR_0x8004, 1
+    return
 
 @ The following is a loop for the TV show messages
 @ VAR_RESULT is set to TRUE when the show has printed its final message
