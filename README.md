@@ -13,18 +13,17 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Fairy Type
     - Physical/Special/Status Category Split.
     - New moves and abilities up to Sword/Shield.
-        - Will include most moves up to ORAS, including certain Gen 7+ moves used in BDSP.
+        - Will include most moves up to XY/ORAS, including certain Gen 7+ moves used in BDSP.
     - Updates Hoenn's Regional Dex to match ORAS' with various changes.
-    - Updates National Dex incorporating all the new species.
+    - Updates National Dex incorporating all Generation 4 species.
     - Base stats have been updated.
         - Rotom's normal form has modified base stats.
     - New evolution methods.
     - Hidden Abilities.
     - Items from newer generations.
     - TMs are reusable.
-    - A new key item called Meteorite can be used to change Deoxys' forme.
     
-### New Features (COMPLETED)
+### New Features
 
     - The unused ability Cacophony has been re-added as an alternative to Punk Rocker.
         - Pokemon with Cacophony do 1.5x damage with sound-based moves.
@@ -59,20 +58,18 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Rhydon - Protector - Head Smash
         - Duskull - Reaper Cloth - Ominous Wind
         - Feebas - Prism Scale - Aqua Jet
-    - New low-hp type abilities. Some may not be used.
+    - New low-hp type abilities.
     - A baby egg lotto will be available. Basically an updated Odd Egg.
         - All baby Pokemon will be available in the egg, including a special bonus that has a 2% chance of occuring.
         - Pokemon hatched from the egg have a 16% chance of being shiny.
+        - Talk to the egg lady in Lavaridge Town after entering the Hall of Fame.
+            - You'll get a new egg each time you beat the Champion.
     - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
-        - Will include new Event Items to be used for unobtainable Legendary Pokemon.
-    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
-        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
-        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
-        - Rayquaza will respawn like this naturally.
-        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
+        - Some will be restricted on when they can be obtained.
     - Upon entering the Hall of Fame for the first time, certain locations may have their wild Pokemon change.
         - Will mostly allow non-native Pokemon to be available without jamming them into post-game locations.
         - (Only Route 1 as of now.)
+    - After giving back the Meteorite to Professor Cozmo, he'll give it back to you if you talk to him with a Deoxys in your party.
 
 ### New TMs - (51 through 120)
 
@@ -363,7 +360,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - https://tcrf.net/Prerelease:Pok%C3%A9mon_Gold_and_Silver/Sprites/990613
             - Kiromarill - Beta Azumarill
                 - Water/Fighting
-                    - Evolve Marill - ??? (Can't be friendship)
+                    - Evolve Marill - Level up at 18 while knowing a fighting-type move.
             - Stingbat - Beta Gligar
                 - Dark/Flying
                     - Evolve Gligar - Razor Claw + Trade
@@ -391,6 +388,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 ### TODO LIST
 
     - Add explanation for hidden trees and the Pokemon and items to get.
+        - Route 103 after getting Pokedex.
     - Finish new maps.
     - Expand Scorched Slab.
     - Update wild Pokemon to use new regional dex.
@@ -400,33 +398,42 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Give player other fossils and set up the conversion process.
     - Unobtainable Legendary Pokemon need locations.
         - Reminder to make them respawn if not caught.
-        - Articuno at Shoal Cave ice room after HoF.
+        - They or their location will only show up after the HoF.
+        - Articuno at Shoal Cave ice room.
         - Zapdos at Old Mauville.
         - Moltres at Jagged Pass.
-        - Mewtwo at ???.
-        - Raikou, Entei, Suicune at ???.
+        - Mewtwo at maybe a new area in Rusturf Tunnel.
+        - Raikou, Entei, Suicune at maybe a deserted town north of Lilycove City.
+            - Reminder to make Ho-Oh and Lugia require these three to be caught to give out event item.
         - Celebi at forest south of Pacifidlog Town. (Yet to be made.)
         - Jirachi at special moon area. (Yet to be made.)
-        - Uxie, Mesprit, Azelf at ???.
-        - Dialga, Palkia at ???.
-        - Heatran at Scorched Slab.
-        - Regigigas at ???.
-        - Giratina at ???.
-        - Cresellia at ???.
-        - Manaphy and Phione at ???.
-        - Darkrai at ???.
-        - Shaymin at ???.
+        - Uxie, Mesprit, Azelf at area between Route 112 and Route 119. (Yet to be made.).
+        - Dialga, Palkia at area between Route 112 and Route 119. (Yet to be made.)
+            - Will require catching Uxie, Mesprit, and Azelf.
+        - Heatran at Scorched Slab. (Needs to be expanded.)
+        - Regigigas at cave east of Littleroot Town. (Yet to be made.)
+        - Giratina at special cave system at Mt. Pyre. (Yet to be made.)
+            - Will require catching Dialga and Palkia.
+        - Cresellia at large island northeast of Slateport. (Yet to be made.)
+        - Manaphy and Phione at island southwest of Pacifidlog Town. (Yet to be made.)
+        - Darkrai at large island northeast of Slateport. (Yet to be made.)
+        - Shaymin at forest south of Lilycove City. (Yet to be made.)
             - Gracidea at Flower Shop.
-        - Arceus at ???.
-            - Plates at ???.
+        - Arceus at area between Route 112 and Route 119. (Yet to be made.)
+            - Will require catching Giratina.
+            - Plates at various routes.
+        - Gohng at new area in Granite Cave. (Yet to be made.)
+        - Metal Celebi at Steven's Cave.
+            - Must defeat Steven first.
     - Give all Kanto Starters.
     - Give all Hoenn starters.
         - Enter Hall of Fame to receive the rest.
     - Give all Johto starters.
-        - See all Hoenn Pokemon, then obtain all Hoenn Pokemon to receive the rest.
+        - See all Hoenn Pokemon to obtain one, then obtain all Hoenn Pokemon to receive the rest.
     - Give all Sinnoh Starters.
-        - See all Gen 3 Pokemon, then obtain all Gen 3 Pokemon to receive the rest.
+        - See all Gen 3 Pokemon to obtain one, then obtain all Gen 3 Pokemon to receive the rest.
     - Give new betamon "Starters" as a kind of elemental monkey thing.
+        - Enter Hall of Fame to receive the rest.
     - Implement new swarms along with held items.
     - Modify tutor moves to account for new TMs and potentially add more.
     - Add Odd Egg event into the game.
@@ -460,7 +467,13 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Starting money has been changed to 5000.
     - Hoenn Pokemon missing from Emerald that were in Ruby and Sapphire have been added back to the locations they used to be at.
         - Encounter rates will differ slightly.
-### Changes from the pokeemerald Expansion
+    - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
+        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
+        - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
+        - Rayquaza will respawn like this naturally.
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
+
+### pokeemerald Expansion configuration changes
     - Critical hits do 2x damage instead of 1.5x.
     - Trainers give boosted EXP compared to wild Pokemon.
     - Pokemon receive split EXP instead of full EXP if multiple participated.

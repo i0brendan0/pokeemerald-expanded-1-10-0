@@ -36,6 +36,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
 	setflag FLAG_RESET_KYOGRE_AND_GROUDON
 	setflag FLAG_RESET_ROAMER
 	clearflag FLAG_DEFEATED_RAYQUAZA
+    clearflag FLAG_GIVE_ODD_EGG
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::

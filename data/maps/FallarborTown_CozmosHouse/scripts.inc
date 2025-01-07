@@ -41,9 +41,62 @@ FallarborTown_CozmosHouse_EventScript_DeclineGiveMeteorite::
 	end
 
 FallarborTown_CozmosHouse_EventScript_GaveMeteorite::
+    goto_if_set FLAG_BATTLED_DEOXYS, FallarborTown_CozmosHouse_EventScript_GiveBackMeteorite
+FallarborTown_CozmosHouse_EventScript_NoDeoxysInParty::
 	msgbox FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch, MSGBOX_DEFAULT
 	release
 	end
+
+FallarborTown_CozmosHouse_EventScript_GiveBackMeteorite::
+    goto_if_set FLAG_GAVE_BACK_METEORITE, FallarborTown_CozmosHouse_EventScript_GaveBackMeteorite
+    checkspecies SPECIES_DEOXYS
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_NoDeoxysInParty
+    msgbox FallarborTown_CozmosHouse_Text_PlayerHasDeoxys, MSGBOX_DEFAULT
+    giveitem ITEM_METEORITE
+    goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_EventScript_CantGetMeteorite
+    setflag FLAG_GAVE_BACK_METEORITE
+    msgbox FallarborTown_CozmosHouse_Text_GivenMeteoriteBack
+    release
+    end
+    
+FallarborTown_CozmosHouse_EventScript_GaveBackMeteorite::
+    msgbox FallarborTown_CozmosHouse_Text_TalkAboutMeteorite, MSGBOX_DEFAULT
+    release
+    end
+
+FallarborTown_CozmosHouse_EventScript_CantGetMeteorite::
+    msgbox FallarborTown_CozmosHouse_Text_CantGetMeteorite, MSGBOX_DEFAULT
+    release
+    end
+
+FallarborTown_CozmosHouse_Text_PlayerHasDeoxys::
+	.string "PROF. COZMO: Oh…\p"
+	.string "Is that…\n"
+    .string "a DEOXYS you have with you?\p"
+	.string "Wow. I never thought I would see one.\n"
+	.string "I've heard that DEOXYS can change\l"
+	.string "form with a METEORITE.\p"
+	.string "Why don't you take the METEORITE\n"
+	.string "back and see what you can do with it.\l"
+	.string "I've already done every test on it\l"
+    .string "that I could think of.$"
+
+FallarborTown_CozmosHouse_Text_GivenMeteoriteBack::
+    .string "There you go.\n"
+    .string "Now try it out on your DEOXYS\l"
+    .string "and see what happens.$"
+    
+FallarborTown_CozmosHouse_Text_TalkAboutMeteorite::
+	.string "PROF. COZMO: How is the METEORITE\n"
+	.string "working out for you?\l"
+	.string "I hope you're getting some use\l"
+	.string "out of it since I gave it back.$"
+
+FallarborTown_CozmosHouse_Text_CantGetMeteorite::
+	.string "PROF. COZMO: Oh…\n"
+	.string "It looks like you'll need to make\l"
+	.string "room for the METEORITE. Otherwise,\l"
+	.string "I can't give it to you.$"
 
 FallarborTown_CozmosHouse_EventScript_CozmosWife::
 	lock

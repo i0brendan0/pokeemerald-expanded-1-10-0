@@ -250,9 +250,31 @@ LavaridgeTown_EventScript_EggWoman::
 	end
 
 LavaridgeTown_EventScript_ReceivedEgg::
+    goto_if_set FLAG_SYS_GAME_CLEAR, LavaridgeTown_EventScript_GiveOddEgg
+LavaridgeTown_EventScript_NoEggToGive::
 	msgbox LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare, MSGBOX_DEFAULT
 	release
 	end
+
+LavaridgeTown_EventScript_GiveOddEgg::
+    goto_if_set FLAG_GIVE_ODD_EGG, LavaridgeTown_EventScript_NoEggToGive
+	msgbox LavaridgeTown_Text_HaveOddEggWillYouTakeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LavaridgeTown_EventScript_DeclineEgg
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, LavaridgeTown_EventScript_NoRoomForEgg
+	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_LAVARIDGE_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_ReceivedTheEgg
+	waitfanfare
+	call Common_EventScript_OddEgg
+	release
+	end
+
+LavaridgeTown_Text_HaveOddEggWillYouTakeIt:
+	.string "I have here an ODD EGG.\p"
+	.string "So, what say you?\n"
+	.string "Will you take this EGG to hatch?$"
 
 LavaridgeTown_EventScript_NoRoomForEgg::
 	msgbox LavaridgeTown_Text_NoRoomForThisEgg, MSGBOX_DEFAULT
