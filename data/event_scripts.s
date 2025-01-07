@@ -1169,3 +1169,21 @@ Common_EventScript_OddEgg::
 	.include "data/maps/Route139/scripts.inc"
 
 	.include "data/maps/SubearthTown/scripts.inc"
+
+	.include "data/maps/Route140/scripts.inc"
+
+	.include "data/maps/EastedgeTown/scripts.inc"
+
+	.include "data/maps/Route142/scripts.inc"
+
+	.include "data/maps/Route141/scripts.inc"
+
+	.include "data/maps/Route143/scripts.inc"
+
+	.include "data/maps/Route144/scripts.inc"
+
+	.include "data/maps/Route145/scripts.inc"
+
+	.include "data/maps/Route146/scripts.inc"
+
+	.include "data/maps/Route147/scripts.inc"

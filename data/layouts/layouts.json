@@ -275,7 +275,7 @@
       "id": "LAYOUT_ROUTE112",
       "name": "Route112_Layout",
       "width": 40,
-      "height": 60,
+      "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route112/border.bin",
@@ -285,7 +285,7 @@
       "id": "LAYOUT_ROUTE113",
       "name": "Route113_Layout",
       "width": 100,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route113/border.bin",
@@ -4470,6 +4470,96 @@
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/SubearthTown/border.bin",
       "blockdata_filepath": "data/layouts/SubearthTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE140",
+      "name": "Route140_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route140/border.bin",
+      "blockdata_filepath": "data/layouts/Route140/map.bin"
+    },
+    {
+      "id": "LAYOUT_EASTEDGE_TOWN",
+      "name": "EastedgeTown_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/EastedgeTown/border.bin",
+      "blockdata_filepath": "data/layouts/EastedgeTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE142",
+      "name": "Route142_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Route142/border.bin",
+      "blockdata_filepath": "data/layouts/Route142/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE141",
+      "name": "Route141_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Route141/border.bin",
+      "blockdata_filepath": "data/layouts/Route141/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE143",
+      "name": "Route143_Layout",
+      "width": 26,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route143/border.bin",
+      "blockdata_filepath": "data/layouts/Route143/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE144",
+      "name": "Route144_Layout",
+      "width": 40,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route144/border.bin",
+      "blockdata_filepath": "data/layouts/Route144/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE145",
+      "name": "Route145_Layout",
+      "width": 40,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route145/border.bin",
+      "blockdata_filepath": "data/layouts/Route145/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE146",
+      "name": "Route146_Layout",
+      "width": 40,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route146/border.bin",
+      "blockdata_filepath": "data/layouts/Route146/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE147",
+      "name": "Route147_Layout",
+      "width": 22,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route147/border.bin",
+      "blockdata_filepath": "data/layouts/Route147/map.bin"
     }
   ]
 }

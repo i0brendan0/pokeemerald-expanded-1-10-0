@@ -1919,6 +1919,22 @@
       "y": 12,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROUTE_141_FOREST",
+      "name": "ROUTE 141 FOREST",
+      "x": 18,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_NEW_TOWN_1_CAVE",
+      "name": "SUBEARTH CAVE",
+      "x": 2,
+      "y": 2,
+      "width": 1,
+      "height": 1
     }
   ]
 }

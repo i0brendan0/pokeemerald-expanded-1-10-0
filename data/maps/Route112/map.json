@@ -20,12 +20,12 @@
     },
     {
       "map": "MAP_LAVARIDGE_TOWN",
-      "offset": 40,
+      "offset": 38,
       "direction": "left"
     },
     {
       "map": "MAP_ROUTE111",
-      "offset": -20,
+      "offset": -22,
       "direction": "right"
     }
   ],
@@ -33,7 +33,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 26,
-      "y": 30,
+      "y": 28,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -46,7 +46,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 24,
-      "y": 34,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -59,7 +59,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 29,
-      "y": 49,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -72,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 22,
-      "y": 46,
+      "y": 44,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
@@ -85,7 +85,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 15,
-      "y": 40,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 27,
-      "y": 30,
+      "y": 28,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -111,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 27,
-      "y": 6,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -124,7 +124,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 28,
-      "y": 6,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -137,7 +137,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 29,
-      "y": 6,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -150,7 +150,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 30,
-      "y": 6,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -163,7 +163,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 8,
-      "y": 50,
+      "y": 48,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -176,7 +176,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 14,
-      "y": 43,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -189,7 +189,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 31,
-      "y": 7,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 1,
@@ -202,7 +202,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 31,
-      "y": 11,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
       "movement_range_x": 1,
@@ -216,42 +216,42 @@
   "warp_events": [
     {
       "x": 28,
-      "y": 27,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ROUTE112_CABLE_CAR_STATION",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
-      "y": 27,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ROUTE112_CABLE_CAR_STATION",
       "dest_warp_id": "1"
     },
     {
       "x": 6,
-      "y": 46,
+      "y": 44,
       "elevation": 3,
       "dest_map": "MAP_JAGGED_PASS",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
-      "y": 46,
+      "y": 44,
       "elevation": 3,
       "dest_map": "MAP_JAGGED_PASS",
       "dest_warp_id": "1"
     },
     {
       "x": 11,
-      "y": 36,
+      "y": 34,
       "elevation": 0,
       "dest_map": "MAP_FIERY_PATH",
       "dest_warp_id": "0"
     },
     {
       "x": 22,
-      "y": 10,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_FIERY_PATH",
       "dest_warp_id": "1"
@@ -264,7 +264,7 @@
     {
       "type": "sign",
       "x": 19,
-      "y": 44,
+      "y": 42,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route112_EventScript_MtChimneySign"
@@ -272,7 +272,7 @@
     {
       "type": "sign",
       "x": 22,
-      "y": 37,
+      "y": 35,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route112_EventScript_MtChimneyCableCarSign"
@@ -280,7 +280,7 @@
     {
       "type": "sign",
       "x": 4,
-      "y": 49,
+      "y": 47,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route112_EventScript_RouteSignLavaridge"

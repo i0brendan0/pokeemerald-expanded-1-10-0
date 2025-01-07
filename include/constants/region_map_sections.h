@@ -230,6 +230,7 @@
 // South of Lilycove City
 #define MAPSEC_ROUTE_140                    0xDC
 #define MAPSEC_ROUTE_141                    0xDD
+#define MAPSEC_ROUTE_141_FOREST             0xF2 // placed here for now
 #define MAPSEC_NEW_TOWN_2                   0xDE
 #define MAPSEC_ROUTE_142                    0xDF
 // West of Sootopolis City
@@ -253,7 +254,7 @@
 #define MAPSEC_NEW_FOREST                   0xEE
 // Special
 #define MAPSEC_MOON                         0xF0
-#define MAPSEC_NONE                         0xF2
+#define MAPSEC_NONE                         0xF3
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

@@ -1,0 +1,44 @@
+{
+  "id": "MAP_EASTEDGE_TOWN",
+  "name": "EastedgeTown",
+  "layout": "LAYOUT_EASTEDGE_TOWN",
+  "music": "MUS_LILYCOVE",
+  "region_map_section": "MAPSEC_NEW_TOWN_2",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE140",
+      "offset": 6,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE142",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE141",
+      "offset": 2,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

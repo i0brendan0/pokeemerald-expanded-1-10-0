@@ -214,6 +214,7 @@
 #define METATILE_General_DarkGrass             0x05C
 #define METATILE_General_DarkGrass_TreeLeft    0x135
 #define METATILE_General_DarkGrass_TreeRight   0x13F
+#define METATILE_General_DarkWater             0x183
 #define METATILE_General_Door                  0x021
 #define METATILE_General_Door_Contest          0x1DB
 #define METATILE_General_Door_Gym              0x1CD

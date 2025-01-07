@@ -592,6 +592,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE123_BERRY_MASTERS_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 122,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE140",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 123,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE140",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

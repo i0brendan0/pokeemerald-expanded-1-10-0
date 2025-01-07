@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE132",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE147",
+      "offset": 8,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -40,8 +45,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
-      "x": 13,
-      "y": 3,
+      "x": 5,
+      "y": 2,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
