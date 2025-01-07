@@ -379,12 +379,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Water Incense - Golpy
         - Full Incense - Dunslet
         - Lax Incense - Chiks
-    - Type Effectiveness Changes
-        - Ice - Resist Dragon and Ground
-        - Electric - Super effective to Steel
-        - Bug - Remove Fairy Resistance - Resist Psychic
-        - Poison - Super effective to Bug
-        
+
 ### TODO LIST
 
     - Add explanation for hidden trees and the Pokemon and items to get.
@@ -472,6 +467,14 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
         - Rayquaza will respawn like this naturally.
         - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
+        
+### Type Changes
+        - Ice resists Dragon
+        - Ice resists Ground
+        - Steel is weak to Electric
+        - Bug is neutral to Fairy
+        - Bug resists Psychic
+        - Bug is weak to Poison (Gen 1)
 
 ### pokeemerald Expansion configuration changes
     - Critical hits do 2x damage instead of 1.5x.
