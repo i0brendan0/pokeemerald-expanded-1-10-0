@@ -8,7 +8,13 @@ Route103_MapScripts::
 Route103_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
+    call_if_set FLAG_ADVENTURE_STARTED, Route103_EventScript_ReadyRivalForHiddenTree
 	end
+
+Route103_EventScript_ReadyRivalForHiddenTree::
+	setobjectxyperm LOCALID_RIVAL, 6, 2
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_DOWN
+    end
 
 Route103_OnLoad:
 	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
@@ -39,6 +45,7 @@ Route103_EventScript_Rival::
 	end
 
 Route103_EventScript_RivalMay::
+    goto_if_set FLAG_ADVENTURE_STARTED, Route103_EventScript_RivalExplainHiddenTree
 	msgbox Route103_Text_MayRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_MAY, TRUE
@@ -56,6 +63,7 @@ Route103_EventScript_RivalMay::
 	end
 
 Route103_EventScript_RivalBrendan::
+    goto_if_set FLAG_ADVENTURE_STARTED, Route103_EventScript_RivalExplainHiddenTree
 	msgbox Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
@@ -71,6 +79,84 @@ Route103_EventScript_RivalBrendan::
 	case 1, Route103_EventScript_StartBrendanBattleTorchic
 	case 2, Route103_EventScript_StartBrendanBattleMudkip
 	end
+    
+Route103_EventScript_RivalExplainHiddenTree::
+    faceplayer
+    msgbox Route103_Text_RivalExplainHiddenTree, MSGBOX_DEFAULT
+    closemessage
+    setflag FLAG_HIDDEN_TREE_EXPLANATION
+    random 5
+    addvar VAR_RESULT, 1
+    copyvar VAR_HIDDEN_TREE_ROUTE_103, VAR_RESULT
+    releaseall
+    switch VAR_FACING
+	case DIR_NORTH, Route103_EventScript_RivalExitFacingNorthOrEast
+	case DIR_WEST, Route103_EventScript_RivalExitFacingWest
+	case DIR_EAST, Route103_EventScript_RivalExitFacingNorthOrEast
+    end
+    
+Route103_EventScript_RivalExitFacingNorthOrEast::
+	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingNorthOrEast1
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingNorthOrEast2
+	waitmovement 0
+	removeobject LOCALID_RIVAL
+	releaseall
+	end
+    
+Route103_Movement_RivalExitFacingNorthOrEast1:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+Route103_Movement_RivalExitFacingNorthOrEast2:
+	jump_2_down
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route103_EventScript_RivalExitFacingWest::
+	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingWest1
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingWest2
+	waitmovement 0
+	removeobject LOCALID_RIVAL
+	releaseall
+	end
+    
+Route103_Movement_RivalExitFacingWest1:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+Route103_Movement_RivalExitFacingWest2:
+	jump_2_down
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route103_Text_RivalExplainHiddenTree::
+    .string "Hey {PLAYER}{KUN}!\p"
+    .string "I'm here to tell you about hidden.\n"
+    .string "trees. If you look to the tree right\l"
+    .string "next to me, you'll see it's different\l"
+    .string "than other trees.\p"
+    .string "If you interact with it, you might\n"
+    .string "get something to fall down from it.\p"
+    .string "Try it out and see what you get.$"
 
 Route103_EventScript_StartMayBattleTreecko::
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated

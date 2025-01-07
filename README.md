@@ -9,6 +9,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 ## Features
 
 ### pokeemerald Expansion features
+
     - Generation 4 Pokemon
     - Fairy Type
     - Physical/Special/Status Category Split.
@@ -22,7 +23,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Hidden Abilities.
     - Items from newer generations.
     - TMs are reusable.
-    
+
 ### New Features
 
     - The unused ability Cacophony has been re-added as an alternative to Punk Rocker.
@@ -150,83 +151,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (PENDING)
 
-    - Cut trees will no longer reappear when entering the map.
-    - Rock Smash rocks on Route 111 will no longer reappear when entering the map.
-        - Additional temporary rocks will be added to the route.
     - Certain Pokeballs in the world will give a higher amount of that item.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
-    - Certain Pokemon have type changes. To help decide if these changes are good or not, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLScKd_1CYb4mHNBIM4shUubUGBgedT6iaY6hVtMExTkFXhBtIA/viewform?usp=share_link) to give me your thoughts on them.
-        - Gen 1
-            - Charizard
-                - Fire/Dragon
-            - Arbok
-                - Poison/Dark
-            - Ninetales - Normal Form
-                - Fire/Fairy
-            - Psyduck
-                - Psychic/Water
-            - Golduck
-                - Psychic/Water
-            - Primeape
-                - Fighting/Dark
-            - Hypno
-                - Psychic/Dark
-            - Kangaskhan
-                - Normal/Fighting
-            - Gyarados
-                - Water/Dragon
-        - Gen 2
-            - Bellossom
-                - Grass/Fairy
-            - Sudowoodo
-                - Rock/Fighting
-            - Sunflora
-                - Grass/Fire
-            - Wobbuffet
-                - Psychic/Ghost
-            - Dunsparce
-                - Normal/Steel
-            - Ursaring
-                - Normal/Fighting
-        - Gen 3
-            - Sceptile
-                - Grass/Dragon
-            - Skitty
-                - Fairy
-            - Delcatty
-                - Fairy
-            - Manectric
-                - Electric/Dark
-            - Volbeat
-                - Bug/Fairy
-            - Illumise
-                - Bug/Fairy
-            - Swalot
-                - Poison/Fairy
-            - Torkoal
-                - Fire/Rock
-            - Glalie
-                - Ice/Rock
-            - Huntail
-                - Water/Dark
-            - Gorebyss
-                - Water/Psychic
-            - Luvdisc
-                - Water/Fairy
-        - Gen 4
-            - Luxray
-                - Electric/Dark
-            - Rampardos
-                - Rock/Dark
-            - Bonsly
-                - Rock/Normal
-            - Pachirisu
-                - Electric/Fairy
-            - Lopunny
-                - Normal/Fighting
-            - Carnivine
-                - Grass/Dark
-
     - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
         - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
             - Lefneko - Beta Hoppip line
@@ -389,6 +315,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Update wild Pokemon to use new regional dex.
     - TMs 51-120 need descriptions.
         - Use move descriptions as a base.
+    - Add new incense items to the world.
     - New incense items need graphics.
     - Give player other fossils and set up the conversion process.
     - Unobtainable Legendary Pokemon need locations.
@@ -435,10 +362,11 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Let NPC that gives Wynaut Egg also give out this egg.
     - Move Mr. Mime and Mime Jr. in the alphabetical Pokedex order.
     - Potentially add more post-game maps to vanilla locations.
-    
+
 ## Changes
 
 ### Changes from Emerald
+
     - Shiny odds have been increase by 2x.
     - Pokemon can get 255 EVs in each stat similar to STAT EXP in generation 1 and 2.
     - Pure Power now doubles Special Attack instead of Attack. To differentiate from Huge Power.
@@ -466,17 +394,88 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
         - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
         - Rayquaza will respawn like this naturally.
-        - The Eon Duo chosen as the roamer will respawn after looking at the TV again. (Will generate new stats each time.)
-        
+        - The Eon Duo chosen as the roamer will respawn after looking at the TV again.
+    - An incense seller can be found at the Slateport City Market.
+    - Cut trees will no longer reappear.
+    - Rock Smash rocks blocking an area will no longer appear.
+        - Temporary rocks will be added to allow Rock Smash encounters.
+
 ### Type Changes
-        - Ice resists Dragon
-        - Ice resists Ground
-        - Steel is weak to Electric
-        - Bug is neutral to Fairy
-        - Bug resists Psychic
-        - Bug is weak to Poison (Gen 1)
+
+    - Ice resists Dragon
+    - Ice resists Ground
+    - Steel is weak to Electric
+    - Bug is neutral to Fairy
+    - Bug resists Psychic
+    - Bug is weak to Poison (Gen 1)
+    - Certain Pokemon have type changes.
+        - Charizard
+            - Fire/Dragon
+        - Arbok
+            - Poison/Dark
+        - Ninetales - Normal Form
+            - Fire/Fairy
+        - Golduck
+            - Water/Psychic
+        - Primeape
+            - Fighting/Dark
+        - Hypno
+            - Psychic/Dark
+        - Kangaskhan
+            - Normal/Fighting
+        - Gyarados
+            - Water/Dragon
+        - Bellossom
+            - Grass/Fairy
+        - Sudowoodo
+            - Rock/Fighting
+        - Sunflora
+            - Grass/Fire
+        - Wobbuffet
+            - Psychic/Ghost
+        - Dunsparce
+            - Normal/Steel
+        - Ursaring
+            - Normal/Fighting
+        - Sceptile
+            - Grass/Dragon
+        - Skitty
+            - Normal/Fairy
+        - Delcatty
+            - Normal/Fairy
+        - Manectric
+            - Electric/Dark
+        - Volbeat
+            - Bug/Fairy
+        - Illumise
+            - Bug/Fairy
+        - Swalot
+            - Poison/Fairy
+        - Torkoal
+            - Fire/Rock
+        - Glalie
+            - Ice/Rock
+        - Huntail
+            - Water/Dark
+        - Gorebyss
+            - Water/Psychic
+        - Luvdisc
+            - Water/Fairy
+        - Luxray
+            - Electric/Dark
+        - Rampardos
+            - Rock/Dark
+        - Bonsly
+            - Rock/Normal
+        - Pachirisu
+            - Electric/Fairy
+        - Lopunny
+            - Normal/Fighting
+        - Carnivine
+            - Grass/Dark
 
 ### pokeemerald Expansion configuration changes
+
     - Critical hits do 2x damage instead of 1.5x.
     - Trainers give boosted EXP compared to wild Pokemon.
     - Pokemon receive split EXP instead of full EXP if multiple participated.
@@ -508,11 +507,15 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Health recovery items heal as they would pre-Gen 7.
     - Incense items work for breeding as they would normally instead of having no effect.
         - New items will be added for use with Beta Mon.
+
 ### Notable Bug Fixes
+
     - RNG will now be seeded like it should.
     - Pokedex entries will not show without the Pokedex.
     - Various map edits that involve incorrectly used tiles.
+
 ### Shiny Color Changes
+
     - PENDING
         - Abra
         - Articuno
@@ -550,9 +553,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Venonat
         - Wormadam (All forms)
         - Zapdos
-    
+
 Use x_MODIFY_x to find changes for future.
-    
+
 ### [Documentation on features can be found here for the pokeemerald Expansion](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
 ### [List of pokeemerald Expansion contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits)

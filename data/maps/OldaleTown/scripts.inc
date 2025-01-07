@@ -9,7 +9,7 @@ OldaleTown_MapScripts::
 OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_OLDALE_TOWN
-	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
+	call_if_unset FLAG_HIDDEN_TREE_EXPLANATION, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
@@ -194,6 +194,7 @@ OldaleTown_Movement_Unknown2:
 OldaleTown_EventScript_FootprintsMan::
 	lock
 	faceplayer
+    goto_if_unset FLAG_HIDDEN_TREE_EXPLANATION, OldaleTown_EventScript_GoLearnAboutHiddenTree
 	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_NotBlockingPath
 	msgbox OldaleTown_Text_DiscoveredFootprints, MSGBOX_DEFAULT
 	closemessage
@@ -201,18 +202,41 @@ OldaleTown_EventScript_FootprintsMan::
 	waitmovement 0
 	release
 	end
+    
+OldaleTown_EventScript_GoLearnAboutHiddenTree::
+	msgbox OldaleTown_Text_GoLearnAboutHiddenTree, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+    
+OldaleTown_Text_BlockedGoLearnAboutHiddenTree::
+    .string "Wait!\n"
+OldaleTown_Text_GoLearnAboutHiddenTree::
+    .string "Someone came by and told me to tell\l"
+    .string "you to go meet them at ROUTE 103.\p"
+    .string "I'm not sure why, but it might have\n"
+    .string "something to do with that weird thing\l"
+    .string "coming out of a tree or something.$"
 
 OldaleTown_EventScript_BlockedPath::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerStepBack
 	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_BackUp
 	waitmovement 0
+    goto_if_unset FLAG_HIDDEN_TREE_EXPLANATION, OldaleTown_EventScript_BlockedGoLearnAboutHiddenTree
 	msgbox OldaleTown_Text_WaitDontComeInHere, MSGBOX_DEFAULT
+OldaleTown_EventScript_BlockedReturn::
 	closemessage
 	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_ReturnToOriginalPosition
 	waitmovement 0
 	releaseall
 	end
+    
+OldaleTown_EventScript_BlockedGoLearnAboutHiddenTree::
+	msgbox OldaleTown_Text_BlockedGoLearnAboutHiddenTree, MSGBOX_DEFAULT
+    goto OldaleTown_EventScript_BlockedReturn
 
 OldaleTown_EventScript_NotBlockingPath::
 	msgbox OldaleTown_Text_FinishedSketchingFootprints, MSGBOX_DEFAULT
