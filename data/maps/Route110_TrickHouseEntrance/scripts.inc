@@ -427,7 +427,20 @@ Route110_TrickHouseEntrance_EventScript_GiveBlueTent::
 	return
 
 Route110_TrickHouseEntrance_EventScript_ReceivedTent::
+    setvar VAR_0x8001, 0
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL,  Route110_TrickHouseEntrance_EventScript_ForgotTM_1
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL,    Route110_TrickHouseEntrance_EventScript_ForgotTM_2
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL,  Route110_TrickHouseEntrance_EventScript_ForgotTM_3
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL,  Route110_TrickHouseEntrance_EventScript_ForgotTM_4
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL,    Route110_TrickHouseEntrance_EventScript_ForgotTM_5
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL,    Route110_TrickHouseEntrance_EventScript_ForgotTM_6
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL, Route110_TrickHouseEntrance_EventScript_ForgotTM_7
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL,  Route110_TrickHouseEntrance_EventScript_ForgotTM_8
+    call_if_unset FLAG_ITEM_TRICK_HOUSE_PUZZLE_8_BEAD_MAIL,    Route110_TrickHouseEntrance_EventScript_ForgotTM_9
+    compare VAR_0x8001, 0
+    call_if FALSE, Route110_TrickHouseEntrance_EventScript_ForgotTM
 	msgbox Route110_TrickHouseEntrance_Text_ThenFarewell, MSGBOX_DEFAULT
+    giveitem ITEM_TM_TRICK_ROOM
 	closemessage
 	applymovement LOCALID_TRICK_MASTER, Route110_TrickHousePuzzle5_Movement_MechadollShake
 	waitmovement 0
@@ -441,6 +454,64 @@ Route110_TrickHouseEntrance_EventScript_ReceivedTent::
 	setvar VAR_TRICK_HOUSE_ENTRANCE_STATE, 5
 	releaseall
 	end
+    
+Route110_TrickHouseEntrance_EventScript_ForgotTM_1::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_ENERGY_BALL
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_2::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_EMBARGO
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_3::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_RECYCLE
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_4::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_SHADOW_CLAW
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_5::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_GRASS_KNOT
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_6::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_GYRO_BALL
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_7::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_DAZZLING_GLEAM
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_8::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_SCALD
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM_9::
+    addvar VAR_0x8001, 1
+    additem ITEM_TM_ZAP_CANNON
+    setflag FLAG_ITEM_TRICK_HOUSE_PUZZLE_8_BEAD_MAIL
+    return
+
+Route110_TrickHouseEntrance_EventScript_ForgotTM::
+    msgbox Route110_TrickHouseEntrance_Text_ForgotTM
+    return
 
 Route110_TrickHouseEntrance_EventScript_Door::
 	lockall
@@ -804,11 +875,17 @@ Route110_TrickHouseEntrance_Text_MechadollWhichTent:
 	.string "WHICH DO YOU PREFER?$"
 
 Route110_TrickHouseEntrance_Text_ThenFarewell:
-	.string "THEN FAREWELL.$"
+	.string "THEN FAREWELL.\p"
+    .string "FIRST, TAKE.\p"
+    .string "GIFT FROM TRICK MASTER.$"
 
 Route110_TrickHouseEntrance_Text_PCFullAgain:
 	.string "YOUR PC STATUS: FULL AGAIN.\n"
 	.string "MEAN, YOU ARE.$"
+    
+Route110_TrickHouseEntrance_Text_ForgotTM::
+    .string "TMS, YOU FORGOT.\n"
+    .string "I GIVE YOU, TMS YOU MISSED.$"
 
 Route110_TrickHousePuzzle_Text_FoundAScroll:
 	.string "{PLAYER} found a scroll.$"
