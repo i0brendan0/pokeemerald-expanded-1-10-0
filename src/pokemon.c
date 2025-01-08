@@ -5528,16 +5528,23 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 
 static const u16 sUniversalMoves[] =
 {
+    MOVE_ATTRACT,
     MOVE_BIDE,
+    MOVE_CURSE,
+    MOVE_DOUBLE_TEAM,
     MOVE_FRUSTRATION,
+    MOVE_HEADBUTT,
+    MOVE_HELPING_HAND,
     MOVE_HIDDEN_POWER,
     MOVE_MIMIC,
     MOVE_NATURAL_GIFT,
+    MOVE_PROTECT,
     MOVE_RAGE,
     MOVE_RETURN,
     MOVE_SECRET_POWER,
     MOVE_SUBSTITUTE,
     MOVE_TERA_BLAST,
+    MOVE_TOXIC,
 };
 
 u8 CanLearnTeachableMove(u16 species, u16 move)
