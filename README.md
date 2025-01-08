@@ -80,9 +80,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         Moves with a 📘 have never been TMs.
     - TM  51 - Roost
     - TM  52 - Focus Blast
-    - TM  53 - Energy Ball
+    - TM  53 - Energy Ball - Found in Trick House - Puzzle 1 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  54 - False Swipe
-    - TM  55 - Brine
+    - TM  55 - Brine - Found in Abandoned Ship 1F - Northwest Room
     - TM  56 - Fling
     - TM  57 - Charge Beam
     - TM  58 - Endure
@@ -90,18 +90,18 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM  60 - Drain Punch
     - TM  61 - Will-O-Wisp
     - TM  62 - Silver Wind
-    - TM  63 - Embargo
-    - TM  64 - Explosion
-    - TM  65 - Shadow Claw
+    - TM  63 - Embargo - Found in Trick House - Puzzle 2 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  64 - Explosion - Given by tutor in Pacifidlog Town.=
+    - TM  65 - Shadow Claw - Found in Trick House - Puzzle 3 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  66 - Payback
-    - TM  67 - Recycle
+    - TM  67 - Recycle - Found in Trick House - Puzzle 2 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  68 - Giga Impact
     - TM  69 - Rock Polish
-    - TM  70 - Dazzling Gleam 📕 (Flash is an HM)
+    - TM  70 - Dazzling Gleam 📕 (Flash is an HM) - Found in Trick House - Puzzle 6 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  71 - Stone Edge
     - TM  72 - Avalanche
     - TM  73 - Thunder Wave
-    - TM  74 - Gyro Ball
+    - TM  74 - Gyro Ball - Found in Trick House - Puzzle 4 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  75 - Swords Dance
     - TM  76 - Stealth Rock
     - TM  77 - Psych Up
@@ -109,18 +109,18 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM  79 - Dark Pulse
     - TM  80 - Rock Slide
     - TM  81 - X-Scissor
-    - TM  82 - Sleep Talk
+    - TM  82 - Sleep Talk - Given by tutor in Fortree City.=
     - TM  83 - Natural Gift
     - TM  84 - Poison Jab
     - TM  85 - Dream Eater
-    - TM  86 - Grass Knot
-    - TM  87 - Swagger
+    - TM  86 - Grass Knot - Found in Trick House - Puzzle 3 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  87 - Swagger - Given by tutor in Slateport City.=
     - TM  88 - Pluck
     - TM  89 - U-Turn
-    - TM  90 - Substitute
+    - TM  90 - Substitute - Given by tutor in Lilycove City.=
     - TM  91 - Flash Cannon
-    - TM  92 - Trick Room
-    - TM  93 - Scald 📕
+    - TM  92 - Trick Room - Given by Trick Master before he leaves.
+    - TM  93 - Scald 📕 - Found in Trick House - Puzzle 7 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM  94 - Play Rough 📕
     - TM  95 - Bug Buzz 📕
     - TM  96 - Volt Switch 📕
@@ -129,20 +129,20 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM  99 - Fairy Wind 📘
     - TM 100 - Sheer Cold 📘
     - TM 101 - Teleport 📗
-    - TM 102 - Dynamic Punch 📗
-    - TM 103 - Zap Cannon 📗
+    - TM 102 - Dynamic Punch 📗 - Given by tutor in Mossdeep City.=
+    - TM 103 - Zap Cannon 📗 - Found in Trick House - Puzzle 8 (Can be retrieved from Trick Master after finishing all 8 puzzles)
     - TM 104 - Curse 📗
     - TM 105 - Pay Day 📗
     - TM 106 - Headbutt 📗
     - TM 107 - Thunder Fang 📕
     - TM 108 - Ice Fang 📕
     - TM 109 - Fire Fang 📕
-    - TM 110 - Double-Edge 📗
-    - TM 111 - Fury Cutter 📗
-    - TM 112 - Metronome 📗
-    - TM 113 - Mimic 📗
-    - TM 114 - Rollout 📗
-    - TM 115 - Weather Ball 📕
+    - TM 110 - Double-Edge 📗 - Given by tutor in Sootopolis City.=
+    - TM 111 - Fury Cutter 📗 - Given by tutor in Verdanturf Town.=
+    - TM 112 - Metronome 📗 - Given by tutor in Fallarbor Town.=
+    - TM 113 - Mimic 📗 - Given by tutor in Lavaridge Town.=
+    - TM 114 - Rollout 📗 - Given by tutor in Mauville City.=
+    - TM 115 - Weather Ball 📕 - Given by someone at the Weather Institute.=
     - TM 116 - Power-Up Punch 📕
     - TM 117 - Wild Charge 📕
     - TM 118 - Helping Hand 📕
@@ -151,7 +151,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (PENDING)
 
-    - Certain Pokeballs in the world will give a higher amount of that item.
     - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
     - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
         - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
@@ -358,10 +357,13 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Enter Hall of Fame to receive the rest.
     - Implement new swarms along with held items.
     - Modify tutor moves to account for new TMs and potentially add more.
-    - Add Odd Egg event into the game.
-        - Let NPC that gives Wynaut Egg also give out this egg.
-    - Move Mr. Mime and Mime Jr. in the alphabetical Pokedex order.
     - Potentially add more post-game maps to vanilla locations.
+    - Modify some Pokeballs to give extra items. Same for scripted items.
+    - Add evo item shop.
+    - Make sure to make repeatable TMs only given out once.
+        - Note: Quiz Lady in Lilycove. Replace her TM with something else.
+    - Remove Mail from rewards.
+        - Note: Quiz Lady in Lilycove
 
 ## Changes
 
@@ -399,6 +401,22 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Cut trees will no longer reappear.
     - Rock Smash rocks blocking an area will no longer appear.
         - Temporary rocks will be added to allow Rock Smash encounters.
+    - Pokeballs may give out more than 1 item.
+        - Potion 5
+        - Super Potion 3
+        - Ether/Elixer 2
+        - Repel 5
+        - Super Repel 3
+        - Battle Items 5
+        - Pokeball 5
+        - Great Ball 3
+        - Specialty Balls 2
+        - Bitter Recovery Items 2 (Not Revival Herb)
+        - Revive 2
+        - Full Heal 2
+        - Status Healing Items 3
+        - Shards 3
+        - Escape Rope 3
 
 ### Type Changes
 
@@ -513,6 +531,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - RNG will now be seeded like it should.
     - Pokedex entries will not show without the Pokedex.
     - Various map edits that involve incorrectly used tiles.
+    - New swarms will generate correctly. (Hopefully)
 
 ### Shiny Color Changes
 
