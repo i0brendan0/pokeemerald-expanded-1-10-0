@@ -134,7 +134,7 @@ Route120_EventScript_GiveIapapaBerry::
 	end
 
 Route120_EventScript_GiveBerry::
-	giveitem VAR_0x8004
+	giveitem VAR_0x8004, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_ROUTE_120_RECEIVED_BERRY
 	msgbox Route120_Text_BerryIsRareRaiseItWithCare, MSGBOX_DEFAULT

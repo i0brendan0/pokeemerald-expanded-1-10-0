@@ -361,9 +361,17 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Modify some Pokeballs to give extra items. Same for scripted items.
     - Add evo item shop.
     - Make sure to make repeatable TMs only given out once.
-        - Note: Quiz Lady in Lilycove. Replace her TM with something else.
+        - Quiz Lady in Lilycove. Replace her TM with something else.
+        - Friendship person in Pacifidlog.
     - Remove Mail from rewards.
-        - Note: Quiz Lady in Lilycove
+        - Quiz Lady in Lilycove
+        - Trades
+    - Add Oval Charm and Shiny Charm.
+    - Add rematch reward items.
+    - Give both bikes.
+    - Modify Pokemart shop items.
+    - Add more trades.
+    - Add recurring items.
 
 ## Changes
 
@@ -402,21 +410,11 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Rock Smash rocks blocking an area will no longer appear.
         - Temporary rocks will be added to allow Rock Smash encounters.
     - Pokeballs may give out more than 1 item.
-        - Potion 5
-        - Super Potion 3
-        - Ether/Elixer 2
-        - Repel 5
-        - Super Repel 3
-        - Battle Items 5
-        - Pokeball 5
-        - Great Ball 3
-        - Specialty Balls 2
-        - Bitter Recovery Items 2 (Not Revival Herb)
-        - Revive 2
-        - Full Heal 2
-        - Status Healing Items 3
-        - Shards 3
-        - Escape Rope 3
+        - Potions, Repels, Pokeballs, Battle Boost Items - 5
+        - Super Potions, Super Repels, Great Balls, Shards, Escape Ropes, Single Status Healing Items - 3
+        - Ethers, Elixirs, Specialty Balls, Revives, Full Heals, Bitter Recovery Items (not including Revival Herb) - 2
+    - Mail found in item balls now have TMs.
+        - TMs found in the Trick House will be given to the player after finishing the last puzzle if missed.
 
 ### Type Changes
 
