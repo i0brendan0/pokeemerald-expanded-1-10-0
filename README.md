@@ -307,8 +307,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### TODO LIST
 
-    - Add explanation for hidden trees and the Pokemon and items to get.
-        - Route 103 after getting Pokedex.
     - Finish new maps.
     - Expand Scorched Slab.
     - Update wild Pokemon to use new regional dex.
@@ -358,8 +356,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Implement new swarms along with held items.
     - Modify tutor moves to account for new TMs and potentially add more.
     - Potentially add more post-game maps to vanilla locations.
-    - Modify some Pokeballs to give extra items. Same for scripted items.
-    - Add evo item shop.
     - Make sure to make repeatable TMs only given out once.
         - Quiz Lady in Lilycove. Replace her TM with something else.
         - Friendship person in Pacifidlog.
@@ -372,6 +368,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Modify Pokemart shop items.
     - Add more trades.
     - Add recurring items.
+    - Update Pokenav small maps.
 
 ## Changes
 
