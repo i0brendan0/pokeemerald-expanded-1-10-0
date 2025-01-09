@@ -240,6 +240,7 @@
 #define MAPSEC_ROUTE_146                    0xE3
 #define MAPSEC_ROUTE_147                    0xE4
 #define MAPSEC_NEW_ISLAND_1                 0xE5
+#define MAPSEC_MOONLIT_CAVE                 0xF3 // placed here for now
 // North of Southern Island
 #define MAPSEC_ROUTE_148                    0xE6
 #define MAPSEC_ROUTE_149                    0xE7
@@ -254,7 +255,7 @@
 #define MAPSEC_NEW_FOREST                   0xEE
 // Special
 #define MAPSEC_MOON                         0xF0
-#define MAPSEC_NONE                         0xF3
+#define MAPSEC_NONE                         0xF4
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

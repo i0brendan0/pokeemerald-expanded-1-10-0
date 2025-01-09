@@ -4555,11 +4555,51 @@
       "id": "LAYOUT_ROUTE147",
       "name": "Route147_Layout",
       "width": 22,
-      "height": 40,
+      "height": 50,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route147/border.bin",
       "blockdata_filepath": "data/layouts/Route147/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOONLIT_ISLAND_SOUTH_EAST",
+      "name": "MoonlitIsland_SouthEast_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/MoonlitIsland_SouthEast/border.bin",
+      "blockdata_filepath": "data/layouts/MoonlitIsland_SouthEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOONLIT_ISLAND_SOUTH_WEST",
+      "name": "MoonlitIsland_SouthWest_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/MoonlitIsland_SouthWest/border.bin",
+      "blockdata_filepath": "data/layouts/MoonlitIsland_SouthWest/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOONLIT_ISLAND_NORTH_EAST",
+      "name": "MoonlitIsland_NorthEast_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/MoonlitIsland_NorthEast/border.bin",
+      "blockdata_filepath": "data/layouts/MoonlitIsland_NorthEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOONLIT_ISLAND_NORTH_WEST",
+      "name": "MoonlitIsland_NorthWest_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/MoonlitIsland_NorthWest/border.bin",
+      "blockdata_filepath": "data/layouts/MoonlitIsland_NorthWest/map.bin"
     }
   ]
 }

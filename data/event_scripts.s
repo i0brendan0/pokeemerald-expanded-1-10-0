@@ -1187,3 +1187,11 @@ Common_EventScript_OddEgg::
 	.include "data/maps/Route146/scripts.inc"
 
 	.include "data/maps/Route147/scripts.inc"
+
+	.include "data/maps/MoonlitIsland_SouthEast/scripts.inc"
+
+	.include "data/maps/MoonlitIsland_SouthWest/scripts.inc"
+
+	.include "data/maps/MoonlitIsland_NorthEast/scripts.inc"
+
+	.include "data/maps/MoonlitIsland_NorthWest/scripts.inc"

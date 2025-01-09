@@ -22,6 +22,16 @@
       "map": "MAP_ROUTE133",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_MOONLIT_ISLAND_SOUTH_EAST",
+      "offset": 58,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MOONLIT_ISLAND_SOUTH_WEST",
+      "offset": 28,
+      "direction": "up"
     }
   ],
   "object_events": [

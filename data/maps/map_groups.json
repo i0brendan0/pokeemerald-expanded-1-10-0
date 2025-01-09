@@ -107,7 +107,11 @@
     "Route144",
     "Route145",
     "Route146",
-    "Route147"
+    "Route147",
+    "MoonlitIsland_SouthEast",
+    "MoonlitIsland_SouthWest",
+    "MoonlitIsland_NorthEast",
+    "MoonlitIsland_NorthWest"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
