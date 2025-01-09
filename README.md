@@ -80,7 +80,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         Moves with a 📘 have never been TMs.
     - TM  51 - Roost
     - TM  52 - Focus Blast
-    - TM  53 - Energy Ball - Found in Trick House - Puzzle 1 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  53 - Energy Ball - Found in Trick House - Puzzle 1
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  54 - False Swipe
     - TM  55 - Brine - Found in Abandoned Ship 1F - Northwest Room
     - TM  56 - Fling
@@ -90,59 +91,67 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM  60 - Drain Punch
     - TM  61 - Will-O-Wisp
     - TM  62 - Silver Wind
-    - TM  63 - Embargo - Found in Trick House - Puzzle 2 (Can be retrieved from Trick Master after finishing all 8 puzzles)
-    - TM  64 - Explosion - Given by tutor in Pacifidlog Town.=
-    - TM  65 - Shadow Claw - Found in Trick House - Puzzle 3 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  63 - Embargo - Found in Trick House - Puzzle 2
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
+    - TM  64 - Explosion - Given by tutor in Pacifidlog Town.
+    - TM  65 - Shadow Claw - Found in Trick House - Puzzle 3
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  66 - Payback
-    - TM  67 - Recycle - Found in Trick House - Puzzle 2 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  67 - Recycle - Found in Trick House - Puzzle 2
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  68 - Giga Impact
     - TM  69 - Rock Polish
-    - TM  70 - Dazzling Gleam 📕 (Flash is an HM) - Found in Trick House - Puzzle 6 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  70 - Dazzling Gleam 📕 (Flash is an HM) - Found in Trick House - Puzzle 6
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  71 - Stone Edge
     - TM  72 - Avalanche
-    - TM  73 - Thunder Wave
-    - TM  74 - Gyro Ball - Found in Trick House - Puzzle 4 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  73 - Thunder Wave - Sold by TM seller in Slateport.
+    - TM  74 - Gyro Ball - Found in Trick House - Puzzle 4
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  75 - Swords Dance
     - TM  76 - Stealth Rock
     - TM  77 - Psych Up
-    - TM  78 - Captivate
+    - TM  78 - Captivate - Sold by TM seller in Slateport.
     - TM  79 - Dark Pulse
     - TM  80 - Rock Slide
     - TM  81 - X-Scissor
-    - TM  82 - Sleep Talk - Given by tutor in Fortree City.=
+    - TM  82 - Sleep Talk - Given by tutor in Fortree City.
     - TM  83 - Natural Gift
     - TM  84 - Poison Jab
     - TM  85 - Dream Eater
-    - TM  86 - Grass Knot - Found in Trick House - Puzzle 3 (Can be retrieved from Trick Master after finishing all 8 puzzles)
-    - TM  87 - Swagger - Given by tutor in Slateport City.=
+    - TM  86 - Grass Knot - Found in Trick House - Puzzle 3
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
+    - TM  87 - Swagger - Given by tutor in Slateport City.
     - TM  88 - Pluck
     - TM  89 - U-Turn
-    - TM  90 - Substitute - Given by tutor in Lilycove City.=
+    - TM  90 - Substitute - Given by tutor in Lilycove City.
     - TM  91 - Flash Cannon
     - TM  92 - Trick Room - Given by Trick Master before he leaves.
-    - TM  93 - Scald 📕 - Found in Trick House - Puzzle 7 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM  93 - Scald 📕 - Found in Trick House - Puzzle 7
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  94 - Play Rough 📕
     - TM  95 - Bug Buzz 📕
     - TM  96 - Volt Switch 📕
     - TM  97 - Baby Doll Eyes 📘
-    - TM  98 - Tri Attack 📗
+    - TM  98 - Tri Attack 📗 - Sold by TM seller in Slateport.
     - TM  99 - Fairy Wind 📘
     - TM 100 - Sheer Cold 📘
     - TM 101 - Teleport 📗
-    - TM 102 - Dynamic Punch 📗 - Given by tutor in Mossdeep City.=
-    - TM 103 - Zap Cannon 📗 - Found in Trick House - Puzzle 8 (Can be retrieved from Trick Master after finishing all 8 puzzles)
+    - TM 102 - Dynamic Punch 📗 - Given by tutor in Mossdeep City.
+    - TM 103 - Zap Cannon 📗 - Found in Trick House - Puzzle 8
+        - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM 104 - Curse 📗
     - TM 105 - Pay Day 📗
     - TM 106 - Headbutt 📗
     - TM 107 - Thunder Fang 📕
     - TM 108 - Ice Fang 📕
     - TM 109 - Fire Fang 📕
-    - TM 110 - Double-Edge 📗 - Given by tutor in Sootopolis City.=
-    - TM 111 - Fury Cutter 📗 - Given by tutor in Verdanturf Town.=
-    - TM 112 - Metronome 📗 - Given by tutor in Fallarbor Town.=
-    - TM 113 - Mimic 📗 - Given by tutor in Lavaridge Town.=
-    - TM 114 - Rollout 📗 - Given by tutor in Mauville City.=
-    - TM 115 - Weather Ball 📕 - Given by someone at the Weather Institute.=
+    - TM 110 - Double-Edge 📗 - Given by tutor in Sootopolis City.
+    - TM 111 - Fury Cutter 📗 - Given by tutor in Verdanturf Town.
+    - TM 112 - Metronome 📗 - Given by tutor in Fallarbor Town.
+    - TM 113 - Mimic 📗 - Given by tutor in Lavaridge Town.
+    - TM 114 - Rollout 📗 - Given by tutor in Mauville City.
+    - TM 115 - Weather Ball 📕 - Given by someone at the Weather Institute.
     - TM 116 - Power-Up Punch 📕
     - TM 117 - Wild Charge 📕
     - TM 118 - Helping Hand 📕
@@ -369,6 +378,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Add more trades.
     - Add recurring items.
     - Update Pokenav small maps.
+    - Modify TM prices
 
 ## Changes
 

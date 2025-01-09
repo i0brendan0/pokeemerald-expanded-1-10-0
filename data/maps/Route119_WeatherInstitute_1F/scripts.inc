@@ -19,9 +19,17 @@ Route119_WeatherInstitute_1F_EventScript_LittleBoy::
 	special GetPlayerBigGuyGirlString
 	goto_if_eq VAR_WEATHER_INSTITUTE_STATE, 0, Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere
 	msgbox Route119_WeatherInstitute_1F_Text_WowYoureStrong, MSGBOX_DEFAULT
+    goto_if_unset FLAG_RECEIVED_TM_WEATHER_BALL, Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamGiveWeatherBallTM
 	release
 	end
 
+Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamGiveWeatherBallTM::
+    msgbox Route119_WeatherInstitute_1F_Text_FoundTM, MSGBOX_DEFAULT
+    giveitem ITEM_TM_WEATHER_BALL
+    setflag FLAG_RECEIVED_TM_WEATHER_BALL
+    release
+    end
+    
 Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere::
 	msgbox Route119_WeatherInstitute_1F_Text_EveryoneWentUpstairs, MSGBOX_DEFAULT
 	release
@@ -110,6 +118,11 @@ Route119_WeatherInstitute_1F_Text_WowYoureStrong:
 	.string "Wow, you're really strong!\p"
 	.string "I wish I could be a POKéMON TRAINER\n"
 	.string "like you!$"
+
+Route119_WeatherInstitute_1F_Text_FoundTM:
+    .string "While I was hiding, I found this TM.\n"
+    .string "I think it might be useful\l"
+    .string "so here, take it.$"
 
 Route119_WeatherInstitute_1F_Text_ProfStudyingRain:
 	.string "The PROFESSOR loves rain.\n"

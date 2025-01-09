@@ -561,7 +561,9 @@ SlateportCity_EventScript_PowerTMClerk::
 	.align 2
 SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM_HIDDEN_POWER
-	.2byte ITEM_TM_SECRET_POWER
+    .2byte ITEM_TM_THUNDER_WAVE
+    .2byte ITEM_TM_CAPTIVATE
+    .2byte ITEM_TM_TRI_ATTACK
 	pokemartlistend
 
 SlateportCity_EventScript_IncenseClerk::
