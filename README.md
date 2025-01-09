@@ -66,11 +66,13 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Talk to the egg lady in Lavaridge Town after entering the Hall of Fame.
             - You'll get a new egg each time you beat the Champion.
     - Event Items that unlock areas for Legendary Pokemon to be caught can now be obtained from the second floor of a Pokemon Center.
-        - Some will be restricted on when they can be obtained.
+        - Some will be restricted on when they can be obtained. (TODO)
     - Upon entering the Hall of Fame for the first time, certain locations may have their wild Pokemon change.
         - Will mostly allow non-native Pokemon to be available without jamming them into post-game locations.
         - (Only Route 1 as of now.)
     - After giving back the Meteorite to Professor Cozmo, he'll give it back to you if you talk to him with a Deoxys in your party.
+    - After the player picks up the other fossil at the Desert Underpass, a random fossil will appear in the same spot daily.
+        - The scientist who resurrects fossils will now accept all non-Generation 3 fossils.
 
 ### New TMs - (51 through 120)
 
@@ -158,9 +160,9 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM 119 - Soft-Boiled 📗
     - TM 120 - Dragon Rage 📗
 
-### New Features (PENDING)
+### New Features (UNFINISHED)
 
-    - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type. 
+    - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type.
     - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
         - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
             - Lefneko - Beta Hoppip line
@@ -323,7 +325,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Use move descriptions as a base.
     - Add new incense items to the world.
     - New incense items need graphics.
-    - Give player other fossils and set up the conversion process.
     - Unobtainable Legendary Pokemon need locations.
         - Reminder to make them respawn if not caught.
         - They or their location will only show up after the HoF.
@@ -376,9 +377,11 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Give both bikes.
     - Modify Pokemart shop items.
     - Add more trades.
-    - Add recurring items.
+    - Add recurring items. (Both regular and hidden)
     - Update Pokenav small maps.
     - Modify TM prices
+    - Remove a lot of Generation configurations.
+    - EV training items give EVs when walking.
 
 ## Changes
 
