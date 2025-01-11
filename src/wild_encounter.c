@@ -432,6 +432,9 @@ static void CreateWildMon(u16 species, u8 level)
     bool32 checkCuteCharm = TRUE;
 
     ZeroEnemyPartyMons();
+    
+    if ((species == SPECIES_WOOPER) && FlagGet(FLAG_SYS_GAME_CLEAR) && !(Random() % 100))
+        species = SPECIES_WOOBER;
 
     switch (gSpeciesInfo[species].genderRatio)
     {
