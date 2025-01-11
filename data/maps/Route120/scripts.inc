@@ -289,6 +289,7 @@ Route120_EventScript_RegisterRobert::
 Route120_EventScript_RematchRobert::
 	trainerbattle_rematch TRAINER_ROBERT_1, Route120_Text_RobertRematchIntro, Route120_Text_RobertRematchDefeat
 	msgbox Route120_Text_RobertPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_FULL_RESTORE, 20
 	end
 
 Route120_EventScript_Lorenzo::
@@ -320,6 +321,7 @@ Route120_EventScript_RegisterJeffrey::
 Route120_EventScript_RematchJeffrey::
 	trainerbattle_rematch TRAINER_JEFFREY_1, Route120_Text_JeffreyRematchIntro, Route120_Text_JeffreyRematchDefeat
 	msgbox Route120_Text_JeffreyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_NET_BALL, 20
 	end
 
 Route120_EventScript_Jennifer::

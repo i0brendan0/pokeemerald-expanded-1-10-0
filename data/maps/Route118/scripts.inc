@@ -197,6 +197,7 @@ Route118_EventScript_RegisterRose::
 Route118_EventScript_RematchRose::
 	trainerbattle_rematch TRAINER_ROSE_1, Route118_Text_RoseRematchIntro, Route118_Text_RoseRematchDefeat
 	msgbox Route118_Text_RosePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_LEAF_STONE, 5
 	end
 
 Route118_EventScript_Barny::
@@ -228,6 +229,7 @@ Route118_EventScript_RegisterDalton::
 Route118_EventScript_RematchDalton::
 	trainerbattle_rematch TRAINER_DALTON_1, Route118_Text_DaltonRematchIntro, Route118_Text_DaltonRematchDefeat
 	msgbox Route118_Text_DaltonPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_THUNDER_STONE, 5
 	end
 
 Route118_EventScript_Perry::

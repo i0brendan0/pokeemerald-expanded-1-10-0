@@ -895,6 +895,7 @@ Route104_EventScript_RegisterHaley::
 Route104_EventScript_RematchHaley::
 	trainerbattle_rematch TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
 	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route104_EventScript_Winston::
@@ -936,6 +937,7 @@ Route104_EventScript_RegisterWinston::
 Route104_EventScript_RematchWinston::
 	trainerbattle_rematch TRAINER_WINSTON_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
 	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_LUXURY_BALL, 20
 	end
 
 Route104_EventScript_Cindy::
@@ -977,6 +979,7 @@ Route104_EventScript_RegisterCindy::
 Route104_EventScript_RematchCindy::
 	trainerbattle_rematch TRAINER_CINDY_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
 	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_LUXURY_BALL, 20
 	end
 
 Route104_EventScript_Gina::

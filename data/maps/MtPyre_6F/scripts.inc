@@ -20,6 +20,7 @@ MtPyre_6F_EventScript_RegisterValerie::
 MtPyre_6F_EventScript_RematchValerie::
 	trainerbattle_rematch TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieRematchIntro, MtPyre_6F_Text_ValerieRematchDefeat
 	msgbox MtPyre_6F_Text_ValeriePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DUSK_STONE, 5
 	end
 
 MtPyre_6F_EventScript_Cedric::

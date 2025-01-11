@@ -413,6 +413,7 @@ Route109_EventScript_RickyRegisterMatchCallAfterBattle::
 Route109_EventScript_RickyRematch::
 	trainerbattle_rematch TRAINER_RICKY_1, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
 	msgbox Route109_Text_RickyRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_STARDUST, 20
 	end
 
 Route109_EventScript_Lola::
@@ -434,6 +435,7 @@ Route109_EventScript_LolaRegisterMatchCallAfterBattle::
 Route109_EventScript_LolaRematch::
 	trainerbattle_rematch TRAINER_LOLA_1, Route109_Text_LolaRematchIntro, Route109_Text_LolaRematchDefeated
 	msgbox Route109_Text_LolaRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_STARDUST, 20
 	end
 
 Route109_EventScript_Austina::

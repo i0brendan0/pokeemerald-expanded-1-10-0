@@ -197,6 +197,7 @@ Route128_EventScript_RegisterIsaiah::
 Route128_EventScript_RematchIsaiah::
 	trainerbattle_rematch TRAINER_ISAIAH_1, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
 	msgbox Route128_Text_IsaiahPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ZINC, 15
 	end
 
 Route128_EventScript_Katelyn::
@@ -218,6 +219,7 @@ Route128_EventScript_RegisterKatelyn::
 Route128_EventScript_RematchKatelyn::
 	trainerbattle_rematch TRAINER_KATELYN_1, Route128_Text_KatelynRematchIntro, Route128_Text_KatelynRematchDefeat
 	msgbox Route128_Text_KatelynPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DIVE_BALL, 20
 	end
 
 Route128_EventScript_Alexa::

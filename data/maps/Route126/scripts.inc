@@ -60,5 +60,6 @@ Route126_EventScript_RegisterPablo::
 Route126_EventScript_RematchPablo::
 	trainerbattle_rematch TRAINER_PABLO_1, Route126_Text_PabloRematchIntro, Route126_Text_PabloRematchDefeat
 	msgbox Route126_Text_PabloPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 

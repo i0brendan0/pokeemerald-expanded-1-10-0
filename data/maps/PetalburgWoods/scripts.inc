@@ -316,6 +316,7 @@ PetalburgWoods_EventScript_RegisterJames2::
 PetalburgWoods_EventScript_JamesRematch::
 	trainerbattle_rematch TRAINER_JAMES_1, PetalburgWoods_Text_MyPokemonHaveGrown, PetalburgWoods_Text_CantBePopularIfLose
 	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_NET_BALL, 20
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:

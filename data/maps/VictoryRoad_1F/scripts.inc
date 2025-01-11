@@ -93,6 +93,7 @@ VictoryRoad_1F_EventScript_ExitWally::
 VictoryRoad_1F_EventScript_RematchWally::
 	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_BIG_NUGGET, 10
 	end
 
 VictoryRoad_1F_EventScript_Edgar::

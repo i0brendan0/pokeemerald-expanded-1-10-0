@@ -194,6 +194,7 @@ Route110_EventScript_EdwinRegisterMatchCallAfterBattle::
 Route110_EventScript_EdwinRematch::
 	trainerbattle_rematch TRAINER_EDWIN_1, Route110_Text_EdwinRematchIntro, Route110_Text_EdwinRematchDefeated
 	msgbox Route110_Text_EdwinRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_REPEAT_BALL, 20
 	end
 
 Route110_EventScript_Dale::
@@ -230,6 +231,7 @@ Route110_EventScript_BenjaminRegisterMatchCallAfterBattle::
 Route110_EventScript_BenjaminRematch::
 	trainerbattle_rematch TRAINER_BENJAMIN_1, Route110_Text_BenjaminRematchIntro, Route110_Text_BenjaminRematchDefeated
 	msgbox Route110_Text_BenjaminRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_LUXURY_BALL, 20
 	end
 
 Route110_EventScript_Jasmine::
@@ -256,6 +258,7 @@ Route110_EventScript_AbigailRegisterMatchCallAfterBattle::
 Route110_EventScript_AbigailRematch::
 	trainerbattle_rematch TRAINER_ABIGAIL_1, Route110_Text_AbigailRematchIntro, Route110_Text_AbigailRematchDefeated
 	msgbox Route110_Text_AbigailRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route110_EventScript_Isabel::
@@ -277,6 +280,7 @@ Route110_EventScript_IsabelRegisterMatchCallAfterBattle::
 Route110_EventScript_IsabelRematch::
 	trainerbattle_rematch TRAINER_ISABEL_1, Route110_Text_IsabelRematchIntro, Route110_Text_IsabelRematchDefeated
 	msgbox Route110_Text_IsabelRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_HEAL_BALL, 20
 	end
 
 Route110_EventScript_Timmy::

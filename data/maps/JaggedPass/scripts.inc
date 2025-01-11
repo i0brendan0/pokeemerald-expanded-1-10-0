@@ -117,6 +117,7 @@ JaggedPass_EventScript_RegisterDiana::
 JaggedPass_EventScript_DianaRematch::
 	trainerbattle_rematch TRAINER_DIANA_1, JaggedPass_Text_DianaRematchIntro, JaggedPass_Text_DianaRematchDefeat
 	msgbox JaggedPass_Text_DianaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_TINY_MUSHROOM, 20
 	end
 
 JaggedPass_EventScript_Ethan::
@@ -137,6 +138,7 @@ JaggedPass_EventScript_RegisterEthan::
 JaggedPass_EventScript_EthanRematch::
 	trainerbattle_rematch TRAINER_ETHAN_1, JaggedPass_Text_EthanRematchIntro, JaggedPass_Text_EthanRematchDefeat
 	msgbox JaggedPass_Text_EthanPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_TINY_MUSHROOM, 20
 	end
 
 JaggedPass_EventScript_Julio::

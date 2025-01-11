@@ -87,6 +87,7 @@ Route113_EventScript_RegisterMadeline::
 Route113_EventScript_RematchMadeline::
 	trainerbattle_rematch TRAINER_MADELINE_1, Route113_Text_MadelineRematchIntro, Route113_Text_MadelineRematchDefeat
 	msgbox Route113_Text_MadelinePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_MAX_REPEL, 20
 	end
 
 Route113_EventScript_Lao::
@@ -108,6 +109,7 @@ Route113_EventScript_RegisterLao::
 Route113_EventScript_RematchLao::
 	trainerbattle_rematch TRAINER_LAO_1, Route113_Text_LaoRematchIntro, Route113_Text_LaoRematchDefeat
 	msgbox Route113_Text_LaoPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_REVIVE, 20
 	end
 
 Route113_EventScript_Lung::

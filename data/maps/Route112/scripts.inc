@@ -87,6 +87,7 @@ Route112_EventScript_RegisterTrent::
 Route112_EventScript_RematchTrent::
 	trainerbattle_rematch TRAINER_TRENT_1, Route112_Text_TrentRematchIntro, Route112_Text_TrentRematchDefeat
 	msgbox Route112_Text_TrentRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_BIG_MUSHROOM, 15
 	end
 
 Route112_EventScript_Larry::

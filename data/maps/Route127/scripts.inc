@@ -74,5 +74,6 @@ Route127_EventScript_RegisterKoji::
 Route127_EventScript_RematchKoji::
 	trainerbattle_rematch TRAINER_KOJI_1, Route127_Text_KojiRematchIntro, Route127_Text_KojiRematchDefeat
 	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_SHINY_STONE, 5
 	end
 

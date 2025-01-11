@@ -29,6 +29,7 @@ AbandonedShip_Rooms_1F_EventScript_RegisterThalia::
 AbandonedShip_Rooms_1F_EventScript_ThaliaRematch::
 	trainerbattle_rematch TRAINER_THALIA_1, AbandonedShip_Rooms_1F_Text_ThaliaRematchIntro, AbandonedShip_Rooms_1F_Text_ThaliaRematchDefeat
 	msgbox AbandonedShip_Rooms_1F_Text_ThaliaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DESTINY_KNOT, 10
 	end
 
 AbandonedShip_Rooms_1F_Text_TakingALookAround:

@@ -74,6 +74,7 @@ Route105_EventScript_AndresRegisterMatchCallAfterBattle::
 Route105_EventScript_AndresRematch::
 	trainerbattle_rematch TRAINER_ANDRES_1, Route105_Text_AndresRematchIntro, Route105_Text_AndresRematchDefeated
 	msgbox Route105_Text_AndresRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_STARDUST, 20
 	end
 
 Route104_Text_DadPokenavCall:

@@ -278,6 +278,7 @@ Route116_EventScript_RegisterJerry::
 Route116_EventScript_RematchJerry::
 	trainerbattle_rematch TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
 	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_NEST_BALL, 20
 	end
 
 Route116_EventScript_Clark::
@@ -329,6 +330,7 @@ Route116_EventScript_RegisterKaren::
 Route116_EventScript_RematchKaren::
 	trainerbattle_rematch TRAINER_KAREN_1, Route116_Text_KarenRematchIntro, Route116_Text_KarenRematchDefeat
 	msgbox Route116_Text_KarenPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_NEST_BALL, 20
 	end
 
 Route116_EventScript_Sarah::

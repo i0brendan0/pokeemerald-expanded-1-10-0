@@ -118,6 +118,7 @@ Route114_EventScript_RegisterSteve::
 Route114_EventScript_RematchSteve::
 	trainerbattle_rematch TRAINER_STEVE_1, Route114_Text_SteveRematchIntro, Route114_Text_SteveRematchDefeat
 	msgbox Route114_Text_StevePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_QUICK_BALL, 20
 	end
 
 Route114_EventScript_Bernie::
@@ -139,6 +140,7 @@ Route114_EventScript_RegisterBernie::
 Route114_EventScript_RematchBernie::
 	trainerbattle_rematch TRAINER_BERNIE_1, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
 	msgbox Route114_Text_BerniePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_FIRE_STONE, 10
 	end
 
 Route114_EventScript_Claude::

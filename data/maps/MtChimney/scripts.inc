@@ -505,6 +505,7 @@ MtChimney_EventScript_DefeatedShelby::
 MtChimney_EventScript_RematchShelby::
 	trainerbattle_rematch TRAINER_SHELBY_1, MtChimney_Text_ShelbyRematchIntro, MtChimney_Text_ShelbyRematchDefeat
 	msgbox MtChimney_Text_ShelbyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_UP, 10
 	end
 
 MtChimney_EventScript_Melissa::
@@ -546,6 +547,7 @@ MtChimney_EventScript_SawyerDefeated::
 MtChimney_EventScript_SawyerRematch::
 	trainerbattle_rematch TRAINER_SAWYER_1, MtChimney_Text_SawyerRematchIntro, MtChimney_Text_SawyerRematchDefeat
 	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_MOON_STONE, 5
 	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano:

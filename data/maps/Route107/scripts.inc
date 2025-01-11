@@ -25,6 +25,7 @@ Route107_EventScript_TonyRegisterMatchCallAfterBattle::
 Route107_EventScript_TonyRematch::
 	trainerbattle_rematch TRAINER_TONY_1, Route107_Text_TonyRematchIntro, Route107_Text_TonyRematchDefeated
 	msgbox Route107_Text_TonyRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PEARL, 20
 	end
 
 Route107_EventScript_Denise::

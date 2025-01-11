@@ -29,22 +29,28 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - The unused ability Cacophony has been re-added as an alternative to Punk Rocker.
         - Pokemon with Cacophony do 1.5x damage with sound-based moves.
         - Pokemon with Cacophony will get a 10% boost to accuracy with sound-based moves.
-        - Currently only the Whismur and Kricketot line have Cacophony as their second ability. 
+        - The Whismur and Kricketot line have Cacophony as their second ability. 
     - Pokemon that evolve by trade can now evolve through the use of a Link Cable.
     - Pokemon that evolve by trade while holding an item can now evolve through the use of a Link Cable while holding that item.
     - Altering Cave's wild Pokemon changes every day.
         - Used to be part of an unreleased Mystery Gift.
     - Stats that change from a Pokemon's nature will be shaded.
     - Phione evolves into Manaphy at high friendship.
-    - Certain moves have type changes.
+    - Certain moves have changes in type and/or effect.
         - Splash
             - Water
             - Does damage during rain based on the user's weight.
+        - Cut
+            - High critical hit ratio.
+        - Strength
+            - 20% chance to flinch
     - Swarming Pokemon may now hold special items.
-    - Castform gets a Sandy Form. (No sprite/design yet)
+        - (Implemented but no items yet.)
+    - Castform gets a Sandy Form.
+        - (Implemented but no sprite yet)
     - Hidden Trees. Hidden Grotto-like interactable trees where each day, a Pokemon or item may drop from the tree.
         - All Hidden Tree Pokemon will have their hidden ability. 
-        - (No Pokemon to obtain yet.)
+        - (Implemented but no Pokemon to obtain yet.)
     - Certain Pokemon will know moves as a baby just like Pichu and Volt Tackle. 
         - Farfetch'd - Leek - Sky Attack
         - Chansey/Happiny - Lucky Punch - Mach Punch
@@ -69,10 +75,13 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Some will be restricted on when they can be obtained. (TODO)
     - Upon entering the Hall of Fame for the first time, certain locations may have their wild Pokemon change.
         - Will mostly allow non-native Pokemon to be available without jamming them into post-game locations.
-        - (Only Route 1 as of now.)
+        - (Implemented but only Route 1 uses this feature as of now.)
     - After giving back the Meteorite to Professor Cozmo, he'll give it back to you if you talk to him with a Deoxys in your party.
     - After the player picks up the other fossil at the Desert Underpass, a random fossil will appear in the same spot daily.
         - The scientist who resurrects fossils will now accept all non-Generation 3 fossils.
+    - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type.
+        - (Implemented but no trainers available yet.)
+    - Trainers may give out items after being beaten in a rematch.
 
 ### New TMs - (51 through 120)
 
@@ -128,7 +137,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM  89 - U-Turn
     - TM  90 - Substitute - Given by tutor in Lilycove City.
     - TM  91 - Flash Cannon
-    - TM  92 - Trick Room - Given by Trick Master before he leaves.
+    - TM  92 - Trick Room - Given by MECHABOT 5 after finishing all 8 puzzles.
     - TM  93 - Scald 📕 - Found in Trick House - Puzzle 7
         - Can be retrieved from MECHABOT 5 after finishing all 8 puzzles if missed.
     - TM  94 - Play Rough 📕
@@ -153,7 +162,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - TM 112 - Metronome 📗 - Given by tutor in Fallarbor Town.
     - TM 113 - Mimic 📗 - Given by tutor in Lavaridge Town.
     - TM 114 - Rollout 📗 - Given by tutor in Mauville City.
-    - TM 115 - Weather Ball 📕 - Given by someone at the Weather Institute.
+    - TM 115 - Weather Ball 📕 - Given by a little boy at the Weather Institute after dealing with Team Magma.
     - TM 116 - Power-Up Punch 📕
     - TM 117 - Wild Charge 📕
     - TM 118 - Helping Hand 📕
@@ -162,7 +171,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
 
 ### New Features (UNFINISHED)
 
-    - 18 trainers are scattered throughout Hoenn, one for each type. Defeating them will give a bonus to damage done by their type.
     - Beta mon from previous generations. To help me name the unnamed beta mon, visit [this form](https://docs.google.com/forms/d/e/1FAIpQLSd-yXdW80FGVM1yWF8cjuY3-7D_ypu1qKMQMfgrda5Lwbe7Ug/viewform?usp=share_link).
         - Gen 2 - https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Pok%C3%A9mon
             - Lefneko - Beta Hoppip line
@@ -373,7 +381,6 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Quiz Lady in Lilycove
         - Trades
     - Add Oval Charm and Shiny Charm.
-    - Add rematch reward items.
     - Give both bikes.
     - Modify Pokemart shop items.
     - Add more trades.
@@ -411,9 +418,8 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Hoenn Pokemon missing from Emerald that were in Ruby and Sapphire have been added back to the locations they used to be at.
         - Encounter rates will differ slightly.
     - Legendary Pokemon will respawn when the player enters the Hall of Fame if they weren't caught already.
-        - Deoxys, Mew, Ho-Oh, Lugia, and the Eon Duo that isn't chosen as the roamer already do.
+        - Deoxys, Mew, Ho-Oh, Lugia, Rayquaza, and the Eon Duo that isn't chosen as the roamer already do.
         - Groudon and Kyogre will respawn after talking to someone at the Weather Institute, starting their abnormal weather event.
-        - Rayquaza will respawn like this naturally.
         - The Eon Duo chosen as the roamer will respawn after looking at the TV again.
     - An incense seller can be found at the Slateport City Market.
     - Cut trees will no longer reappear.

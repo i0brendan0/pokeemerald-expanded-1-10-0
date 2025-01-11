@@ -320,6 +320,7 @@ Route102_EventScript_AmyRegisterMatchCallAfterBattle::
 Route102_EventScript_AmyRematch::
 	trainerbattle_rematch_double TRAINER_AMY_AND_LIV_1, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated, Route103_Text_AmyRematchNotEnoughPokemon
 	msgbox Route103_Text_AmyRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_POKE_DOLL, 30
 	end
 
 Route103_EventScript_Liv::
@@ -338,6 +339,7 @@ Route102_EventScript_LivRegisterMatchCallAfterBattle::
 Route102_EventScript_LivRematch::
 	trainerbattle_rematch_double TRAINER_AMY_AND_LIV_1, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated, Route103_Text_LivRematchNotEnoughPokemon
 	msgbox Route103_Text_LivRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_POKE_DOLL, 30
 	end
 
 Route103_EventScript_Andrew::
@@ -364,6 +366,7 @@ Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
 Route103_EventScript_MiguelRematch::
 	trainerbattle_rematch TRAINER_MIGUEL_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
 	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_HEAL_BALL, 20
 	end
 
 Route103_EventScript_Marcos::

@@ -59,6 +59,7 @@ Route125_EventScript_RegisterErnest::
 Route125_EventScript_RematchErnest::
 	trainerbattle_rematch TRAINER_ERNEST_1, Route125_Text_ErnestRematchIntro, Route125_Text_ErnestRematchDefeat
 	msgbox Route125_Text_ErnestRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DIVE_BALL, 20
 	end
 
 Route125_EventScript_Kim::

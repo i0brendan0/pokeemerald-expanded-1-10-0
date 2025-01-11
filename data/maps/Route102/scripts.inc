@@ -56,6 +56,7 @@ Route102_EventScript_CalvinRegister::
 Route102_EventScript_CalvinRematch::
 	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
 	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route102_EventScript_Rick::

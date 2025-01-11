@@ -76,6 +76,7 @@ Route123_EventScript_RegisterCameron::
 Route123_EventScript_RematchCameron::
 	trainerbattle_rematch TRAINER_CAMERON_1, Route123_Text_CameronRematchIntro, Route123_Text_CameronRematchDefeat
 	msgbox Route123_Text_CameronPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_CALCIUM, 15
 	end
 
 Route123_EventScript_Jacki::
@@ -97,6 +98,7 @@ Route123_EventScript_RegisterJacki::
 Route123_EventScript_RematchJacki::
 	trainerbattle_rematch TRAINER_JACKI_1, Route123_Text_JackiRematchIntro, Route123_Text_JackiRematchDefeat
 	msgbox Route123_Text_JackiPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DAWN_STONE, 5
 	end
 
 Route123_EventScript_Miu::
@@ -168,6 +170,7 @@ Route123_EventScript_RegisterFernando::
 Route123_EventScript_RematchFernando::
 	trainerbattle_rematch TRAINER_FERNANDO_1, Route123_Text_FernandoRematchIntro, Route123_Text_FernandoRematchDefeat
 	msgbox Route123_Text_FernandoPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_QUICK_BALL, 20
 	end
 
 Route123_Text_LoveGrassMonsHaveAny:

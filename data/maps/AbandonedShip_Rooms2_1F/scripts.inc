@@ -18,6 +18,7 @@ AbandonedShip_Rooms2_1F_EventScript_RegisterDan::
 AbandonedShip_Rooms2_1F_EventScript_DanRematch::
 	trainerbattle_rematch_double TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_DanRematchIntro, AbandonedShip_Rooms2_1F_Text_DanRematchDefeat, AbandonedShip_Rooms2_1F_Text_DanRematchNotEnoughMons
 	msgbox AbandonedShip_Rooms2_1F_Text_DanPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DAWN_STONE, 5
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Kira::
@@ -37,6 +38,7 @@ AbandonedShip_Rooms2_1F_EventScript_RegisterKira::
 AbandonedShip_Rooms2_1F_EventScript_KiraRematch::
 	trainerbattle_rematch_double TRAINER_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_KiraRematchIntro, AbandonedShip_Rooms2_1F_Text_KiraRematchDefeat, AbandonedShip_Rooms2_1F_Text_KiraRematchNotEnoughMons
 	msgbox AbandonedShip_Rooms2_1F_Text_KiraPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_DAWN_STONE, 5
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Jani::

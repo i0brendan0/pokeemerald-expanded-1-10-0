@@ -30,6 +30,7 @@ MtPyre_3F_EventScript_RegisterGabrielle::
 MtPyre_3F_EventScript_RematchGabrielle::
 	trainerbattle_rematch TRAINER_GABRIELLE_1, MtPyre_3F_Text_GabrielleRematchIntro, MtPyre_3F_Text_GabrielleRematchDefeat
 	msgbox MtPyre_3F_Text_GabriellePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_SHINY_STONE, 5
 	end
 
 MtPyre_3F_Text_WilliamIntro:

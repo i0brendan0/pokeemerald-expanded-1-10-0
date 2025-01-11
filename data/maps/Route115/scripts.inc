@@ -50,6 +50,7 @@ Route115_EventScript_RegisterTimothy::
 Route115_EventScript_RematchTimothy::
 	trainerbattle_rematch TRAINER_TIMOTHY_1, Route115_Text_TimothyRematchIntro, Route115_Text_TimothyRematchDefeat
 	msgbox Route115_Text_TimothyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_SUN_STONE, 5
 	end
 
 Route115_EventScript_Koichi::
@@ -76,6 +77,7 @@ Route115_EventScript_RegisterNob::
 Route115_EventScript_RematchNob::
 	trainerbattle_rematch TRAINER_NOB_1, Route115_Text_NobRematchIntro, Route115_Text_NobRematchDefeat
 	msgbox Route115_Text_NobPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PROTEIN, 15
 	end
 
 Route115_EventScript_Cyndy::
@@ -97,6 +99,7 @@ Route115_EventScript_RegisterCyndy::
 Route115_EventScript_RematchCyndy::
 	trainerbattle_rematch TRAINER_CYNDY_1, Route115_Text_CyndyRematchIntro, Route115_Text_CyndyRematchDefeat
 	msgbox Route115_Text_CyndyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_CARBOS, 15
 	end
 
 Route115_EventScript_Hector::

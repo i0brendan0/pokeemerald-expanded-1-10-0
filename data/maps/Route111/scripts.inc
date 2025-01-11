@@ -475,6 +475,7 @@ Route111_EventScript_RegisterDusty::
 Route111_EventScript_RematchDusty::
 	trainerbattle_rematch TRAINER_DUSTY_1, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
 	msgbox Route111_Text_DustyPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_STAR_PIECE, 15
 	end
 
 Route111_EventScript_Travis::
@@ -511,6 +512,7 @@ Route111_EventScript_RegisterWilton::
 Route111_EventScript_RematchWilton::
 	trainerbattle_rematch TRAINER_WILTON_1, Route111_Text_WiltonRematchIntro, Route111_Text_WiltonRematchDefeat
 	msgbox Route111_Text_WiltonPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_UP, 10
 	end
 
 Route111_EventScript_Brooke::
@@ -532,6 +534,7 @@ Route111_EventScript_RegisterBrooke::
 Route111_EventScript_RematchBrooke::
 	trainerbattle_rematch TRAINER_BROOKE_1, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
 	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_UP, 10
 	end
 
 Route111_EventScript_Hayden::

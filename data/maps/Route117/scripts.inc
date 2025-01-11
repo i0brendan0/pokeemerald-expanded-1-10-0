@@ -93,6 +93,7 @@ Route117_EventScript_RegisterIsaac::
 Route117_EventScript_RematchIsaac::
 	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
 	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_RARE_CANDY, 1
 	end
 
 Route117_EventScript_Lydia::
@@ -114,6 +115,7 @@ Route117_EventScript_RegisterLydia::
 Route117_EventScript_RematchLydia::
 	trainerbattle_rematch TRAINER_LYDIA_1, Route117_Text_LydiaRematchIntro, Route117_Text_LydiaRematchDefeat
 	msgbox Route117_Text_LydiaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_RARE_CANDY, 1
 	end
 
 Route117_EventScript_Dylan::
@@ -135,6 +137,7 @@ Route117_EventScript_RegisterDylan::
 Route117_EventScript_RematchDylan::
 	trainerbattle_rematch TRAINER_DYLAN_1, Route117_Text_DylanRematchIntro, Route117_Text_DylanRematchDefeat
 	msgbox Route117_Text_DylanPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_QUICK_BALL, 20
 	end
 
 Route117_EventScript_Maria::
@@ -156,6 +159,7 @@ Route117_EventScript_RegisterMaria::
 Route117_EventScript_RematchMaria::
 	trainerbattle_rematch TRAINER_MARIA_1, Route117_Text_MariaRematchIntro, Route117_Text_MariaRematchDefeat
 	msgbox Route117_Text_MariaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_QUICK_BALL, 20
 	end
 
 Route117_EventScript_Derek::
@@ -180,6 +184,7 @@ Route117_EventScript_RegisterAnna::
 Route117_EventScript_RematchAnna::
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaRematchIntro, Route117_Text_AnnaRematchDefeat, Route117_Text_AnnaRematchNotEnoughMons
 	msgbox Route117_Text_AnnaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route117_EventScript_Meg::
@@ -199,6 +204,7 @@ Route117_EventScript_RegisterMeg::
 Route117_EventScript_RematchMeg::
 	trainerbattle_rematch_double TRAINER_ANNA_AND_MEG_1, Route117_Text_MegRematchIntro, Route117_Text_MegRematchDefeat, Route117_Text_MegRematchNotEnoughMons
 	msgbox Route117_Text_MegPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route117_EventScript_Melina::

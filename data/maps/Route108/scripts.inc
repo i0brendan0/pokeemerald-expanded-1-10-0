@@ -45,5 +45,6 @@ Route108_EventScript_CoryRegisterMatchCallAfterBattle::
 Route108_EventScript_CoryRematch::
 	trainerbattle_rematch TRAINER_CORY_1, Route108_Text_CoryRematchIntro, Route108_Text_CoryRematchDefeated
 	msgbox Route108_Text_CoryRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_UP, 10
 	end
 

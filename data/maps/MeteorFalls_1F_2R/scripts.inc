@@ -20,6 +20,7 @@ MeteorFalls_1F_2R_EventScript_RegisterNicolas::
 MeteorFalls_1F_2R_EventScript_RematchNicolas::
 	trainerbattle_rematch TRAINER_NICOLAS_1, MeteorFalls_1F_2R_Text_NicolasRematchIntro, MeteorFalls_1F_2R_Text_NicolasRematchDefeat
 	msgbox MeteorFalls_1F_2R_Text_NicolasPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_FULL_RESTORE, 20
 	end
 
 MeteorFalls_1F_2R_EventScript_John::
@@ -39,6 +40,7 @@ MeteorFalls_1F_2R_EventScript_RegisterJohn::
 MeteorFalls_1F_2R_EventScript_RematchJohn::
 	trainerbattle_rematch_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JohnRematchIntro, MeteorFalls_1F_2R_Text_JohnRematchDefeat, MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons
 	msgbox MeteorFalls_1F_2R_Text_JohnPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_MAX, 5
 	end
 
 MeteorFalls_1F_2R_EventScript_Jay::
@@ -58,6 +60,7 @@ MeteorFalls_1F_2R_EventScript_RegisterJay::
 MeteorFalls_1F_2R_EventScript_RematchJay::
 	trainerbattle_rematch_double TRAINER_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_JayRematchIntro, MeteorFalls_1F_2R_Text_JayRematchDefeat, MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons
 	msgbox MeteorFalls_1F_2R_Text_JayPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PP_MAX, 5
 	end
 
 MeteorFalls_1F_2R_Text_NicolasIntro:

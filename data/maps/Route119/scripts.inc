@@ -370,6 +370,7 @@ Route119_EventScript_RegisterJackson::
 Route119_EventScript_RematchJackson::
 	trainerbattle_rematch TRAINER_JACKSON_1, Route119_Text_JacksonRematchIntro, Route119_Text_JacksonRematchDefeat
 	msgbox Route119_Text_JacksonPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_TIMER_BALL, 20
 	end
 
 Route119_EventScript_Catherine::
@@ -391,6 +392,7 @@ Route119_EventScript_RegisterCatherine::
 Route119_EventScript_RematchCatherine::
 	trainerbattle_rematch TRAINER_CATHERINE_1, Route119_Text_CatherineRematchIntro, Route119_Text_CatherineRematchDefeat
 	msgbox Route119_Text_CatherinePostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_TIMER_BALL, 20
 	end
 
 Route119_EventScript_Hugh::

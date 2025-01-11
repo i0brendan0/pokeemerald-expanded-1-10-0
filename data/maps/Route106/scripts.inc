@@ -34,6 +34,7 @@ Route106_EventScript_ElliotRegisterMatchCallAfterBattle::
 Route106_EventScript_ElliotRematch::
 	trainerbattle_rematch TRAINER_ELLIOT_1, Route106_Text_ElliotRematchIntro, Route106_Text_ElliotRematchDefeated
 	msgbox Route106_Text_ElliotRematchPostBattle, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_WATER_STONE, 5
 	end
 
 Route106_EventScript_Ned::

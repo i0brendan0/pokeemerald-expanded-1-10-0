@@ -93,6 +93,7 @@ Route121_EventScript_RegisterWalter::
 Route121_EventScript_RematchWalter::
 	trainerbattle_rematch TRAINER_WALTER_1, Route121_Text_WalterRematchIntro, Route121_Text_WalterRematchDefeat
 	msgbox Route121_Text_WalterPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_NUGGET, 15
 	end
 
 Route121_EventScript_Tammy::
@@ -129,6 +130,7 @@ Route121_EventScript_RegisterJessica::
 Route121_EventScript_RematchJessica::
 	trainerbattle_rematch TRAINER_JESSICA_1, Route121_Text_JessicaRematchIntro, Route121_Text_JessicaRematchDefeat
 	msgbox Route121_Text_JessicaPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_PEARL, 20
 	end
 
 Route121_EventScript_Cale::
@@ -170,6 +172,7 @@ Route121_EventScript_RegisterCristin::
 Route121_EventScript_RematchCristin::
 	trainerbattle_rematch TRAINER_CRISTIN_1, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat
 	msgbox Route121_Text_CristinPostRematch, MSGBOX_AUTOCLOSE
+    rematchreward ITEM_ULTRA_BALL, 20
 	end
 
 Route121_Text_OkayMoveOutToMtPyre:
