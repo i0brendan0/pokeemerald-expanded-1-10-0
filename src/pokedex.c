@@ -4582,9 +4582,9 @@ bool16 HasAllHoennMons(void)
 {
     u32 i, j;
 
-    for (i = 1; i < HOENN_DEX_COUNT; i++)
+    for (i = 0; i < HOENN_DEX_COUNT; i++)
     {
-        j = HoennToNationalOrder(i);
+        j = HoennToNationalOrder(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
             return FALSE;
     }
@@ -4596,9 +4596,9 @@ bool16 HasAllKantoMons(void)
     u32 i;
 
     // -1 excludes Mew
-    for (i = 1; i < KANTO_DEX_END - 1; i++)
+    for (i = 0; i < KANTO_DEX_END - 1; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;
     }
     return TRUE;
@@ -4609,9 +4609,9 @@ bool16 HasAllJohtoMons(void)
     u32 i;
 
     // -1 excludes Celebi
-    for (i = JOHTO_DEX_END + 1; i < (JOHTO_DEX_END - KANTO_DEX_END) - 1; i++)
+    for (i = JOHTO_DEX_END; i < (JOHTO_DEX_END - KANTO_DEX_END) - 1; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;
     }
     return TRUE;
@@ -4622,9 +4622,9 @@ bool16 HasAllSinnohMons(void)
     u32 i;
 
     // -1 excludes Phione, Manaphy, Darkrai, Shaymin, Arceus
-    for (i = HOENN_DEX_END + 1; i < (SINNOH_DEX_END - HOENN_DEX_END) - 5; i++)
+    for (i = HOENN_DEX_END; i < (SINNOH_DEX_END - HOENN_DEX_END) - 5; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;
     }
     return TRUE;
@@ -4634,9 +4634,9 @@ bool16 HasAllMons(void)
 {
     u32 i, j;
 
-    for (i = 1; i < NATIONAL_DEX_COUNT + 1; i++)
+    for (i = 0; i < NATIONAL_DEX_COUNT + 1; i++)
     {
-        j = NationalPokedexNumToSpecies(i);
+        j = NationalPokedexNumToSpecies(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_CAUGHT))
             return FALSE;
     }
@@ -4648,9 +4648,9 @@ bool16 HasAllMonsIncludingMythicals(void)
 {
     u32 i;
 
-    for (i = 1; i < NATIONAL_DEX_COUNT + 1; i++)
+    for (i = 0; i < NATIONAL_DEX_COUNT + 1; i++)
     {
-        if (!GetSetPokedexFlag(NationalPokedexNumToSpecies(i), FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(NationalPokedexNumToSpecies(i + 1), FLAG_GET_CAUGHT))
             return FALSE;
     }
 
@@ -4661,9 +4661,9 @@ bool16 HasSeenAllHoennMons(void)
 {
     u32 i, j;
 
-    for (i = 1; i < HOENN_DEX_COUNT; i++)
+    for (i = ; i < HOENN_DEX_COUNT; i++)
     {
-        j = HoennToNationalOrder(i);
+        j = HoennToNationalOrder(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_SEEN))
             return FALSE;
     }
@@ -4675,9 +4675,9 @@ bool16 HasSeenAllKantoMons(void)
     u32 i;
 
     // -1 excludes Mew
-    for (i = 1; i < KANTO_DEX_END - 1; i++)
+    for (i = 0; i < KANTO_DEX_END - 1; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_SEEN))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
             return FALSE;
     }
     return TRUE;
@@ -4688,9 +4688,9 @@ bool16 HasSeenAllJohtoMons(void)
     u32 i;
 
     // -1 excludes Celebi
-    for (i = JOHTO_DEX_END + 1; i < (JOHTO_DEX_END - KANTO_DEX_END) - 1; i++)
+    for (i = JOHTO_DEX_END; i < (JOHTO_DEX_END - KANTO_DEX_END) - 1; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_SEEN))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
             return FALSE;
     }
     return TRUE;
@@ -4701,9 +4701,9 @@ bool16 HasSeenAllSinnohMons(void)
     u32 i;
 
     // -5 excludes Phione, Manaphy, Darkrai, Shaymin, Arceus
-    for (i = HOENN_DEX_END + 1; i < (SINNOH_DEX_END - HOENN_DEX_END) - 5; i++)
+    for (i = HOENN_DEX_END; i < (SINNOH_DEX_END - HOENN_DEX_END) - 5; i++)
     {
-        if (!GetSetPokedexFlag(i, FLAG_GET_SEEN))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
             return FALSE;
     }
     return TRUE;
@@ -4713,9 +4713,9 @@ bool16 HasSeenAllMons(void)
 {
     u32 i, j;
 
-    for (i = 1; i < NATIONAL_DEX_COUNT + 1; i++)
+    for (i = 0; i < NATIONAL_DEX_COUNT + 1; i++)
     {
-        j = NationalPokedexNumToSpecies(i);
+        j = NationalPokedexNumToSpecies(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_SEEN))
             return FALSE;
     }
@@ -4727,9 +4727,9 @@ bool16 HasSeenAllMonsIncludingMythicals(void)
 {
     u32 i;
 
-    for (i = 1; i < NATIONAL_DEX_COUNT + 1; i++)
+    for (i = 0; i < NATIONAL_DEX_COUNT + 1; i++)
     {
-        if (!GetSetPokedexFlag(NationalPokedexNumToSpecies(i), FLAG_GET_SEEN))
+        if (!GetSetPokedexFlag(NationalPokedexNumToSpecies(i + 1), FLAG_GET_SEEN))
             return FALSE;
     }
 
