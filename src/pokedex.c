@@ -4661,7 +4661,7 @@ bool16 HasSeenAllHoennMons(void)
 {
     u32 i, j;
 
-    for (i = ; i < HOENN_DEX_COUNT; i++)
+    for (i = 0; i < HOENN_DEX_COUNT; i++)
     {
         j = HoennToNationalOrder(i + 1);
         if (!(gSpeciesInfo[j].isMythical && !gSpeciesInfo[j].dexForceRequired) && !GetSetPokedexFlag(j, FLAG_GET_SEEN))
