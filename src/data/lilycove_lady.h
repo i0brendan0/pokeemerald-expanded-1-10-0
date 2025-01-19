@@ -1,6 +1,7 @@
 #include "constants/event_objects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/abilities.h"
 
 struct LilycoveContestLadyValues
 {
@@ -93,8 +94,8 @@ static const u16 sQuizLadyQuestion3[QUIZ_QUESTION_LEN] =
     EC_WORD_QUES,
     EC_EMPTY_WORD,
     EC_WORD_LEVEL,
-    EC_WORD_INSOMNIA,
-    EC_WORD_CUTE_CHARM
+    EC_ABILITY(INSOMNIA),
+    EC_ABILITY(CUTE_CHARM)
 };
 
 static const u16 sQuizLadyQuestion4[QUIZ_QUESTION_LEN] =
@@ -131,9 +132,9 @@ static const u16 sQuizLadyQuestion6[QUIZ_QUESTION_LEN] =
     EC_MOVE2(CONFUSION),
     EC_WORD_QUES,
     EC_EMPTY_WORD,
-    EC_WORD_ILLUMINATE,
-    EC_WORD_OWN_TEMPO,
-    EC_WORD_SWIFT_SWIM
+    EC_ABILITY(ILLUMINATE),
+    EC_ABILITY(OWN_TEMPO),
+    EC_ABILITY(SWIFT_SWIM)
 };
 
 static const u16 sQuizLadyQuestion7[QUIZ_QUESTION_LEN] =
@@ -157,9 +158,9 @@ static const u16 sQuizLadyQuestion8[QUIZ_QUESTION_LEN] =
     EC_WORD_ESCAPE,
     EC_WORD_QUES,
     EC_EMPTY_WORD,
-    EC_WORD_RUN_AWAY,
-    EC_WORD_SHADOW_TAG,
-    EC_WORD_WONDER_GUARD
+    EC_ABILITY(RUN_AWAY),
+    EC_ABILITY(SHADOW_TAG),
+    EC_ABILITY(WONDER_GUARD)
 };
 
 static const u16 sQuizLadyQuestion9[QUIZ_QUESTION_LEN] =
@@ -170,9 +171,9 @@ static const u16 sQuizLadyQuestion9[QUIZ_QUESTION_LEN] =
     EC_WORD_POISON,
     EC_WORD_QUES,
     EC_EMPTY_WORD,
-    EC_WORD_GUTS,
-    EC_WORD_IMMUNITY,
-    EC_WORD_SHED_SKIN
+    EC_ABILITY(GUTS),
+    EC_ABILITY(IMMUNITY),
+    EC_ABILITY(SHED_SKIN)
 };
 
 static const u16 sQuizLadyQuestion10[QUIZ_QUESTION_LEN] =
@@ -293,10 +294,10 @@ static const u16 sQuizLadyQuizAnswers[] =
     EC_WORD_LEVEL,
     EC_WORD_FLOWERS,
     EC_WORD_EGG,
-    EC_WORD_OWN_TEMPO,
+    EC_ABILITY(OWN_TEMPO),
     EC_WORD_ROCK,
-    EC_WORD_SHADOW_TAG,
-    EC_WORD_IMMUNITY,
+    EC_ABILITY(SHADOW_TAG),
+    EC_ABILITY(IMMUNITY),
     EC_WORD_POKEMON,
     EC_WORD_PC,
     EC_WORD_TELEVISION,

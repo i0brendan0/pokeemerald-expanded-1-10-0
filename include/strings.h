@@ -2404,6 +2404,7 @@ extern const u8 gEasyChatGroupName_Move1[];
 extern const u8 gEasyChatGroupName_Move2[];
 extern const u8 gEasyChatGroupName_TrendySaying[];
 extern const u8 gEasyChatGroupName_Pokemon2[];
+extern const u8 gEasyChatGroupName_Ability[];
 
 // Text Input Strings
 extern const u8 gText_EasyChatKeyboard_ABCDEFothers[];

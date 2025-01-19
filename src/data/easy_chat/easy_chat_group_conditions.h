@@ -20,7 +20,6 @@ const u8 gEasyChatWord_Noisy[] = _("NOISY");
 const u8 gEasyChatWord_Big[] = _("BIG");
 const u8 gEasyChatWord_Late[] = _("LATE");
 const u8 gEasyChatWord_Close[] = _("CLOSE");
-const u8 gEasyChatWord_Docile[] = _("DOCILE");
 const u8 gEasyChatWord_Amusing[] = _("AMUSING");
 const u8 gEasyChatWord_Entertaining[] = _("ENTERTAINING");
 const u8 gEasyChatWord_Perfection[] = _("PERFECTION");
@@ -199,12 +198,6 @@ const struct EasyChatWordInfo gEasyChatGroup_Conditions[] = {
     {
         .text = gEasyChatWord_Close,
         .alphabeticalOrder = 1,
-        .enabled = TRUE,
-    },
-    [EC_INDEX(EC_WORD_DOCILE)] =
-    {
-        .text = gEasyChatWord_Docile,
-        .alphabeticalOrder = 37,
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_AMUSING)] =

@@ -380,7 +380,7 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Remove Mail from rewards.
         - Quiz Lady in Lilycove
         - Trades
-    - Add Oval Charm and Shiny Charm.
+    - Give out Oval Charm and Shiny Charm.
     - Give both bikes.
     - Modify Pokemart shop items.
     - Add more trades.
@@ -389,6 +389,11 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Modify TM prices
     - Remove a lot of Generation configurations.
     - EV training items give EVs when walking.
+    - Add gen 4 + abilities to Easy Chat system.
+        - Move abilities out of STATUS. (Will not be ready until no new gen 4+ abilities will be given to pokemon.)
+    - Add gen 4 + moves to Easy Chat system. (Will not be ready until no new gen 4+ moves will be given to pokemon.)
+    - Give post-HoF trainer rosters Pokemon outside the Hoenn Dex.
+    - Maybe modify how badly poisoned works.
 
 ## Changes
 

@@ -6962,6 +6962,11 @@ const u8 *GetMoveName(u16 moveId)
     return gMovesInfo[moveId].name;
 }
 
+const u8 *GetAbilityName(u16 abilityId)
+{
+    return gAbilitiesInfo[abilityId].name;
+}
+
 const u8 *GetMoveAnimationScript(u16 moveId)
 {
     if (gMovesInfo[moveId].battleAnimScript == NULL)

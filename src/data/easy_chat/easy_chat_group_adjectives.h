@@ -33,7 +33,6 @@ const u8 gEasyChatWord_Destroyed[] = _("DESTROYED");
 const u8 gEasyChatWord_Fiery[] = _("FIERY");
 const u8 gEasyChatWord_LoveyDovey[] = _("LOVEY-DOVEY");
 const u8 gEasyChatWord_Happily[] = _("HAPPILY");
-const u8 gEasyChatWord_Anticipation[] = _("ANTICIPATION");
 
 const struct EasyChatWordInfo gEasyChatGroup_Adjectives[] = {
     [EC_INDEX(EC_WORD_WANDERING)] =
@@ -244,12 +243,6 @@ const struct EasyChatWordInfo gEasyChatGroup_Adjectives[] = {
     {
         .text = gEasyChatWord_Happily,
         .alphabeticalOrder = 25,
-        .enabled = TRUE,
-    },
-    [EC_INDEX(EC_WORD_ANTICIPATION)] =
-    {
-        .text = gEasyChatWord_Anticipation,
-        .alphabeticalOrder = 30,
         .enabled = TRUE,
     },
 };

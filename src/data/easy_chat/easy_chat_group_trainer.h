@@ -25,6 +25,8 @@ const u8 gEasyChatWord_Gold[] = _("GOLD");
 const u8 gEasyChatWord_Leaf[] = _("LEAF");
 const u8 gEasyChatWord_Silver[] = _("SILVER");
 const u8 gEasyChatWord_Emerald[] = _("EMERALD");
+const u8 gEasyChatWord_Blue[] = _("BLUE");
+const u8 gEasyChatWord_Yellow[] = _("YELLOW");
 
 const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     [EC_INDEX(EC_WORD_I_CHOOSE_YOU)] =
@@ -145,13 +147,13 @@ const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     {
         .text = gEasyChatWord_Red,
         .alphabeticalOrder = 19,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_GREEN)] =
     {
         .text = gEasyChatWord_Green,
         .alphabeticalOrder = 17,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_BAG)] =
     {
@@ -163,29 +165,41 @@ const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     {
         .text = gEasyChatWord_Flame,
         .alphabeticalOrder = 25,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_GOLD)] =
     {
         .text = gEasyChatWord_Gold,
         .alphabeticalOrder = 10,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_LEAF)] =
     {
         .text = gEasyChatWord_Leaf,
         .alphabeticalOrder = 2,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_SILVER)] =
     {
         .text = gEasyChatWord_Silver,
         .alphabeticalOrder = 11,
-        .enabled = FALSE,
+        .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_EMERALD)] =
     {
         .text = gEasyChatWord_Emerald,
+        .alphabeticalOrder = 12,
+        .enabled = TRUE,
+    },
+    [EC_INDEX(EC_WORD_BLUE)] =
+    {
+        .text = gEasyChatWord_Blue,
+        .alphabeticalOrder = 11,
+        .enabled = TRUE,
+    },
+    [EC_INDEX(EC_WORD_YELLOW)] =
+    {
+        .text = gEasyChatWord_Yellow,
         .alphabeticalOrder = 12,
         .enabled = TRUE,
     },

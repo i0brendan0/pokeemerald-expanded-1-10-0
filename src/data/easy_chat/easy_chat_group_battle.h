@@ -13,7 +13,6 @@ const u8 gEasyChatWord_CanWin[] = _("CAN WIN");
 const u8 gEasyChatWord_NoMatch[] = _("NO MATCH");
 const u8 gEasyChatWord_Spirit[] = _("SPIRIT");
 const u8 gEasyChatWord_Decided[] = _("DECIDED");
-const u8 gEasyChatWord_TrumpCard[] = _("TRUMP CARD");
 const u8 gEasyChatWord_TakeThat[] = _("TAKE THAT");
 const u8 gEasyChatWord_ComeOn[] = _("COME ON");
 const u8 gEasyChatWord_Attack[] = _("ATTACK");
@@ -42,7 +41,6 @@ const u8 gEasyChatWord_Battle[] = _("BATTLE");
 const u8 gEasyChatWord_Fight[] = _("FIGHT");
 const u8 gEasyChatWord_Resuscitate[] = _("RESUSCITATE");
 const u8 gEasyChatWord_Points[] = _("POINTS");
-const u8 gEasyChatWord_Serious[] = _("SERIOUS");
 const u8 gEasyChatWord_GiveUp[] = _("GIVE UP");
 const u8 gEasyChatWord_Loss[] = _("LOSS");
 const u8 gEasyChatWord_IfILose[] = _("IF I LOSE");
@@ -151,12 +149,6 @@ const struct EasyChatWordInfo gEasyChatGroup_Battle[] = {
     {
         .text = gEasyChatWord_Decided,
         .alphabeticalOrder = 35,
-        .enabled = TRUE,
-    },
-    [EC_INDEX(EC_WORD_TRUMP_CARD)] =
-    {
-        .text = gEasyChatWord_TrumpCard,
-        .alphabeticalOrder = 36,
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_TAKE_THAT)] =
@@ -325,12 +317,6 @@ const struct EasyChatWordInfo gEasyChatGroup_Battle[] = {
     {
         .text = gEasyChatWord_Points,
         .alphabeticalOrder = 61,
-        .enabled = TRUE,
-    },
-    [EC_INDEX(EC_WORD_SERIOUS)] =
-    {
-        .text = gEasyChatWord_Serious,
-        .alphabeticalOrder = 27,
         .enabled = TRUE,
     },
     [EC_INDEX(EC_WORD_GIVE_UP)] =
