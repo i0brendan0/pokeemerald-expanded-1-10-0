@@ -1,4 +1,15 @@
 MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan::
+    lock
+    faceplayer
+    msgbox MauvilleCity_PokemonCenter_1F_Text_OldManCantDo, MSGBOX_DEFAULT
+    release
+    end
+    
+MauvilleCity_PokemonCenter_1F_Text_OldManCantDo::
+	.string "This feature will be repurposed\n"
+	.string "at some point in the future.$"
+
+
 	special Script_GetCurrentMauvilleMan
 	switch VAR_RESULT
 	case MAUVILLE_MAN_BARD, MauvilleCity_PokemonCenter_1F_EventScript_Bard

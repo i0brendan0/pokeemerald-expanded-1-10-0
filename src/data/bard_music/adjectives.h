@@ -1,6 +1,6 @@
 #ifndef GUARD_DATA_BARD_MUSIC_ADJECTIVES_H
 #define GUARD_DATA_BARD_MUSIC_ADJECTIVES_H
-static const struct BardSoundTemplate sBardSoundTemplates_Adjectives[][MAX_BARD_SOUNDS_PER_WORD] = {
+static const struct BardSoundTemplate sBardSoundTemplates_Adjectives[][MAX_BARD_SOUNDS_PER_WORD] = {/*
     [EC_INDEX(EC_WORD_WANDERING)] = {
         { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
         { .songId = PHONEME_ID(PH_NURSE_SOLO) },
@@ -288,7 +288,7 @@ static const struct BardSoundTemplate sBardSoundTemplates_Adjectives[][MAX_BARD_
         { .songId = PHONEME_ID(PH_FACE_BLEND) },
         { .songId = PHONEME_ID(PH_THOUGHT_SOLO) },
         PREV_BARD_SOUND
-    }
+    }*/
 };
 
 #endif // GUARD_DATA_BARD_MUSIC_ADJECTIVES_H

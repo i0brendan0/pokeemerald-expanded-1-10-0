@@ -1,6 +1,6 @@
 #ifndef GUARD_DATA_BARD_MUSIC_STATUS_H
 #define GUARD_DATA_BARD_MUSIC_STATUS_H
-static const struct BardSoundTemplate sBardSoundTemplates_Status[][MAX_BARD_SOUNDS_PER_WORD] = {
+static const struct BardSoundTemplate sBardSoundTemplates_Status[][MAX_BARD_SOUNDS_PER_WORD] = {/*
     [EC_INDEX(EC_WORD_DARK)] = {
         { .songId = PHONEME_ID(PH_CLOTH_SOLO) },
         PREV_BARD_SOUND,
@@ -872,7 +872,7 @@ static const struct BardSoundTemplate sBardSoundTemplates_Status[][MAX_BARD_SOUN
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
-    }
+    }*/
 };
 
 #endif // GUARD_DATA_BARD_MUSIC_STATUS_H

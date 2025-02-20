@@ -1,6 +1,6 @@
 #ifndef GUARD_DATA_BARD_MUSIC_BATTLE_H
 #define GUARD_DATA_BARD_MUSIC_BATTLE_H
-static const struct BardSoundTemplate sBardSoundTemplates_Battle[][MAX_BARD_SOUNDS_PER_WORD] = {
+static const struct BardSoundTemplate sBardSoundTemplates_Battle[][MAX_BARD_SOUNDS_PER_WORD] = {/*
     [EC_INDEX(EC_WORD_MATCH_UP)] = {
         { .songId = PHONEME_ID(PH_TRAP_SOLO) },
         { .songId = PHONEME_ID(PH_STRUT_BLEND) },
@@ -504,7 +504,7 @@ static const struct BardSoundTemplate sBardSoundTemplates_Battle[][MAX_BARD_SOUN
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
-    }
+    }*/
 };
 
 #endif // GUARD_DATA_BARD_MUSIC_BATTLE_H

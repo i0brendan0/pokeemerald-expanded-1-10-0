@@ -394,6 +394,12 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
     - Add gen 4 + moves to Easy Chat system. (Will not be ready until no new gen 4+ moves will be given to pokemon.)
     - Give post-HoF trainer rosters Pokemon outside the Hoenn Dex.
     - Maybe modify how badly poisoned works.
+    - Potentially add in FR/LG locations to get non-Hoenn Pokemon.
+        - Tanoby Ruins/Chambers - Unown
+    - Allow entry to the Cave of Origin post HoF.
+        - Also add in the unused maps.
+    - Remove the 5 guys from Mauville Pokemon Center.
+        - Replace their functions with something else instead.
 
 ## Changes
 
@@ -593,7 +599,5 @@ This hack is a personal upgrade/modification of the original Pokemon Emerald. It
         - Zapdos
 
 Use x_MODIFY_x to find changes for future.
-
-### [Documentation on features can be found here for the pokeemerald Expansion](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
 ### [List of pokeemerald Expansion contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits)
